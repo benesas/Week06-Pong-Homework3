@@ -4,7 +4,7 @@
 
 Unity **6000.3.2f1** kullanıldı. Windows Development build başarıyla alındı. Sahne açılışı, aktif UnityTransport, port 7770 ve sunucu kontrollü raket ayarları doğrulandı.
 
-FishNet'in kendi kaynaklarında nullable/eski API uyarıları var; derlemeyi engellemiyor. Unity Cloud projesi henüz bağlanmadığı için Services bağlantı uyarısı beklenir.
+FishNet'in kendi kaynaklarında nullable/eski API uyarıları var; derlemeyi engellemiyor. Unity Cloud projesi pong bağlandı ve Relay etkinleştirildi.
 
 ## Yerel iki oyuncu testi
 
@@ -34,8 +34,8 @@ Sunucu dururken konum değişikliği olmayabileceğinden, raketin yetkili konumu
 **Otomatik oynama:** Bot A/B iki ayrı süreçte, ardından host/misafir rolleri değiştirilerek iki maç oynadı. Her iki maç da 3–2 bitti ve skorlar iki tarafta eşleşti. Ayrıntılar `OTOMATIK_MACLAR.md` ve `AutoMatches/results.json` içinde. Bu maçlar 127.0.0.1 üzerinde gerçekleşti.
 
 - Multiplayer Services ve FishyUnityTransport paketleri indirildi ve kodla birlikte derlendi.
-- RelayLink ve HUD kodları derlendi; gerçek Relay allocation/katılım bağlantısı bu çalışmada doğrulanmadı.
-- Unity hesabı/Cloud proje bağlantısı yapılmadı; Dashboard'da Relay'in etkinleştirilmesi gerekiyor.
+- Gerçek Relay allocation, katılım kodu ve misafir bağlantısı doğrulandı. Relay üzerinden otomatik maç 3–2 tamamlandı; misafir RTT 67 ms.
+- Unity Cloud projesi pong bağlandı; Dashboard Relay kurulumunun tamamlandığını ve etkinleştirildiğini doğruladı. Ayrıntılar RELAY_TESTI.md içinde.
 - Farklı ağdaki arkadaşla 3 puanlık maç, rol değişimi, gerçek RTT ve bağlantı kartı BEKLİYOR.
 - Dersin Notes 6.1/6.2 dosyaları sağlanmadı; uygulama davranışına uygun açıklamalı bir sürüm hazırlandı.
 - Yerel Git commitleri hazırlandı. GitHub adresi verilmediği için push yapılmadı.

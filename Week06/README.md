@@ -97,7 +97,9 @@ Commit: `Homework 3: host cheats work`.
 
 Manifestte Multiplayer Services, Input System, URP, Multiplayer Play Mode ve belirli Git commitine sabitlenmiş FishyUnityTransport bulunur. FishNet 4.7.3R başlangıç paketinden korunmuştur.
 
-**Hesabınla tamamlanacak:**
+**Tamamlandı:** Unity Cloud projesi pong bağlandı; Relay etkinleştirildi. Katılım koduyla iki süreç bağlanıp 3–2 oynadı, misafir RTT 67 ms. [Relay kanıtı ve görüntü](RELAY_TESTI.md).
+
+Başka bir projede kurulum gerekirse:
 
 1. Edit → Project Settings → Services: öğrenci Unity hesabınla giriş yap.
 2. Unity Cloud projesi oluştur veya mevcut projeyi bağla.
@@ -182,7 +184,7 @@ RTT ve skor birlikte görünürken misafir ekran görüntüsünü `Week06/screen
 
 ## Teslim kontrolü
 
-- [ ] Kendi Unity Cloud projem bağlandı ve Relay açık.
+- [x] Unity Cloud projesi pong bağlandı ve Relay açık.
 - [ ] Editör/misafir pencerelerinde C/X/T/G denemelerini yaptım.
 - [ ] Servis reddini yalnız isteği yapan oyuncu gördü.
 - [ ] Host Speed 40 deneyi yapıldı, sonra 8'e alındı.

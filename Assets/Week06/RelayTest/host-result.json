@@ -1,0 +1,20 @@
+{
+    "role": "host",
+    "player": "LEFT",
+    "connection": "Unity Relay DTLS / two processes on same PC",
+    "left": 3,
+    "right": 2,
+    "goalsObserved": 5,
+    "durationSeconds": 56.69858407974243,
+    "guestRttMs": 33,
+    "completed": true,
+    "scoreWrittenDirectly": false,
+    "error": "",
+    "events": [
+        "15.99s score 1:0",
+        "25.60s score 1:1",
+        "40.49s score 2:1",
+        "47.19s score 2:2",
+        "56.70s score 3:2"
+    ]
+}

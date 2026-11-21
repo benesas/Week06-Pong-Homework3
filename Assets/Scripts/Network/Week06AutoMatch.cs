@@ -8,8 +8,6 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.LowLevel;
 
-// İki bağımsız süreçte klavye girdisiyle oynayan test oyuncusu.
-// Skoru, topu veya raket konumunu doğrudan değiştirmez.
 [DefaultExecutionOrder(-100)]
 public class Week06AutoMatch : MonoBehaviour
 {
@@ -41,6 +39,8 @@ public class Week06AutoMatch : MonoBehaviour
         bot._role = args[flag + 1];
         bot._directory = args[directory + 1];
         bot._result = new MatchResult { role = bot._role };
+        if (Array.IndexOf(args, "-relay-host") >= 0 || Array.IndexOf(args, "-relay-join") >= 0)
+            bot._result.connection = "Unity Relay DTLS / two processes on same PC";
         Directory.CreateDirectory(bot._directory);
         InputSystem.settings.backgroundBehavior = InputSettings.BackgroundBehavior.IgnoreFocus;
         bot._keyboard = InputSystem.AddDevice<Keyboard>();
@@ -79,8 +79,7 @@ public class Week06AutoMatch : MonoBehaviour
         if (inPlay && !_wasInPlay) _rallyStarted = Time.realtimeSinceStartup;
         _wasInPlay = inPlay;
         float target = ball.transform.position.z;
-        // Önce ralli: iki oyuncu da topu takip eder. 5 saniye sonra sırayla
-        // biri topu kaçırır; puanı yine normal gol denetimi hesaplar.
+
         int plannedWinner = total % 2 == 0 ? PaddleController.Left : PaddleController.Right;
         if (inPlay && Time.realtimeSinceStartup - _rallyStarted > 5 && me.Side.Value != plannedWinner)
             target = ball.transform.position.z >= 0 ? -3.9f : 3.9f;
@@ -103,7 +102,7 @@ public class Week06AutoMatch : MonoBehaviour
         _result.guestRttMs = (long)InstanceFinder.TimeManager.RoundTripTime;
         File.WriteAllText(Path.Combine(_directory, _role + "-result.json"), JsonUtility.ToJson(_result, true));
         Debug.Log($"[AutoMatch/{_role}] COMPLETE success={_result.completed} score={_result.left}:{_result.right} error={error}");
-        // İki taraf da final SyncVar'larını ve ekran görüntüsünü alabilsin.
+
         yield return new WaitForSecondsRealtime(0.5f);
         yield return new WaitForEndOfFrame();
         ScreenCapture.CaptureScreenshot(Path.Combine(_directory, _role + "-final.png"));

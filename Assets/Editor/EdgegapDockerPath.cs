@@ -1,11 +1,3 @@
-// Pong — makes the Edgegap plugin find Docker on a Mac (Week 4, edge).
-// Symptom in the Edgegap window: "Containerization Error ... Couldn't complete containerization",
-// and in the Console just before it: "/bin/bash: docker: command not found".
-// Cause: the Edgegap plugin starts docker through /bin/bash -c with the Unity Editor's PATH plus /usr/local/bin.
-// Docker Desktop installed in "user" mode puts the CLI only in ~/.docker/bin, which is in neither place.
-// Fix: prepend the Docker CLI folders to the Editor process PATH when the editor loads. The plugin reads
-// PATH with Environment.GetEnvironmentVariable, so it picks this up. No sudo and no package edit needed.
-// Machine-wide alternative: Docker Desktop > Settings > Advanced > "System" install (writes /usr/local/bin symlinks).
 #if UNITY_EDITOR_OSX || UNITY_EDITOR_LINUX
 using System;
 using System.IO;
@@ -21,9 +13,9 @@ public static class EdgegapDockerPath
         string home = Environment.GetEnvironmentVariable("HOME") ?? "";
         string[] candidates =
         {
-            Path.Combine(home, ".docker", "bin"),        // Docker Desktop, "user" install (this Mac)
-            "/usr/local/bin",                             // Docker Desktop, "system" install; Intel Homebrew
-            "/opt/homebrew/bin",                          // Apple Silicon Homebrew (docker CLI via brew)
+            Path.Combine(home, ".docker", "bin"),
+            "/usr/local/bin",
+            "/opt/homebrew/bin",
             "/Applications/Docker.app/Contents/Resources/bin"
         };
 

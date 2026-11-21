@@ -7,8 +7,6 @@ using UnityEditor.PackageManager;
 using UnityEditor.PackageManager.Requests;
 using UnityEngine;
 
-// unitypackage, Packages/manifest.json taşımaz. Eksik UPM bağımlılıklarını
-// mevcut Week05 URP projesine importtan sonra kurar; hesap girişi yapmaz.
 [InitializeOnLoad]
 public static class Week06Dependencies
 {

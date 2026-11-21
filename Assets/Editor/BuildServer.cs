@@ -1,11 +1,3 @@
-// Pong — builds the Linux Dedicated Server with one menu click or from the command line (Week 4, edge).
-//   Menu:          Pong > Build Linux Dedicated Server
-//   Command line:  Unity -batchmode -quit -projectPath . -executeMethod BuildServer.Linux
-// Output: Builds/LinuxServer/Pong.x86_64 (+ Pong_Data). The Dockerfile at the project root copies that folder.
-// Needs the "Linux Dedicated Server Build Support" module in the Hub.
-// Scripting backend: IL2CPP. Mono's JIT aborts under x86 emulation (Rosetta and QEMU) on Apple Silicon Docker
-// with "Assertion at x86-codegen.h:410", so the local docker run test only works with IL2CPP. Needs the
-// com.unity.toolchain.macos-arm64-linux (Mac) or com.unity.toolchain.win-x86_64-linux-x86_64 (Windows) package.
 using System.IO;
 using System.Linq;
 using UnityEditor;
@@ -31,7 +23,7 @@ public static class BuildServer
             scenes           = scenes,
             locationPathName = OutputPath,
             target           = BuildTarget.StandaloneLinux64,
-            subtarget        = (int)StandaloneBuildSubtarget.Server,   // THE line: Dedicated Server, not a windowed player
+            subtarget        = (int)StandaloneBuildSubtarget.Server,
             options          = BuildOptions.None
         };
 

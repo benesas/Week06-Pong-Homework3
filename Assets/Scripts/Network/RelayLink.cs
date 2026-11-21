@@ -9,15 +9,13 @@ using Unity.Services.Relay;
 using Unity.Services.Relay.Models;
 using UnityEngine;
 
-// Relay yalnızca paketleri taşır; oyun kurallarını hâlâ host uygular.
 public static class RelayLink
 {
     private static async Task Initialize()
     {
         if (UnityServices.State != ServicesInitializationState.Initialized)
         {
-            // Ayrı süreçler farklı anonim oyuncu profili kullanır.
-            // Editör/MPPM aynı PC'de aynı oyuncu kimliğiyle bağlanmasın.
+
             var options = new InitializationOptions();
             options.SetProfile("pong_" + System.Diagnostics.Process.GetCurrentProcess().Id);
             await UnityServices.InitializeAsync(options);
@@ -40,13 +38,13 @@ public static class RelayLink
         await Initialize();
         Allocation allocation = await RelayService.Instance.CreateAllocationAsync(1);
         string code = await RelayService.Instance.GetJoinCodeAsync(allocation.AllocationId);
-        // DTLS uç noktasını seç; anahtar/bağlantı verilerini loglama veya dosyaya yazma.
+
         var endpoint = allocation.ServerEndpoints.Find(e => e.ConnectionType == "dtls");
         if (endpoint == null) throw new InvalidOperationException("Relay DTLS endpoint bulunamadı.");
         transport.SetRelayServerData(endpoint.Host, (ushort)endpoint.Port,
             allocation.AllocationIdBytes, allocation.Key, allocation.ConnectionData,
             allocation.ConnectionData, true);
-        // Önce Relay ayarı, sonra sunucu, en son hostun yerel istemcisi.
+
         if (!manager.ServerManager.StartConnection())
             throw new InvalidOperationException("Relay sunucusu başlatılamadı.");
         if (!manager.ClientManager.StartConnection())

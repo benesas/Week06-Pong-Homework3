@@ -6,8 +6,6 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.LowLevel;
 
-// İsteğe bağlı iki süreçli entegrasyon testi. Normal oyunda oluşturulmaz.
-// -smoke-role host|guest -smoke-start <Unix saniyesi>
 public class Week06NetworkSmoke : MonoBehaviour
 {
     private string _role;
