@@ -1,6 +1,6 @@
 // Pong — the networked paddle, Week 2 version (Steps 4, 6 and 8 of the build).
 // Step 4: a NetworkBehaviour; only the OWNER reads the keyboard; the SERVER assigns a side.
-// Step 6: a NetworkTransform COMPONENT on the prefab (no code): the owner's position replicates.
+// Week 06: NetworkTransform is server authoritative; ServerMove validates owner input.
 // Step 8: the serve and the goal as three RPCs, one per direction:
 //     ServerRpc      owner  -> server   "I pressed Space, let me serve"
 //     ObserversRpc   server -> everyone "Player 2 scored, 3 : 2" (an event, not state)
@@ -80,6 +80,7 @@ public class PaddleController : NetworkBehaviour
         if (mine)
         {
             Local = this;
+            TimeManager.OnTick += OwnerTick;
             Debug.Log($"[Client] I am client {OwnerId}, playing {SideName(Side.Value)}. My paddle is #{ObjectId}. Only I read the keyboard for it.");
         }
         else
@@ -92,7 +93,7 @@ public class PaddleController : NetworkBehaviour
     public override void OnStopClient()
     {
         All.Remove(this);
-        if (Local == this) Local = null;
+        if (Local == this) { TimeManager.OnTick -= OwnerTick; Local = null; }
         Debug.Log($"[Client] Paddle #{ObjectId} gone. Paddles known here: {All.Count}.");
     }
 
@@ -115,28 +116,73 @@ public class PaddleController : NetworkBehaviour
 
     public static string SideName(int side) => side == Left ? "LEFT" : side == Right ? "RIGHT" : "SPECTATOR";
 
-    // ---- gameplay (owner only) ----
+    // Week 06: istemci konum değil, yön gönderir. Kararı sunucu verir.
+    private const double MinInputGap = 0.030;
+    private const double MinServeGap = 1.0;
+    private double _lastInputTime = -1;
+    private double _lastServeTime = -1; // static değil: her raketin kendi süresi
+    private float _direction;
+    private bool _burstRequested, _oversizedRequested;
 
     private void Update()
     {
-        // THE most important line of the block. Without it, every client moves every paddle.
-        if (!IsOwner) return;
-        if (Side.Value == Spectator) return;            // spectators watch
-
+        if (!IsOwner || Side.Value == Spectator) return;
         Keyboard kb = Keyboard.current;
         if (kb == null) return;
+        float dir = 0;
+        if (kb.wKey.isPressed || kb.upArrowKey.isPressed) dir += 1;
+        if (kb.sKey.isPressed || kb.downArrowKey.isPressed) dir -= 1;
 
-        float dir = 0f;
-        if (kb.wKey.isPressed || kb.upArrowKey.isPressed)   dir += 1f;
-        if (kb.sKey.isPressed || kb.downArrowKey.isPressed) dir -= 1f;
+        _direction = dir;
+        if (kb.cKey.wasPressedThisFrame) _burstRequested = true;
+        if (kb.xKey.wasPressedThisFrame) _oversizedRequested = true;
 
-        // Still a plain local move. The NetworkTransform component on this prefab notices the
-        // change and sends it to the server, which forwards it to every other client (Step 6).
-        transform.position += Vector3.forward * dir * speed * Time.deltaTime;
+        // T ve G özellikle RPC KULLANMAZ: host güven sınırı deneyi.
+        if (kb.tKey.wasPressedThisFrame && NetworkBall.Instance != null)
+        {
+            Vector3 pos = transform.position;
+            pos.z = NetworkBall.Instance.transform.position.z;
+            transform.position = pos;
+        }
+        if (kb.gKey.wasPressedThisFrame && GameState.Instance != null)
+            GameState.Instance.LeftScore.Value = 9;
+        if (kb.spaceKey.wasPressedThisFrame) ServerRequestServe();
+    }
+
+    // Her ağ tickinde tek normal istek: FPS hareket hızını değiştirmez.
+    private void OwnerTick()
+    {
+        if (!IsOwner || Side.Value == Spectator) return;
+        if (_burstRequested)
+        {
+            for (int i = 0; i < 20; i++) ServerMove(1f);
+            _burstRequested = false;
+            _oversizedRequested = false;
+        }
+        else if (_oversizedRequested)
+        {
+            ServerMove(100f);
+            _oversizedRequested = false;
+        }
+        else ServerMove(_direction);
+    }
+
+    [ServerRpc]
+    private void ServerMove(float direction)
+    {
+        // Sıra: biçim -> hız sınırı -> oyun kuralı -> durum değişikliği.
+        if (float.IsNaN(direction) || float.IsInfinity(direction)) return;
+        double now = TimeManager.TicksToTime(TimeManager.Tick);
+        if (_lastInputTime >= 0 && now - _lastInputTime < MinInputGap)
+        {
+            Debug.Log($"[Server] Rejected input from {OwnerId}: too fast");
+            return;
+        }
+        _lastInputTime = now;
+        if (Side.Value == Spectator) return;
+        direction = Mathf.Clamp(direction, -1f, 1f);
+        transform.position += Vector3.forward * direction * speed * (float)TimeManager.TickDelta;
         Court.ClampPaddle(transform);
-
-        if (kb.spaceKey.wasPressedThisFrame)
-            ServerRequestServe();                       // ask; do not decide
     }
 
     // ---- the serve and the goal: three RPCs, three directions ----
@@ -146,11 +192,25 @@ public class PaddleController : NetworkBehaviour
     {
         GameState gs = GameState.Instance;
         if (gs == null || NetworkBall.Instance == null) return;
+        double now = TimeManager.TicksToTime(TimeManager.Tick);
+        if (_lastServeTime >= 0 && now - _lastServeTime < MinServeGap)
+        {
+            TargetRefused(Owner, "TOO FAST");
+            return;
+        }
+        _lastServeTime = now;
+        if (Side.Value == Spectator) return;
         if (gs.ServingSide.Value != Side.Value) return;         // not your serve: the request is refused, nothing happens anywhere
         if (NetworkBall.Instance.InPlay.Value) return;          // stale: the ball is already moving
 
         NetworkBall.Instance.ServerServe(towardSide: 1 - Side.Value);   // the SERVER launches the ball
         GameState.Announce($"Player {OwnerId} ({SideName(Side.Value)}) served");
+    }
+
+    [TargetRpc]
+    private void TargetRefused(NetworkConnection target, string why)
+    {
+        ConnectionHud.Flash(why);
     }
 
     [ObserversRpc]                                      // server -> every client that observes this object
