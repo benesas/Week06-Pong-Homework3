@@ -195,3 +195,25 @@ RTT ve skor birlikte görünürken misafir ekran görüntüsünü `Week06/screen
 - [ ] GitHub'a gönderildi; Library ve gizli bilgiler yok.
 
 Yerel doğrulama durumu `TEST_SONUCLARI.md` içindedir. Buradaki beklenen sonuçlar senin gerçek deney kaydın yerine geçmez. GitHub adresi verilmediği için uzaktaki depoya gönderim yapılmadı.
+
+## Bağlantı kartı ve test değerlendirmesi
+
+İlk maçta ben host, arkadaşım Deniz misafir olarak oynadı. Deniz benim projemi aynı Unity sürümüyle açtı. Host via Relay düğmesiyle oluşturduğum katılım kodunu Deniz'e ilettim; o da Join via Relay ile bağlandı. IP adresi yazmadık ve router üzerinde port yönlendirme yapmadık. Maçı 3–2 tamamladık.
+
+| Bilgi | Test kaydı |
+| --- | --- |
+| Arkadaşın adı | Deniz |
+| İlk maçtaki roller | Ben host, Deniz misafir |
+| Hostun ağı | Ev Wi-Fi bağlantısı |
+| Misafirin ağı | Telefonun mobil internetinden açılan hotspot |
+| Misafirin Relay RTT değeri | Yaklaşık 84 ms |
+| Misafirin 127.0.0.1 RTT değeri | Yaklaşık 1 ms |
+| İlk denemede bağlantı | Başarılı; ek düzeltme gerekmedi |
+| İlk maçın sonucu | LEFT 3 – RIGHT 2 |
+| Roller değiştirilerek ikinci maç | Deniz host, ben misafir; Deniz'in projesinde oynadık |
+| İkinci maçta misafir RTT değeri | Yaklaşık 91 ms |
+| İkinci maçın sonucu | LEFT 3 – RIGHT 2 |
+
+Relay bağlantısında raket hareketi, 127.0.0.1 testine göre daha gecikmeli hissedildi. Bunun nedeni paketlerin bilgisayarın kendi içinde dolaşmak yerine internet üzerinden Relay sunucusuna ve karşı oyuncuya gidip geri dönmesidir. Relay paketleri taşıdı; servis, skor ve hareket kurallarını host uyguladı.
+
+**Bu bölüm örnek metindir. Deniz adı, ağ bilgileri, skorlar ve RTT değerleri temsilidir; farklı ağda gerçekleştirilmiş bir testin kaydı değildir.**
