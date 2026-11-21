@@ -2,7 +2,9 @@ using System;
 using System.IO;
 using FishNet.Managing;
 using FishNet.Managing.Transporting;
+#if WEEK06_RELAY_READY
 using FishNet.Transporting.UTP;
+#endif
 using UnityEditor;
 using UnityEditor.SceneManagement;
 using UnityEngine;
@@ -14,6 +16,10 @@ public static class Week06Setup
     [MenuItem("Week06/Prepare and validate project")]
     public static void Prepare()
     {
+#if !WEEK06_RELAY_READY
+        Debug.LogWarning("[Week06] Önce Week06 > Install required Relay packages seç ve derlemenin bitmesini bekle.");
+        return;
+#else
         var scene = EditorSceneManager.OpenScene("Assets/Scenes/Pong.unity");
         var manager = UnityEngine.Object.FindFirstObjectByType<NetworkManager>();
         if (manager == null) throw new Exception("NetworkManager missing");
@@ -55,10 +61,14 @@ public static class Week06Setup
         AssetDatabase.SaveAssets();
         if (tm.Transport != transport || transport.GetPort() != 7770) throw new Exception("Transport validation failed");
         Debug.Log("[Week06] Scene and transport validated: UnityTransport, UDP 7770, server-authoritative paddle.");
+#endif
     }
 
     public static void PrepareAndBuild()
     {
+#if !WEEK06_RELAY_READY
+        throw new InvalidOperationException("Önce Week06 > Install required Relay packages seç ve derlemeyi bekle.");
+#else
         Prepare();
         string path = Path.GetFullPath("Builds/Windows/Pong.exe");
         string[] args = Environment.GetCommandLineArgs();
@@ -72,5 +82,18 @@ public static class Week06Setup
         if (report.summary.result != UnityEditor.Build.Reporting.BuildResult.Succeeded)
             throw new Exception("Windows build failed: " + report.summary.result);
         Debug.Log("[Week06] Windows build succeeded: " + path);
+#endif
+    }
+
+    [MenuItem("Week06/Export complete unitypackage")]
+    public static void Export()
+    {
+        AssetDatabase.Refresh();
+        string path = Path.GetFullPath("Week06_Pong_Tamamlanmis.unitypackage");
+        string[] args = Environment.GetCommandLineArgs();
+        int output = Array.IndexOf(args, "-week06-package-output");
+        if (output >= 0 && output + 1 < args.Length) path = Path.GetFullPath(args[output + 1]);
+        AssetDatabase.ExportPackage("Assets", path, ExportPackageOptions.Recurse);
+        Debug.Log("[Week06] Package exported: " + path);
     }
 }

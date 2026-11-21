@@ -1,3 +1,4 @@
+#if WEEK06_RELAY_READY
 using System;
 using System.Threading.Tasks;
 using FishNet.Managing;
@@ -73,3 +74,17 @@ public static class RelayLink
             throw new InvalidOperationException("Relay istemcisi başlatılamadı.");
     }
 }
+
+#else
+using System;
+using System.Threading.Tasks;
+using FishNet.Managing;
+
+public static class RelayLink
+{
+    public static Task<string> Host(NetworkManager manager) => Task.FromException<string>(
+        new InvalidOperationException("Week06 > Install required Relay packages seç ve derlemeyi bekle."));
+    public static Task Join(NetworkManager manager, string code) => Task.FromException(
+        new InvalidOperationException("Week06 > Install required Relay packages seç ve derlemeyi bekle."));
+}
+#endif

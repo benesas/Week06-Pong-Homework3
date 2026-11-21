@@ -1,0 +1,98 @@
+[
+  {
+    "match": 1,
+    "hostBot": "A",
+    "guestBot": "B",
+    "network": "loopback local; NOT Relay or two networks",
+    "results": {
+      "host": {
+        "role": "host",
+        "player": "LEFT",
+        "connection": "127.0.0.1 / local UnityTransport",
+        "left": 3,
+        "right": 2,
+        "goalsObserved": 5,
+        "durationSeconds": 58.25686287879944,
+        "guestRttMs": 33,
+        "completed": true,
+        "scoreWrittenDirectly": false,
+        "error": "",
+        "events": [
+          "15.41s score 1:0",
+          "25.19s score 1:1",
+          "34.81s score 2:1",
+          "43.68s score 2:2",
+          "58.26s score 3:2"
+        ]
+      },
+      "guest": {
+        "role": "guest",
+        "player": "RIGHT",
+        "connection": "127.0.0.1 / local UnityTransport",
+        "left": 3,
+        "right": 2,
+        "goalsObserved": 5,
+        "durationSeconds": 53.38984513282776,
+        "guestRttMs": 0,
+        "completed": true,
+        "scoreWrittenDirectly": false,
+        "error": "",
+        "events": [
+          "10.58s score 1:0",
+          "20.32s score 1:1",
+          "29.96s score 2:1",
+          "38.82s score 2:2",
+          "53.39s score 3:2"
+        ]
+      }
+    }
+  },
+  {
+    "match": 2,
+    "hostBot": "B",
+    "guestBot": "A",
+    "network": "loopback local; NOT Relay or two networks",
+    "results": {
+      "host": {
+        "role": "host",
+        "player": "LEFT",
+        "connection": "127.0.0.1 / local UnityTransport",
+        "left": 3,
+        "right": 2,
+        "goalsObserved": 5,
+        "durationSeconds": 56.47386980056763,
+        "guestRttMs": 33,
+        "completed": true,
+        "scoreWrittenDirectly": false,
+        "error": "",
+        "events": [
+          "15.59s score 1:0",
+          "29.15s score 1:1",
+          "38.63s score 2:1",
+          "47.50s score 2:2",
+          "56.47s score 3:2"
+        ]
+      },
+      "guest": {
+        "role": "guest",
+        "player": "RIGHT",
+        "connection": "127.0.0.1 / local UnityTransport",
+        "left": 3,
+        "right": 2,
+        "goalsObserved": 5,
+        "durationSeconds": 51.627676248550415,
+        "guestRttMs": 0,
+        "completed": true,
+        "scoreWrittenDirectly": false,
+        "error": "",
+        "events": [
+          "10.73s score 1:0",
+          "24.29s score 1:1",
+          "33.76s score 2:1",
+          "42.63s score 2:2",
+          "51.63s score 3:2"
+        ]
+      }
+    }
+  }
+]

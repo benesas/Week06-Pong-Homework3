@@ -1,0 +1,22 @@
+[Smoke/host] PASS Two players spawned
+[Smoke/host] PASS Expected player side
+[Smoke/host] PASS Guest G cannot edit authoritative score
+[Smoke/host] PASS Serve refusal reaches only requester
+[Smoke/host] PASS Host G score reaches both processes
+[Smoke/host] PASS Host T position reaches both processes
+[Smoke/host] PASS Guest T cannot persist against server state
+[Smoke/host] PASS Host server speed can be changed to 40
+[Smoke/host] COMPLETE failures=0
+[Smoke/guest] PASS Two players spawned
+[Smoke/guest] PASS Expected player side
+[Smoke/guest] PASS Guest G cannot edit authoritative score
+[Smoke/guest] PASS X is clamped to one normal tick of movement
+[Smoke/guest] PASS Serve refusal reaches only requester
+[Smoke/guest] PASS Host G score reaches both processes
+[Smoke/guest] PASS Host T position reaches both processes
+[Smoke/guest] PASS Guest T cannot persist against server state
+[Smoke/guest] COMPLETE failures=0
+C/X test interval: 19 rejected input requests. C sends 20 requests in one tick.
+Unity 6000.3.2f1 Windows Development build: succeeded.
+Final Unity editor compile and scene validation: succeeded.
+Relay Cloud runtime and cross-network partner test: NOT RUN.

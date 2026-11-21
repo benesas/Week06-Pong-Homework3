@@ -1,0 +1,20 @@
+{
+    "role": "guest",
+    "player": "RIGHT",
+    "connection": "127.0.0.1 / local UnityTransport",
+    "left": 3,
+    "right": 2,
+    "goalsObserved": 5,
+    "durationSeconds": 51.627676248550418,
+    "guestRttMs": 0,
+    "completed": true,
+    "scoreWrittenDirectly": false,
+    "error": "",
+    "events": [
+        "10.73s score 1:0",
+        "24.29s score 1:1",
+        "33.76s score 2:1",
+        "42.63s score 2:2",
+        "51.63s score 3:2"
+    ]
+}

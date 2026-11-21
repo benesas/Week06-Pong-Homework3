@@ -19,6 +19,8 @@ Belge her adım sonunda commit ve push istiyor. 12:00 sonrası gönderimde READM
 
 ## Projeyi aç
 
+**Unitypackage kullanıyorsan:** Unity 6000.3.2f1 ile mevcut Week05 URP projesine paketi import et. Eksik Relay bağımlılıkları otomatik kurulur; internet ve Git gerekir. Gerekirse **Week06 → Install required Relay packages** menüsünü kullan. Derlemeden sonra **Prepare and validate project** seç. Paket içindeki rehber `Assets/Week06/README.md` konumundadır.
+
 1. Unity Hub → Add project from disk ile bu klasörü seç, **6000.3.2f1** ile aç.
 2. Paketlerin indirilmesini ve derlemenin bitmesini bekle.
 3. `Assets/Scenes/Pong.unity` sahnesini aç.
@@ -132,6 +134,10 @@ API kaynağı: https://github.com/ooonush/FishyUnityTransport
 Commit: `Homework 3: join code`.
 
 ## Step 7 — Farklı ağda arkadaş testi
+
+**Kendi kendine oynama tamamlandı:** İki bağımsız oyun süreciyle iki otomatik maç oynandı. Her ikisi de **3–2** bitti; ikinci maçta Bot A/B host ve misafir rollerini değiştirdi. Top ve skor doğrudan değiştirilmedi, W/S ve Space girişleri kullanıldı. Sonuçlar, RTT ölçümleri ve gerçek ekran görüntüleri [otomatik maç raporunda](OTOMATIK_MACLAR.md). Bu yerel deney, hocanın farklı ağdaki gerçek arkadaşla Relay şartını sağlamaz.
+
+Tekrar çalıştırmak için **Week06 → Build and play automatically (two players)** seç. Normal oyuncu kontrolleri korunur; botlar yalnız otomatik maç parametresiyle başlatıldığında etkin olur.
 
 Arkadaşın senin reponu aynı Unity sürümüyle açmalı. Sen host ol, kodu kendin paylaş. Arkadaşın başka ev Wi-Fi veya telefon hotspot üzerinden katılsın. **3 puana kadar oynayın.** Sonra arkadaşının reposunu aç; o host, sen misafir olacak şekilde tekrarlayın.
 

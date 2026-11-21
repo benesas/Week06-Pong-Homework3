@@ -31,6 +31,8 @@ Sunucu dururken konum değişikliği olmayabileceğinden, raketin yetkili konumu
 
 ## Relay ve teslim durumu
 
+**Otomatik oynama:** Bot A/B iki ayrı süreçte, ardından host/misafir rolleri değiştirilerek iki maç oynadı. Her iki maç da 3–2 bitti ve skorlar iki tarafta eşleşti. Ayrıntılar `OTOMATIK_MACLAR.md` ve `AutoMatches/results.json` içinde. Bu maçlar 127.0.0.1 üzerinde gerçekleşti.
+
 - Multiplayer Services ve FishyUnityTransport paketleri indirildi ve kodla birlikte derlendi.
 - RelayLink ve HUD kodları derlendi; gerçek Relay allocation/katılım bağlantısı bu çalışmada doğrulanmadı.
 - Unity hesabı/Cloud proje bağlantısı yapılmadı; Dashboard'da Relay'in etkinleştirilmesi gerekiyor.
