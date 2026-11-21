@@ -183,6 +183,10 @@ public class PaddleController : NetworkBehaviour
         direction = Mathf.Clamp(direction, -1f, 1f);
         transform.position += Vector3.forward * direction * speed * (float)TimeManager.TickDelta;
         Court.ClampPaddle(transform);
+        // Raket dururken de yetkili konumu ara sıra gönder: misafirin T deneyi
+        // yeni bir hareket olmasa bile bir sonraki snapshot ile düzeltilir.
+        if (TimeManager.Tick % 10 == 0)
+            GetComponent<FishNet.Component.Transforming.NetworkTransform>().ForceSend();
     }
 
     // ---- the serve and the goal: three RPCs, three directions ----

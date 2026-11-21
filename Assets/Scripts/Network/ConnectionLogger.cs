@@ -59,8 +59,11 @@ public class ConnectionLogger : MonoBehaviour
     /// One frame later FishNet has finished the connection handshake, so ClientId is no longer -1.
     private IEnumerator LogStartedIdentity()
     {
-        for (int frame = 0; frame < 120 && _nm.ClientManager.Connection.ClientId == -1; frame++)
+        float deadline = Time.realtimeSinceStartup + 5f;
+        while (_nm.ClientManager.Connection.ClientId == -1 && Time.realtimeSinceStartup < deadline)
             yield return null;
+
+        if (_nm.ClientManager.Connection.ClientId == -1) yield break;
 
         Debug.Log($"[Client] Connected. The server calls me client {_nm.ClientManager.Connection.ClientId}.");
         if (_nm.ServerManager.Started)

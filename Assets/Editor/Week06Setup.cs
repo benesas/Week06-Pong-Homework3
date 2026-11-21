@@ -60,7 +60,10 @@ public static class Week06Setup
     public static void PrepareAndBuild()
     {
         Prepare();
-        string path = Path.GetFullPath("../../work/PongBuild/Pong.exe");
+        string path = Path.GetFullPath("Builds/Windows/Pong.exe");
+        string[] args = Environment.GetCommandLineArgs();
+        int output = Array.IndexOf(args, "-week06-build-output");
+        if (output >= 0 && output + 1 < args.Length) path = Path.GetFullPath(args[output + 1]);
         Directory.CreateDirectory(Path.GetDirectoryName(path));
         var report = BuildPipeline.BuildPlayer(new BuildPlayerOptions {
             scenes = new[] { "Assets/Scenes/Pong.unity" }, locationPathName = path,
