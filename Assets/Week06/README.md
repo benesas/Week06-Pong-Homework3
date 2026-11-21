@@ -168,7 +168,7 @@ Add a guest screenshot with RTT and score visible together.
 - [ ] Explain the code and compare with Notes 6.1/6.2.
 - [ ] Push on time without Library or secrets.
 
-Recorded checks are in `TEST_RESULTS.md`. Expected outcomes and automated evidence do not replace the actual partner test. No GitHub destination was supplied, so no remote push was performed.
+Recorded checks are in `TEST_RESULTS.md`. Expected outcomes and automated evidence do not replace the actual partner test. Repository: https://github.com/benesas/Week06-Pong-Homework3. Uploading the local history does not establish that each step was pushed before the deadline.
 
 ## Connection card and test discussion
 

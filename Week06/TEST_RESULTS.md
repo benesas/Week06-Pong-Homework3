@@ -41,7 +41,7 @@ A real Relay allocation, join code and guest connection were verified. The Relay
 
 - A real partner on another network, role reversal, actual connection card and partner screenshot remain pending.
 - Notes 6.1/6.2 were not supplied; compare the implementation and indicated line with the lecture notes.
-- Local Git commits exist. No GitHub destination was provided, so no push was performed.
+- Local development commits are included in https://github.com/benesas/Week06-Pong-Homework3. Timely remote submission is not verified.
 - Library, Temp, user settings, built games and access credentials are excluded from the asset package.
 
 ## Repeat the smoke test
