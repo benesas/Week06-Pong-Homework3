@@ -15,3 +15,5 @@ Eklenenler: sunucu kontrollü hareket, 30 ms giriş sınırı, C/X/T/G hile dene
 Unity Cloud projesi pong bağlandı ve Relay etkinleştirildi. Katılım koduyla bağlanan iki botun gerçek Relay maçı 3–2 bitti; misafir RTT 67 ms. Ayrıntılar [Relay testinde](Week06/RELAY_TESTI.md). İki farklı ağdaki arkadaş deneyi henüz yapılmadı. GitHub depo adresi verilmediği için push yapılmadı.
 
 `Week06NetworkSmoke.cs`, yalnız development/editor ortamında ve `-smoke-role` parametresi verildiğinde çalışan iki süreçli yerel ağ testidir; normal oyunda etkin değildir.
+
+Oyun ekranındaki Feed kayıtları ve teknik debug satırları varsayılan olarak gizlidir. Skor, RTT, katılım kodu ve servis uyarıları görünür kalır.

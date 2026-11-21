@@ -1,5 +1,11 @@
 # Doğrulama sonuçları
 
+## Oyun ekranı
+
+Feed kayıtları, trafik sayaçları, tick ve istemci kimliği gibi teknik satırlar varsayılan olarak gizlendi. `ConnectionHud.showDebugDetails` kapalıdır. Skor, RTT, Relay katılım kodu ve TOO FAST / servis uyarıları korunur. Console kayıtları ödevdeki hile testleri için çalışmaya devam eder.
+
+![Kayıt satırları kapalı oyun ekranı](screenshots/clean-hud.png)
+
 ## Unity derlemesi
 
 Unity **6000.3.2f1** kullanıldı. Windows Development build başarıyla alındı. Sahne açılışı, aktif UnityTransport, port 7770 ve sunucu kontrollü raket ayarları doğrulandı.

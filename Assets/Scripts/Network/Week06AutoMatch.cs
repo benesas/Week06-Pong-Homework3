@@ -106,8 +106,17 @@ public class Week06AutoMatch : MonoBehaviour
         yield return new WaitForSecondsRealtime(0.5f);
         yield return new WaitForEndOfFrame();
         ScreenCapture.CaptureScreenshot(Path.Combine(_directory, _role + "-final.png"));
-        yield return new WaitForSecondsRealtime(2f);
+        yield return new WaitForSecondsRealtime(_role == "host" ? 3f : 2f);
+        var manager = InstanceFinder.NetworkManager;
+        if (manager != null)
+        {
+            manager.ClientManager.StopConnection();
+            yield return new WaitForSecondsRealtime(0.25f);
+            if (manager.ServerManager.Started) manager.ServerManager.StopConnection(true);
+            yield return new WaitForSecondsRealtime(0.25f);
+        }
         InputSystem.RemoveDevice(_keyboard);
+        yield return null;
         Application.Quit(_result.completed ? 0 : 1);
     }
 }

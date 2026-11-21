@@ -928,6 +928,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ConnectionHud
   address: 127.0.0.1
   port: 7770
+  showDebugDetails: 0
 --- !u!4 &2131887898
 Transform:
   m_ObjectHideFlags: 0

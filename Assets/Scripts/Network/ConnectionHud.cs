@@ -11,6 +11,7 @@ public class ConnectionHud : MonoBehaviour
 {
     [SerializeField] private string address = "127.0.0.1";
     [SerializeField] private ushort port    = 7770;
+    [SerializeField] private bool showDebugDetails = false;
 
     private string _joinCode = "";
     private string _relayCode = "";
@@ -223,24 +224,31 @@ public class ConnectionHud : MonoBehaviour
 
         GUI.enabled = previousEnabled;
         GUILayout.Label("W/S veya ↑/↓: hareket | Space: servis");
-        GUILayout.Label("C: spam | X: büyük yön | T: teleport | G: skor 9");
+        if (showDebugDetails)
+            GUILayout.Label("C: spam | X: büyük yön | T: teleport | G: skor 9");
 
         GUILayout.Space(6);
         string stats = _traffic == null ? "  (statistics disabled: StatisticsManager ▸ Run In Release + Network Traffic ▸ Enable Mode)" : "";
-        if (_serverState == LocalConnectionState.Started)
+        if (showDebugDetails && _serverState == LocalConnectionState.Started)
         {
             GUILayout.Label($"Server: {_nm.ServerManager.Clients.Count} client(s) on UDP {_nm.TransportManager.Transport.GetPort()}");
             GUILayout.Label($"Server traffic: in {_srvInBytes} B/s, out {_srvOutBytes} B/s{stats}");
         }
         if (_clientState == LocalConnectionState.Started)
         {
-            GUILayout.Label($"Client: my id = {_nm.ClientManager.Connection.ClientId}");
             GUILayout.Label($"RTT (ping): {_nm.TimeManager.RoundTripTime} ms");
-            GUILayout.Label($"Client traffic: in {_inBytes} B/s, out {_outBytes} B/s{stats}");
+            if (showDebugDetails)
+            {
+                GUILayout.Label($"Client: my id = {_nm.ClientManager.Connection.ClientId}");
+                GUILayout.Label($"Client traffic: in {_inBytes} B/s, out {_outBytes} B/s{stats}");
+            }
         }
 
-        GUILayout.Label($"Paddles known here: {PaddleController.All.Count}");
-        GUILayout.Label($"Tick {_nm.TimeManager.Tick}  @ {_nm.TimeManager.TickRate} ticks/s");
+        if (showDebugDetails)
+        {
+            GUILayout.Label($"Paddles known here: {PaddleController.All.Count}");
+            GUILayout.Label($"Tick {_nm.TimeManager.Tick}  @ {_nm.TimeManager.TickRate} ticks/s");
+        }
 
         GUILayout.Space(6);
         GameState gs = GameState.Instance;
@@ -253,7 +261,7 @@ public class ConnectionHud : MonoBehaviour
             GUILayout.Label($"I am: {mine}   Serve: {PaddleController.SideName(gs.ServingSide.Value)}{(myServe ? "  ◀ press Space" : "")}");
         }
 
-        if (gs != null && gs.Feed.Count > 0)
+        if (showDebugDetails && gs != null && gs.Feed.Count > 0)
         {
             GUILayout.Space(6);
             GUILayout.Label("<b>Feed</b>", Rich());
