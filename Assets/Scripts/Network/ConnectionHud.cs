@@ -39,6 +39,34 @@ public class ConnectionHud : MonoBehaviour
     [SerializeField] private string address = "127.0.0.1";   // "host" or "host:port". Paste the Edgegap address here.
     [SerializeField] private ushort port    = 7770;          // used when the address has no ":port" part (Tugboat's default, UDP)
 
+    private string _joinCode = "";
+    private string _relayCode = "";
+    private bool _relayBusy;
+    private bool _relaySession;
+    private string _relayStatus = "";
+
+    private async void HostViaRelay()
+    {
+        if (_relayBusy) return;
+        _relayBusy = true;
+        _relaySession = true;
+        _relayStatus = "Relay host hazırlanıyor...";
+        try { _relayCode = await RelayLink.Host(_nm); _relayStatus = "Kodu arkadaşınla paylaş."; }
+        catch (Exception ex) { _relayCode = ""; _relayStatus = "Host failed: " + ex.Message; Debug.LogError("[Relay] " + _relayStatus); }
+        finally { _relayBusy = false; }
+    }
+
+    private async void JoinViaRelay()
+    {
+        if (_relayBusy) return;
+        _relayBusy = true;
+        _relaySession = true;
+        _relayStatus = "Relay bağlantısı hazırlanıyor...";
+        try { await RelayLink.Join(_nm, _joinCode); _relayStatus = "Bağlantı isteği gönderildi."; }
+        catch (Exception ex) { _relayStatus = "Join failed: " + ex.Message; Debug.LogError("[Relay] " + _relayStatus); }
+        finally { _relayBusy = false; }
+    }
+
     private NetworkManager _nm;
     private LocalConnectionState _serverState = LocalConnectionState.Stopped;
     private LocalConnectionState _clientState = LocalConnectionState.Stopped;
@@ -113,6 +141,7 @@ public class ConnectionHud : MonoBehaviour
     /// so the server-side cleanup (paddles, ball, score) runs before the server itself goes away.
     private void StopHost()
     {
+        _relayCode = "";
         Debug.Log("[HUD] Stop Host: client first, then the server.");
         _nm.ClientManager.StopConnection();
         _nm.ServerManager.StopConnection(true);
@@ -168,13 +197,30 @@ public class ConnectionHud : MonoBehaviour
 
         GUILayout.BeginArea(new Rect(10, 10, 300, Screen.height - 20));   // tall enough for everything; the box below hugs its content
         GUILayout.BeginVertical(GUI.skin.box);
-        GUILayout.Label("<b>PONG — Week 5: Pong on a host</b>", Rich());
+        GUILayout.Label("<b>PONG — Week 6: Host & Relay</b>", Rich());
+
+        if (_serverState == LocalConnectionState.Stopped && _clientState == LocalConnectionState.Stopped && !_relayBusy)
+        {
+            if (GUILayout.Button("Host via Relay")) HostViaRelay();
+            _joinCode = GUILayout.TextField(_joinCode, 6).ToUpperInvariant();
+            if (GUILayout.Button("Join via Relay")) JoinViaRelay();
+        }
+        if (_relayBusy) GUILayout.Label("Relay: lütfen bekle...");
+        if (!string.IsNullOrEmpty(_relayStatus)) GUILayout.Label(_relayStatus);
+        if (!string.IsNullOrEmpty(_relayCode) && _serverState == LocalConnectionState.Started)
+            GUILayout.Label($"<b><size=26>JOIN CODE: {_relayCode}</size></b>", Rich());
+        if (_relaySession && !_relayBusy)
+            GUILayout.Label("Yerel/IP bağlantıya dönmek için Play'i durdurup tekrar başlat.");
+        bool previousEnabled = GUI.enabled;
+        GUI.enabled = previousEnabled && !_relayBusy;
 
         // --- host: both halves in this one process (Week 5, Step 2) ---
         bool hostRunning = _serverState == LocalConnectionState.Started && _clientState == LocalConnectionState.Started;
         if (_serverState == LocalConnectionState.Stopped && _clientState == LocalConnectionState.Stopped)
         {
+            GUI.enabled = previousEnabled && !_relayBusy && !_relaySession;
             if (GUILayout.Button("Start Host")) StartHost();
+            GUI.enabled = previousEnabled && !_relayBusy;
         }
         else if (hostRunning)
         {
@@ -184,7 +230,9 @@ public class ConnectionHud : MonoBehaviour
         // --- server ---
         if (_serverState == LocalConnectionState.Stopped)
         {
+            GUI.enabled = previousEnabled && !_relayBusy && !_relaySession;
             if (GUILayout.Button("Start Server")) _nm.ServerManager.StartConnection();
+            GUI.enabled = previousEnabled && !_relayBusy;
         }
         else if (GUILayout.Button($"Stop Server  [{_serverState}]"))
         {
@@ -199,13 +247,18 @@ public class ConnectionHud : MonoBehaviour
 
         if (_clientState == LocalConnectionState.Stopped)
         {
+            GUI.enabled = previousEnabled && !_relayBusy && !_relaySession;
             if (GUILayout.Button("Start Client")) StartClient();
+            GUI.enabled = previousEnabled && !_relayBusy;
         }
         else if (GUILayout.Button($"Stop Client  [{_clientState}]"))
         {
             _nm.ClientManager.StopConnection();
         }
 
+        GUI.enabled = previousEnabled;
+        GUILayout.Label("W/S veya ↑/↓: hareket | Space: servis");
+        GUILayout.Label("C: spam | X: büyük yön | T: teleport | G: skor 9");
         // --- status ---
         GUILayout.Space(6);
         string stats = _traffic == null ? "  (statistics disabled: StatisticsManager ▸ Run In Release + Network Traffic ▸ Enable Mode)" : "";
