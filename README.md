@@ -1,19 +1,20 @@
 # Week06 Pong
 
-Unity **6000.3.2f1** ile bu klasörü aç ve `Assets/Scenes/Pong.unity` sahnesini çalıştır.
+Open with **Unity 6000.3.2f1** and load `Assets/Scenes/Pong.unity`.
 
-**[Türkçe ödev açıklaması, cevaplar ve teslim adımları](Week06/README.md)**
+- [Assignment guide and answers](Week06/README.md)
+- [Verification results](Week06/TEST_RESULTS.md)
+- [Automated matches](Week06/AUTOMATED_MATCHES.md)
+- [Unity Cloud and Relay evidence](Week06/RELAY_TEST.md)
 
-**[Yapılan kontroller ve kalan işler](Week06/TEST_SONUCLARI.md)**
+This project continues the scene, prefabs and FishNet code supplied in Week05_Pong_Host.unitypackage.
 
-Başlangıç: Week05_Pong_Host.unitypackage. Mevcut sahne, prefablar ve FishNet altyapısı üzerine devam edildi.
+Implemented: server-authoritative movement, a 30 ms input limit, C/X/T/G cheat demonstrations, a one-second per-player serve limit, private refusal messages, UnityTransport and Relay join codes.
 
-Eklenenler: sunucu kontrollü hareket, 30 ms giriş sınırı, C/X/T/G hile deneyleri, oyuncu başına 1 saniye servis sınırı, özel ret mesajı, UnityTransport ve Relay katılım kodu arayüzü.
+Two local bot matches completed with host/guest roles swapped. Both finished 3-2. Select **Week06 > Build and play automatically (two players)** to repeat. Missing Relay dependencies can be installed through the included Editor helper.
 
-İki botun kendi kendine oynadığı, roller değiştirilerek tekrarlanan iki maç **3–2** tamamlandı. **Week06 → Build and play automatically (two players)** menüsüyle tekrar oynatabilirsin. Unitypackage importunda eksik Relay paketlerini kuran yardımcı da dahildir.
+Cloud project **pong** is linked and Relay is enabled. Two processes also connected through a real Relay join code and played to 3 points. All processes ran on one computer; the real partner test on two different networks remains pending. No GitHub destination was supplied, so no push was performed.
 
-Unity Cloud projesi pong bağlandı ve Relay etkinleştirildi. Katılım koduyla bağlanan iki botun gerçek Relay maçı 3–2 bitti; misafir RTT 67 ms. Ayrıntılar [Relay testinde](Week06/RELAY_TESTI.md). İki farklı ağdaki arkadaş deneyi henüz yapılmadı. GitHub depo adresi verilmediği için push yapılmadı.
+Feed and technical debug rows are hidden by default. Score, RTT, join code and serve/refusal notifications remain visible.
 
-`Week06NetworkSmoke.cs`, yalnız development/editor ortamında ve `-smoke-role` parametresi verildiğinde çalışan iki süreçli yerel ağ testidir; normal oyunda etkin değildir.
-
-Oyun ekranındaki Feed kayıtları ve teknik debug satırları varsayılan olarak gizlidir. Skor, RTT, katılım kodu ve servis uyarıları görünür kalır.
+The smoke and bot drivers run only in the Editor or Development builds, and only when explicitly requested with `-smoke-role` or `-auto-role`. They do not run during normal play.

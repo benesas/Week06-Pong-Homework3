@@ -30,14 +30,14 @@ public static class Week06Automation
                 await Task.Delay(250);
             }
             if (host.HasExited || !File.Exists(hostLog) || !File.ReadAllText(hostLog).Contains("LEFT."))
-                throw new Exception("Host LEFT raketi oluşmadı. Port 7770 kullanan eski oyunu kapatıp tekrar dene.");
+                throw new Exception("The host LEFT paddle did not spawn. Close any previous game using port 7770 and try again.");
             guest = Launch(executable, "-connect 127.0.0.1:7770 -auto-role guest -auto-report " + Quote(results) + " -logFile " + Quote(Path.Combine(results, "guest.log")));
             deadline = DateTime.UtcNow.AddSeconds(190);
             while (DateTime.UtcNow < deadline && (!host.HasExited || !guest.HasExited)) await Task.Delay(500);
-            if (!host.HasExited || !guest.HasExited) throw new Exception("Otomatik maç zaman aşımı.");
-            if (host.ExitCode != 0 || guest.ExitCode != 0) throw new Exception("Maç tamamlanamadı; sonuç klasöründeki loglara bak.");
+            if (!host.HasExited || !guest.HasExited) throw new Exception("The automatic match timed out.");
+            if (host.ExitCode != 0 || guest.ExitCode != 0) throw new Exception("The match did not complete; check the logs in the results folder.");
             AssetDatabase.Refresh();
-            UnityEngine.Debug.Log("[Week06] Otomatik maç tamamlandı. Sonuçlar: " + results);
+            UnityEngine.Debug.Log("[Week06] Automatic match completed. Results: " + results);
         }
         catch (Exception ex)
         {

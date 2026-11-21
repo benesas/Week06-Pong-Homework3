@@ -5,16 +5,16 @@
     "left": 3,
     "right": 2,
     "goalsObserved": 5,
-    "durationSeconds": 51.627676248550418,
+    "durationSeconds": 51.000224590301517,
     "guestRttMs": 0,
     "completed": true,
     "scoreWrittenDirectly": false,
     "error": "",
     "events": [
-        "10.73s score 1:0",
-        "24.29s score 1:1",
-        "33.76s score 2:1",
-        "42.63s score 2:2",
-        "51.63s score 3:2"
+        "7.93s score 1:0",
+        "21.97s score 1:1",
+        "31.83s score 2:1",
+        "40.93s score 2:2",
+        "51.00s score 3:2"
     ]
 }

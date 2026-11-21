@@ -28,7 +28,7 @@ public static class RelayLink
     {
         var transport = manager.TransportManager.GetTransport<UnityTransport>();
         if (transport == null || manager.TransportManager.Transport != transport)
-            throw new InvalidOperationException("TransportManager üzerinde UnityTransport seçilmelidir.");
+            throw new InvalidOperationException("Select UnityTransport on TransportManager.");
         return transport;
     }
 
@@ -40,17 +40,17 @@ public static class RelayLink
         string code = await RelayService.Instance.GetJoinCodeAsync(allocation.AllocationId);
 
         var endpoint = allocation.ServerEndpoints.Find(e => e.ConnectionType == "dtls");
-        if (endpoint == null) throw new InvalidOperationException("Relay DTLS endpoint bulunamadı.");
+        if (endpoint == null) throw new InvalidOperationException("No Relay DTLS endpoint was found.");
         transport.SetRelayServerData(endpoint.Host, (ushort)endpoint.Port,
             allocation.AllocationIdBytes, allocation.Key, allocation.ConnectionData,
             allocation.ConnectionData, true);
 
         if (!manager.ServerManager.StartConnection())
-            throw new InvalidOperationException("Relay sunucusu başlatılamadı.");
+            throw new InvalidOperationException("The Relay server could not be started.");
         if (!manager.ClientManager.StartConnection())
         {
             manager.ServerManager.StopConnection(true);
-            throw new InvalidOperationException("Host istemcisi başlatılamadı.");
+            throw new InvalidOperationException("The host client could not be started.");
         }
         Debug.Log("[Relay] Join code: " + code);
         return code;
@@ -59,17 +59,17 @@ public static class RelayLink
     public static async Task Join(NetworkManager manager, string code)
     {
         code = (code ?? "").Trim().ToUpperInvariant();
-        if (code.Length != 6) throw new ArgumentException("Altı karakterli katılım kodunu gir.");
+        if (code.Length != 6) throw new ArgumentException("Enter the six-character join code.");
         var transport = Transport(manager);
         await Initialize();
         JoinAllocation allocation = await RelayService.Instance.JoinAllocationAsync(code);
         var endpoint = allocation.ServerEndpoints.Find(e => e.ConnectionType == "dtls");
-        if (endpoint == null) throw new InvalidOperationException("Relay DTLS endpoint bulunamadı.");
+        if (endpoint == null) throw new InvalidOperationException("No Relay DTLS endpoint was found.");
         transport.SetRelayServerData(endpoint.Host, (ushort)endpoint.Port,
             allocation.AllocationIdBytes, allocation.Key, allocation.ConnectionData,
             allocation.HostConnectionData, true);
         if (!manager.ClientManager.StartConnection())
-            throw new InvalidOperationException("Relay istemcisi başlatılamadı.");
+            throw new InvalidOperationException("The Relay client could not be started.");
     }
 }
 
@@ -81,8 +81,8 @@ using FishNet.Managing;
 public static class RelayLink
 {
     public static Task<string> Host(NetworkManager manager) => Task.FromException<string>(
-        new InvalidOperationException("Week06 > Install required Relay packages seç ve derlemeyi bekle."));
+        new InvalidOperationException("Select Week06 > Install required Relay packages and wait for compilation."));
     public static Task Join(NetworkManager manager, string code) => Task.FromException(
-        new InvalidOperationException("Week06 > Install required Relay packages seç ve derlemeyi bekle."));
+        new InvalidOperationException("Select Week06 > Install required Relay packages and wait for compilation."));
 }
 #endif

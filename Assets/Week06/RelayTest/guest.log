@@ -1,11 +1,11 @@
 Mono path[0] = 'C:/Users/canxm/Documents/Codex/2026-11-21/b/work/PongBuild/Pong_Data/Managed'
 Mono config path = 'C:/Users/canxm/Documents/Codex/2026-11-21/b/work/PongBuild/MonoBleedingEdge/etc'
 Found 1 interfaces on host : 0) 192.168.1.67
-Player connection [32548]  Target information:
+Player connection [35536]  Target information:
 
-Player connection [32548]  * "[IP] 192.168.1.67 [Port] 55001 [Flags] 2 [Guid] 759697386 [EditorId] 4192861042 [Version] 1048832 [Id] WindowsPlayer(2,DESKTOP-V61JSVV) [Debug] 0 [PackageName] WindowsPlayer [ProjectName] Week06 Pong" 
+Player connection [35536]  * "[IP] 192.168.1.67 [Port] 55001 [Flags] 2 [Guid] 2521196548 [EditorId] 1831063287 [Version] 1048832 [Id] WindowsPlayer(2,DESKTOP-V61JSVV) [Debug] 0 [PackageName] WindowsPlayer [ProjectName] Week06 Pong" 
 
-Player connection [32548] Started UDP target info broadcast (1) on [225.0.0.222:54997].
+Player connection [35536] Started UDP target info broadcast (1) on [225.0.0.222:54997].
 
 Input System module state changed to: Initialized.
 [Physics::Module] Initialized fallback backend.
@@ -29,8 +29,8 @@ Direct3D:
     App VRAM Budget: 7123 MB
     Driver:          32.0.16.1088
 Begin MonoManager ReloadAssembly
-- Loaded All Assemblies, in  0.134 seconds
-- Finished resetting the current domain, in  0.003 seconds
+- Loaded All Assemblies, in  0.135 seconds
+- Finished resetting the current domain, in  0.002 seconds
 [Physics::Module] Selected backend.
 [Physics::Module] Name: PhysX
 [Physics::Module] Id: 0xf2b8ea05
@@ -40,8 +40,8 @@ Begin MonoManager ReloadAssembly
 <RI> Initializing input.
 Using Windows.Gaming.Input
 <RI> Input initialized.
-UnloadTime: 0.617400 ms
-[2026.11.21 13:02:42] Local client is starting for UnityTransport. Server IP is 127.0.0.1, port is 7770.
+UnloadTime: 0.608700 ms
+[2026.11.21 13:28:54] Local client is starting for UnityTransport. Server IP is 127.0.0.1, port is 7770.
 UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
 UnityEngine.StackTraceUtility:ExtractStackTrace () (at C:/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:35)
 UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
@@ -251,7 +251,7 @@ UnityEngine.AsyncOperation:InvokeCompletionEvent () (at C:/build/output/unity/un
 
 (Filename: C:/build/output/unity/unity/Runtime/Export/Debug/Debug.bindings.cs Line: 123)
 
-[2026.11.21 13:02:43] Local client is started for UnityTransport.
+[2026.11.21 13:28:56] Local client is started for UnityTransport.
 UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
 UnityEngine.StackTraceUtility:ExtractStackTrace () (at C:/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:35)
 UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
@@ -585,7 +585,7 @@ FishNet.Transporting.NetworkReaderLoop:Update () (at C:/Users/canxm/Documents/Co
 
 (Filename: C:/build/output/unity/unity/Runtime/Export/Debug/Debug.bindings.cs Line: 123)
 
-[AutoMatch/guest] 9.17s score 1:0
+[AutoMatch/guest] 11.09s score 1:0
 UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
 UnityEngine.StackTraceUtility:ExtractStackTrace () (at C:/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:35)
 UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
@@ -716,7 +716,7 @@ FishNet.Transporting.NetworkReaderLoop:Update () (at C:/Users/canxm/Documents/Co
 
 (Filename: C:/build/output/unity/unity/Runtime/Export/Debug/Debug.bindings.cs Line: 123)
 
-[AutoMatch/guest] 18.80s score 1:1
+[AutoMatch/guest] 20.66s score 1:1
 UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
 UnityEngine.StackTraceUtility:ExtractStackTrace () (at C:/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:35)
 UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
@@ -876,7 +876,7 @@ FishNet.Transporting.NetworkReaderLoop:Update () (at C:/Users/canxm/Documents/Co
 
 (Filename: C:/build/output/unity/unity/Runtime/Export/Debug/Debug.bindings.cs Line: 123)
 
-[AutoMatch/guest] 33.67s score 2:1
+[AutoMatch/guest] 33.99s score 2:1
 UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
 UnityEngine.StackTraceUtility:ExtractStackTrace () (at C:/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:35)
 UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
@@ -1007,7 +1007,7 @@ FishNet.Transporting.NetworkReaderLoop:Update () (at C:/Users/canxm/Documents/Co
 
 (Filename: C:/build/output/unity/unity/Runtime/Export/Debug/Debug.bindings.cs Line: 123)
 
-[AutoMatch/guest] 40.37s score 2:2
+[AutoMatch/guest] 45.82s score 2:2
 UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
 UnityEngine.StackTraceUtility:ExtractStackTrace () (at C:/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:35)
 UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
@@ -1167,7 +1167,7 @@ FishNet.Transporting.NetworkReaderLoop:Update () (at C:/Users/canxm/Documents/Co
 
 (Filename: C:/build/output/unity/unity/Runtime/Export/Debug/Debug.bindings.cs Line: 123)
 
-[AutoMatch/guest] 49.90s score 3:2
+[AutoMatch/guest] 47.26s score 3:2
 UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
 UnityEngine.StackTraceUtility:ExtractStackTrace () (at C:/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:35)
 UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
@@ -1203,7 +1203,19 @@ UnityEngine.Debug:Log (object) (at C:/build/output/unity/unity/Runtime/Export/De
 PaddleController:OnStopClient () (at C:/Users/canxm/Documents/Codex/2026-11-21/b/outputs/Week06_Pong/Assets/Scripts/Network/PaddleController.cs:81)
 FishNet.Object.NetworkBehaviour:OnStopClient_Internal () (at C:/Users/canxm/Documents/Codex/2026-11-21/b/outputs/Week06_Pong/Assets/FishNet/Runtime/Object/NetworkBehaviour/NetworkBehaviour.Callbacks.cs:186)
 FishNet.Object.NetworkObject:InvokeStopCallbacks (bool,bool) (at C:/Users/canxm/Documents/Codex/2026-11-21/b/outputs/Week06_Pong/Assets/FishNet/Runtime/Object/NetworkObject/NetworkObject.Callbacks.cs:130)
-FishNet.Object.NetworkObject:OnDestroy () (at C:/Users/canxm/Documents/Codex/2026-11-21/b/outputs/Week06_Pong/Assets/FishNet/Runtime/Object/NetworkObject/NetworkObject.cs:447)
+FishNet.Object.NetworkObject:Deinitialize (bool) (at C:/Users/canxm/Documents/Codex/2026-11-21/b/outputs/Week06_Pong/Assets/FishNet/Runtime/Object/NetworkObject/NetworkObject.cs:1126)
+FishNet.Managing.Object.ManagedObjects:DespawnWithoutSynchronization (FishNet.Object.NetworkObject,bool,bool,FishNet.Object.DespawnType,bool) (at C:/Users/canxm/Documents/Codex/2026-11-21/b/outputs/Week06_Pong/Assets/FishNet/Runtime/Managing/Object/ManagedObjects.cs:418)
+FishNet.Managing.Object.ManagedObjects:DespawnWithoutSynchronization (bool,bool) (at C:/Users/canxm/Documents/Codex/2026-11-21/b/outputs/Week06_Pong/Assets/FishNet/Runtime/Managing/Object/ManagedObjects.cs:393)
+FishNet.Managing.Client.ClientObjects:OnClientConnectionState (FishNet.Transporting.ClientConnectionStateArgs) (at C:/Users/canxm/Documents/Codex/2026-11-21/b/outputs/Week06_Pong/Assets/FishNet/Runtime/Managing/Client/Object/ClientObjects.cs:97)
+FishNet.Managing.Client.ClientManager:Transport_OnClientConnectionState (FishNet.Transporting.ClientConnectionStateArgs) (at C:/Users/canxm/Documents/Codex/2026-11-21/b/outputs/Week06_Pong/Assets/FishNet/Runtime/Managing/Client/ClientManager.cs:357)
+FishNet.Transporting.UTP.UnityTransport:HandleClientConnectionState (FishNet.Transporting.ClientConnectionStateArgs) (at ./Library/PackageCache/com.alven.fishnet.unitytransport@135253c12e58/UnityTransport.cs:1708)
+FishNet.Transporting.UTP.UnityTransport:SetClientConnectionState (FishNet.Transporting.LocalConnectionState) (at ./Library/PackageCache/com.alven.fishnet.unitytransport@135253c12e58/UnityTransport.cs:1967)
+FishNet.Transporting.UTP.UnityTransport:DisconnectLocalClient () (at ./Library/PackageCache/com.alven.fishnet.unitytransport@135253c12e58/UnityTransport.cs:994)
+FishNet.Transporting.UTP.UnityTransport:StopClient () (at ./Library/PackageCache/com.alven.fishnet.unitytransport@135253c12e58/UnityTransport.cs:1982)
+FishNet.Transporting.UTP.UnityTransport:StopConnection (bool) (at ./Library/PackageCache/com.alven.fishnet.unitytransport@135253c12e58/UnityTransport.cs:1837)
+FishNet.Managing.Client.ClientManager:StopConnection () (at C:/Users/canxm/Documents/Codex/2026-11-21/b/outputs/Week06_Pong/Assets/FishNet/Runtime/Managing/Client/ClientManager.cs:317)
+Week06AutoMatch/<Finish>d__13:MoveNext () (at C:/Users/canxm/Documents/Codex/2026-11-21/b/outputs/Week06_Pong/Assets/Scripts/Network/Week06AutoMatch.cs:113)
+UnityEngine.SetupCoroutine:InvokeMoveNext (System.Collections.IEnumerator,intptr) (at C:/build/output/unity/unity/Runtime/Export/Scripting/Coroutines.cs:17)
 
 (Filename: C:/build/output/unity/unity/Runtime/Export/Debug/Debug.bindings.cs Line: 123)
 
@@ -1217,11 +1229,23 @@ UnityEngine.Debug:Log (object) (at C:/build/output/unity/unity/Runtime/Export/De
 PaddleController:OnStopClient () (at C:/Users/canxm/Documents/Codex/2026-11-21/b/outputs/Week06_Pong/Assets/Scripts/Network/PaddleController.cs:81)
 FishNet.Object.NetworkBehaviour:OnStopClient_Internal () (at C:/Users/canxm/Documents/Codex/2026-11-21/b/outputs/Week06_Pong/Assets/FishNet/Runtime/Object/NetworkBehaviour/NetworkBehaviour.Callbacks.cs:186)
 FishNet.Object.NetworkObject:InvokeStopCallbacks (bool,bool) (at C:/Users/canxm/Documents/Codex/2026-11-21/b/outputs/Week06_Pong/Assets/FishNet/Runtime/Object/NetworkObject/NetworkObject.Callbacks.cs:130)
-FishNet.Object.NetworkObject:OnDestroy () (at C:/Users/canxm/Documents/Codex/2026-11-21/b/outputs/Week06_Pong/Assets/FishNet/Runtime/Object/NetworkObject/NetworkObject.cs:447)
+FishNet.Object.NetworkObject:Deinitialize (bool) (at C:/Users/canxm/Documents/Codex/2026-11-21/b/outputs/Week06_Pong/Assets/FishNet/Runtime/Object/NetworkObject/NetworkObject.cs:1126)
+FishNet.Managing.Object.ManagedObjects:DespawnWithoutSynchronization (FishNet.Object.NetworkObject,bool,bool,FishNet.Object.DespawnType,bool) (at C:/Users/canxm/Documents/Codex/2026-11-21/b/outputs/Week06_Pong/Assets/FishNet/Runtime/Managing/Object/ManagedObjects.cs:418)
+FishNet.Managing.Object.ManagedObjects:DespawnWithoutSynchronization (bool,bool) (at C:/Users/canxm/Documents/Codex/2026-11-21/b/outputs/Week06_Pong/Assets/FishNet/Runtime/Managing/Object/ManagedObjects.cs:393)
+FishNet.Managing.Client.ClientObjects:OnClientConnectionState (FishNet.Transporting.ClientConnectionStateArgs) (at C:/Users/canxm/Documents/Codex/2026-11-21/b/outputs/Week06_Pong/Assets/FishNet/Runtime/Managing/Client/Object/ClientObjects.cs:97)
+FishNet.Managing.Client.ClientManager:Transport_OnClientConnectionState (FishNet.Transporting.ClientConnectionStateArgs) (at C:/Users/canxm/Documents/Codex/2026-11-21/b/outputs/Week06_Pong/Assets/FishNet/Runtime/Managing/Client/ClientManager.cs:357)
+FishNet.Transporting.UTP.UnityTransport:HandleClientConnectionState (FishNet.Transporting.ClientConnectionStateArgs) (at ./Library/PackageCache/com.alven.fishnet.unitytransport@135253c12e58/UnityTransport.cs:1708)
+FishNet.Transporting.UTP.UnityTransport:SetClientConnectionState (FishNet.Transporting.LocalConnectionState) (at ./Library/PackageCache/com.alven.fishnet.unitytransport@135253c12e58/UnityTransport.cs:1967)
+FishNet.Transporting.UTP.UnityTransport:DisconnectLocalClient () (at ./Library/PackageCache/com.alven.fishnet.unitytransport@135253c12e58/UnityTransport.cs:994)
+FishNet.Transporting.UTP.UnityTransport:StopClient () (at ./Library/PackageCache/com.alven.fishnet.unitytransport@135253c12e58/UnityTransport.cs:1982)
+FishNet.Transporting.UTP.UnityTransport:StopConnection (bool) (at ./Library/PackageCache/com.alven.fishnet.unitytransport@135253c12e58/UnityTransport.cs:1837)
+FishNet.Managing.Client.ClientManager:StopConnection () (at C:/Users/canxm/Documents/Codex/2026-11-21/b/outputs/Week06_Pong/Assets/FishNet/Runtime/Managing/Client/ClientManager.cs:317)
+Week06AutoMatch/<Finish>d__13:MoveNext () (at C:/Users/canxm/Documents/Codex/2026-11-21/b/outputs/Week06_Pong/Assets/Scripts/Network/Week06AutoMatch.cs:113)
+UnityEngine.SetupCoroutine:InvokeMoveNext (System.Collections.IEnumerator,intptr) (at C:/build/output/unity/unity/Runtime/Export/Scripting/Coroutines.cs:17)
 
 (Filename: C:/build/output/unity/unity/Runtime/Export/Debug/Debug.bindings.cs Line: 123)
 
-[2026.11.21 13:03:32] Local client is stopping for UnityTransport.
+[2026.11.21 13:29:42] Local client is stopping for UnityTransport.
 UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
 UnityEngine.StackTraceUtility:ExtractStackTrace () (at C:/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:35)
 UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
@@ -1237,12 +1261,33 @@ FishNet.Transporting.UTP.UnityTransport:SetClientConnectionState (FishNet.Transp
 FishNet.Transporting.UTP.UnityTransport:DisconnectLocalClient () (at ./Library/PackageCache/com.alven.fishnet.unitytransport@135253c12e58/UnityTransport.cs:994)
 FishNet.Transporting.UTP.UnityTransport:StopClient () (at ./Library/PackageCache/com.alven.fishnet.unitytransport@135253c12e58/UnityTransport.cs:1982)
 FishNet.Transporting.UTP.UnityTransport:StopConnection (bool) (at ./Library/PackageCache/com.alven.fishnet.unitytransport@135253c12e58/UnityTransport.cs:1837)
-FishNet.Transporting.UTP.UnityTransport:Shutdown () (at ./Library/PackageCache/com.alven.fishnet.unitytransport@135253c12e58/UnityTransport.cs:1851)
-FishNet.Transporting.UTP.UnityTransport:OnDestroy () (at ./Library/PackageCache/com.alven.fishnet.unitytransport@135253c12e58/UnityTransport.cs:920)
+FishNet.Managing.Client.ClientManager:StopConnection () (at C:/Users/canxm/Documents/Codex/2026-11-21/b/outputs/Week06_Pong/Assets/FishNet/Runtime/Managing/Client/ClientManager.cs:317)
+Week06AutoMatch/<Finish>d__13:MoveNext () (at C:/Users/canxm/Documents/Codex/2026-11-21/b/outputs/Week06_Pong/Assets/Scripts/Network/Week06AutoMatch.cs:113)
+UnityEngine.SetupCoroutine:InvokeMoveNext (System.Collections.IEnumerator,intptr) (at C:/build/output/unity/unity/Runtime/Export/Scripting/Coroutines.cs:17)
 
 (Filename: C:/build/output/unity/unity/Runtime/Export/Debug/Debug.bindings.cs Line: 123)
 
-[2026.11.21 13:03:32] Local client is stopped for UnityTransport.
+[Client] Stopping
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at C:/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:35)
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[]) (at C:/build/output/unity/unity/Runtime/Export/Logging/DebugLogHandler.cs:9)
+UnityEngine.Logger:Log (UnityEngine.LogType,object) (at C:/build/output/unity/unity/Runtime/Export/Logging/Logger.cs:60)
+UnityEngine.Debug:Log (object) (at C:/build/output/unity/unity/Runtime/Export/Debug/Debug.bindings.cs:123)
+ConnectionLogger:OnClientState (FishNet.Transporting.ClientConnectionStateArgs) (at C:/Users/canxm/Documents/Codex/2026-11-21/b/outputs/Week06_Pong/Assets/Scripts/Network/ConnectionLogger.cs:47)
+FishNet.Managing.Client.ClientManager:Transport_OnClientConnectionState (FishNet.Transporting.ClientConnectionStateArgs) (at C:/Users/canxm/Documents/Codex/2026-11-21/b/outputs/Week06_Pong/Assets/FishNet/Runtime/Managing/Client/ClientManager.cs:387)
+FishNet.Transporting.UTP.UnityTransport:HandleClientConnectionState (FishNet.Transporting.ClientConnectionStateArgs) (at ./Library/PackageCache/com.alven.fishnet.unitytransport@135253c12e58/UnityTransport.cs:1708)
+FishNet.Transporting.UTP.UnityTransport:SetClientConnectionState (FishNet.Transporting.LocalConnectionState) (at ./Library/PackageCache/com.alven.fishnet.unitytransport@135253c12e58/UnityTransport.cs:1967)
+FishNet.Transporting.UTP.UnityTransport:DisconnectLocalClient () (at ./Library/PackageCache/com.alven.fishnet.unitytransport@135253c12e58/UnityTransport.cs:994)
+FishNet.Transporting.UTP.UnityTransport:StopClient () (at ./Library/PackageCache/com.alven.fishnet.unitytransport@135253c12e58/UnityTransport.cs:1982)
+FishNet.Transporting.UTP.UnityTransport:StopConnection (bool) (at ./Library/PackageCache/com.alven.fishnet.unitytransport@135253c12e58/UnityTransport.cs:1837)
+FishNet.Managing.Client.ClientManager:StopConnection () (at C:/Users/canxm/Documents/Codex/2026-11-21/b/outputs/Week06_Pong/Assets/FishNet/Runtime/Managing/Client/ClientManager.cs:317)
+Week06AutoMatch/<Finish>d__13:MoveNext () (at C:/Users/canxm/Documents/Codex/2026-11-21/b/outputs/Week06_Pong/Assets/Scripts/Network/Week06AutoMatch.cs:113)
+UnityEngine.SetupCoroutine:InvokeMoveNext (System.Collections.IEnumerator,intptr) (at C:/build/output/unity/unity/Runtime/Export/Scripting/Coroutines.cs:17)
+
+(Filename: C:/build/output/unity/unity/Runtime/Export/Debug/Debug.bindings.cs Line: 123)
+
+[2026.11.21 13:29:42] Local client is stopped for UnityTransport.
 UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
 UnityEngine.StackTraceUtility:ExtractStackTrace () (at C:/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:35)
 UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
@@ -1258,8 +1303,29 @@ FishNet.Transporting.UTP.UnityTransport:SetClientConnectionState (FishNet.Transp
 FishNet.Transporting.UTP.UnityTransport:DisconnectLocalClient () (at ./Library/PackageCache/com.alven.fishnet.unitytransport@135253c12e58/UnityTransport.cs:1011)
 FishNet.Transporting.UTP.UnityTransport:StopClient () (at ./Library/PackageCache/com.alven.fishnet.unitytransport@135253c12e58/UnityTransport.cs:1982)
 FishNet.Transporting.UTP.UnityTransport:StopConnection (bool) (at ./Library/PackageCache/com.alven.fishnet.unitytransport@135253c12e58/UnityTransport.cs:1837)
-FishNet.Transporting.UTP.UnityTransport:Shutdown () (at ./Library/PackageCache/com.alven.fishnet.unitytransport@135253c12e58/UnityTransport.cs:1851)
-FishNet.Transporting.UTP.UnityTransport:OnDestroy () (at ./Library/PackageCache/com.alven.fishnet.unitytransport@135253c12e58/UnityTransport.cs:920)
+FishNet.Managing.Client.ClientManager:StopConnection () (at C:/Users/canxm/Documents/Codex/2026-11-21/b/outputs/Week06_Pong/Assets/FishNet/Runtime/Managing/Client/ClientManager.cs:317)
+Week06AutoMatch/<Finish>d__13:MoveNext () (at C:/Users/canxm/Documents/Codex/2026-11-21/b/outputs/Week06_Pong/Assets/Scripts/Network/Week06AutoMatch.cs:113)
+UnityEngine.SetupCoroutine:InvokeMoveNext (System.Collections.IEnumerator,intptr) (at C:/build/output/unity/unity/Runtime/Export/Scripting/Coroutines.cs:17)
+
+(Filename: C:/build/output/unity/unity/Runtime/Export/Debug/Debug.bindings.cs Line: 123)
+
+[Client] Stopped
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at C:/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:35)
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[]) (at C:/build/output/unity/unity/Runtime/Export/Logging/DebugLogHandler.cs:9)
+UnityEngine.Logger:Log (UnityEngine.LogType,object) (at C:/build/output/unity/unity/Runtime/Export/Logging/Logger.cs:60)
+UnityEngine.Debug:Log (object) (at C:/build/output/unity/unity/Runtime/Export/Debug/Debug.bindings.cs:123)
+ConnectionLogger:OnClientState (FishNet.Transporting.ClientConnectionStateArgs) (at C:/Users/canxm/Documents/Codex/2026-11-21/b/outputs/Week06_Pong/Assets/Scripts/Network/ConnectionLogger.cs:47)
+FishNet.Managing.Client.ClientManager:Transport_OnClientConnectionState (FishNet.Transporting.ClientConnectionStateArgs) (at C:/Users/canxm/Documents/Codex/2026-11-21/b/outputs/Week06_Pong/Assets/FishNet/Runtime/Managing/Client/ClientManager.cs:387)
+FishNet.Transporting.UTP.UnityTransport:HandleClientConnectionState (FishNet.Transporting.ClientConnectionStateArgs) (at ./Library/PackageCache/com.alven.fishnet.unitytransport@135253c12e58/UnityTransport.cs:1708)
+FishNet.Transporting.UTP.UnityTransport:SetClientConnectionState (FishNet.Transporting.LocalConnectionState) (at ./Library/PackageCache/com.alven.fishnet.unitytransport@135253c12e58/UnityTransport.cs:1967)
+FishNet.Transporting.UTP.UnityTransport:DisconnectLocalClient () (at ./Library/PackageCache/com.alven.fishnet.unitytransport@135253c12e58/UnityTransport.cs:1011)
+FishNet.Transporting.UTP.UnityTransport:StopClient () (at ./Library/PackageCache/com.alven.fishnet.unitytransport@135253c12e58/UnityTransport.cs:1982)
+FishNet.Transporting.UTP.UnityTransport:StopConnection (bool) (at ./Library/PackageCache/com.alven.fishnet.unitytransport@135253c12e58/UnityTransport.cs:1837)
+FishNet.Managing.Client.ClientManager:StopConnection () (at C:/Users/canxm/Documents/Codex/2026-11-21/b/outputs/Week06_Pong/Assets/FishNet/Runtime/Managing/Client/ClientManager.cs:317)
+Week06AutoMatch/<Finish>d__13:MoveNext () (at C:/Users/canxm/Documents/Codex/2026-11-21/b/outputs/Week06_Pong/Assets/Scripts/Network/Week06AutoMatch.cs:113)
+UnityEngine.SetupCoroutine:InvokeMoveNext (System.Collections.IEnumerator,intptr) (at C:/build/output/unity/unity/Runtime/Export/Scripting/Coroutines.cs:17)
 
 (Filename: C:/build/output/unity/unity/Runtime/Export/Debug/Debug.bindings.cs Line: 123)
 
@@ -1268,4 +1334,4 @@ FishNet.Transporting.UTP.UnityTransport:OnDestroy () (at ./Library/PackageCache/
 Input System module state changed to: ShutdownInProgress.
 Input System polling thread exited.
 Input System module state changed to: Shutdown.
-PlayerConnection::Cleanup##utp:{"type":"MemoryLeaks","version":2,"phase":"Immediate","time":1795255412859,"processId":43736,"allocatedMemory":615018,"memoryLabels":[{"Default":136},{"NewDelete":760},{"Thread":8640},{"Manager":548406},{"GfxDevice":2112},{"GfxThread":3072},{"Audio":752},{"Serialization":520},{"JobScheduler":32768},{"String":508},{"HashMap":6656},{"PoolAlloc":384},{"CloudService":144},{"VR":1872},{"Video":144},{"NativeArray":648},{"Secure":440},{"Subsystems":96},{"Accessibility":80},{"CoreBusinessMetrics":120},{"TLS":6864}]}
+PlayerConnection::Cleanup##utp:{"type":"MemoryLeaks","version":2,"phase":"Immediate","time":1795256983587,"processId":36428,"allocatedMemory":614187,"memoryLabels":[{"Default":136},{"NewDelete":760},{"Thread":8384},{"Manager":548406},{"GfxDevice":2112},{"GfxThread":2304},{"Audio":752},{"Serialization":520},{"JobScheduler":32768},{"String":502},{"HashMap":6656},{"PoolAlloc":384},{"CloudService":144},{"VR":1872},{"Video":144},{"NativeArray":648},{"Secure":440},{"Subsystems":96},{"Accessibility":80},{"Gui":201},{"CoreBusinessMetrics":120},{"TLS":6862}]}

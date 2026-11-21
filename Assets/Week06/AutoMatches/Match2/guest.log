@@ -1,11 +1,11 @@
 Mono path[0] = 'C:/Users/canxm/Documents/Codex/2026-11-21/b/work/PongBuild/Pong_Data/Managed'
 Mono config path = 'C:/Users/canxm/Documents/Codex/2026-11-21/b/work/PongBuild/MonoBleedingEdge/etc'
 Found 1 interfaces on host : 0) 192.168.1.67
-Player connection [40216]  Target information:
+Player connection [37388]  Target information:
 
-Player connection [40216]  * "[IP] 192.168.1.67 [Port] 55001 [Flags] 2 [Guid] 1043491492 [EditorId] 960886217 [Version] 1048832 [Id] WindowsPlayer(2,DESKTOP-V61JSVV) [Debug] 0 [PackageName] WindowsPlayer [ProjectName] Week06 Pong" 
+Player connection [37388]  * "[IP] 192.168.1.67 [Port] 55001 [Flags] 2 [Guid] 679342581 [EditorId] 1831063287 [Version] 1048832 [Id] WindowsPlayer(2,DESKTOP-V61JSVV) [Debug] 0 [PackageName] WindowsPlayer [ProjectName] Week06 Pong" 
 
-Player connection [40216] Started UDP target info broadcast (1) on [225.0.0.222:54997].
+Player connection [37388] Started UDP target info broadcast (1) on [225.0.0.222:54997].
 
 Input System module state changed to: Initialized.
 [Physics::Module] Initialized fallback backend.
@@ -29,8 +29,8 @@ Direct3D:
     App VRAM Budget: 7123 MB
     Driver:          32.0.16.1088
 Begin MonoManager ReloadAssembly
-- Loaded All Assemblies, in  0.145 seconds
-- Finished resetting the current domain, in  0.002 seconds
+- Loaded All Assemblies, in  0.137 seconds
+- Finished resetting the current domain, in  0.003 seconds
 [Physics::Module] Selected backend.
 [Physics::Module] Name: PhysX
 [Physics::Module] Id: 0xf2b8ea05
@@ -40,7 +40,7 @@ Begin MonoManager ReloadAssembly
 <RI> Initializing input.
 Using Windows.Gaming.Input
 <RI> Input initialized.
-UnloadTime: 0.644700 ms
+UnloadTime: 0.657000 ms
 [Client] Connecting to 127.0.0.1 on UDP 7770.
 UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
 UnityEngine.StackTraceUtility:ExtractStackTrace () (at C:/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:35)
@@ -48,12 +48,12 @@ UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOpt
 UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[]) (at C:/build/output/unity/unity/Runtime/Export/Logging/DebugLogHandler.cs:9)
 UnityEngine.Logger:Log (UnityEngine.LogType,object) (at C:/build/output/unity/unity/Runtime/Export/Logging/Logger.cs:60)
 UnityEngine.Debug:Log (object) (at C:/build/output/unity/unity/Runtime/Export/Debug/Debug.bindings.cs:123)
-ConnectionHud:StartClient () (at C:/Users/canxm/Documents/Codex/2026-11-21/b/outputs/Week06_Pong/Assets/Scripts/Network/ConnectionHud.cs:158)
-ConnectionHud:Start () (at C:/Users/canxm/Documents/Codex/2026-11-21/b/outputs/Week06_Pong/Assets/Scripts/Network/ConnectionHud.cs:111)
+ConnectionHud:StartClient () (at C:/Users/canxm/Documents/Codex/2026-11-21/b/outputs/Week06_Pong/Assets/Scripts/Network/ConnectionHud.cs:129)
+ConnectionHud:Start () (at C:/Users/canxm/Documents/Codex/2026-11-21/b/outputs/Week06_Pong/Assets/Scripts/Network/ConnectionHud.cs:81)
 
 (Filename: C:/build/output/unity/unity/Runtime/Export/Debug/Debug.bindings.cs Line: 123)
 
-[2026.11.21 12:48:14] Local client is starting for UnityTransport. Server IP is 127.0.0.1, port is 7770.
+[2026.11.21 13:27:47] Local client is starting for UnityTransport. Server IP is 127.0.0.1, port is 7770.
 UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
 UnityEngine.StackTraceUtility:ExtractStackTrace () (at C:/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:35)
 UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
@@ -70,8 +70,8 @@ FishNet.Transporting.UTP.UnityTransport:StartClient () (at ./Library/PackageCach
 FishNet.Transporting.UTP.UnityTransport:StartConnection (bool) (at ./Library/PackageCache/com.alven.fishnet.unitytransport@135253c12e58/UnityTransport.cs:1832)
 FishNet.Managing.Client.ClientManager:StartConnection () (at C:/Users/canxm/Documents/Codex/2026-11-21/b/outputs/Week06_Pong/Assets/FishNet/Runtime/Managing/Client/ClientManager.cs:325)
 FishNet.Managing.Client.ClientManager:StartConnection (string,uint16) (at C:/Users/canxm/Documents/Codex/2026-11-21/b/outputs/Week06_Pong/Assets/FishNet/Runtime/Managing/Client/ClientManager.cs:344)
-ConnectionHud:StartClient () (at C:/Users/canxm/Documents/Codex/2026-11-21/b/outputs/Week06_Pong/Assets/Scripts/Network/ConnectionHud.cs:159)
-ConnectionHud:Start () (at C:/Users/canxm/Documents/Codex/2026-11-21/b/outputs/Week06_Pong/Assets/Scripts/Network/ConnectionHud.cs:111)
+ConnectionHud:StartClient () (at C:/Users/canxm/Documents/Codex/2026-11-21/b/outputs/Week06_Pong/Assets/Scripts/Network/ConnectionHud.cs:130)
+ConnectionHud:Start () (at C:/Users/canxm/Documents/Codex/2026-11-21/b/outputs/Week06_Pong/Assets/Scripts/Network/ConnectionHud.cs:81)
 
 (Filename: C:/build/output/unity/unity/Runtime/Export/Debug/Debug.bindings.cs Line: 123)
 
@@ -82,7 +82,7 @@ UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOpt
 UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[]) (at C:/build/output/unity/unity/Runtime/Export/Logging/DebugLogHandler.cs:9)
 UnityEngine.Logger:Log (UnityEngine.LogType,object) (at C:/build/output/unity/unity/Runtime/Export/Logging/Logger.cs:60)
 UnityEngine.Debug:Log (object) (at C:/build/output/unity/unity/Runtime/Export/Debug/Debug.bindings.cs:123)
-ConnectionLogger:OnClientState (FishNet.Transporting.ClientConnectionStateArgs) (at C:/Users/canxm/Documents/Codex/2026-11-21/b/outputs/Week06_Pong/Assets/Scripts/Network/ConnectionLogger.cs:54)
+ConnectionLogger:OnClientState (FishNet.Transporting.ClientConnectionStateArgs) (at C:/Users/canxm/Documents/Codex/2026-11-21/b/outputs/Week06_Pong/Assets/Scripts/Network/ConnectionLogger.cs:47)
 FishNet.Managing.Client.ClientManager:Transport_OnClientConnectionState (FishNet.Transporting.ClientConnectionStateArgs) (at C:/Users/canxm/Documents/Codex/2026-11-21/b/outputs/Week06_Pong/Assets/FishNet/Runtime/Managing/Client/ClientManager.cs:387)
 FishNet.Transporting.UTP.UnityTransport:HandleClientConnectionState (FishNet.Transporting.ClientConnectionStateArgs) (at ./Library/PackageCache/com.alven.fishnet.unitytransport@135253c12e58/UnityTransport.cs:1708)
 FishNet.Transporting.UTP.UnityTransport:SetClientConnectionState (FishNet.Transporting.LocalConnectionState) (at ./Library/PackageCache/com.alven.fishnet.unitytransport@135253c12e58/UnityTransport.cs:1967)
@@ -90,12 +90,12 @@ FishNet.Transporting.UTP.UnityTransport:StartClient () (at ./Library/PackageCach
 FishNet.Transporting.UTP.UnityTransport:StartConnection (bool) (at ./Library/PackageCache/com.alven.fishnet.unitytransport@135253c12e58/UnityTransport.cs:1832)
 FishNet.Managing.Client.ClientManager:StartConnection () (at C:/Users/canxm/Documents/Codex/2026-11-21/b/outputs/Week06_Pong/Assets/FishNet/Runtime/Managing/Client/ClientManager.cs:325)
 FishNet.Managing.Client.ClientManager:StartConnection (string,uint16) (at C:/Users/canxm/Documents/Codex/2026-11-21/b/outputs/Week06_Pong/Assets/FishNet/Runtime/Managing/Client/ClientManager.cs:344)
-ConnectionHud:StartClient () (at C:/Users/canxm/Documents/Codex/2026-11-21/b/outputs/Week06_Pong/Assets/Scripts/Network/ConnectionHud.cs:159)
-ConnectionHud:Start () (at C:/Users/canxm/Documents/Codex/2026-11-21/b/outputs/Week06_Pong/Assets/Scripts/Network/ConnectionHud.cs:111)
+ConnectionHud:StartClient () (at C:/Users/canxm/Documents/Codex/2026-11-21/b/outputs/Week06_Pong/Assets/Scripts/Network/ConnectionHud.cs:130)
+ConnectionHud:Start () (at C:/Users/canxm/Documents/Codex/2026-11-21/b/outputs/Week06_Pong/Assets/Scripts/Network/ConnectionHud.cs:81)
 
 (Filename: C:/build/output/unity/unity/Runtime/Export/Debug/Debug.bindings.cs Line: 123)
 
-[2026.11.21 12:48:15] Local client is started for UnityTransport.
+[2026.11.21 13:27:48] Local client is started for UnityTransport.
 UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
 UnityEngine.StackTraceUtility:ExtractStackTrace () (at C:/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:35)
 UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
@@ -128,7 +128,7 @@ UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOpt
 UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[]) (at C:/build/output/unity/unity/Runtime/Export/Logging/DebugLogHandler.cs:9)
 UnityEngine.Logger:Log (UnityEngine.LogType,object) (at C:/build/output/unity/unity/Runtime/Export/Logging/Logger.cs:60)
 UnityEngine.Debug:Log (object) (at C:/build/output/unity/unity/Runtime/Export/Debug/Debug.bindings.cs:123)
-ConnectionLogger:OnClientState (FishNet.Transporting.ClientConnectionStateArgs) (at C:/Users/canxm/Documents/Codex/2026-11-21/b/outputs/Week06_Pong/Assets/Scripts/Network/ConnectionLogger.cs:54)
+ConnectionLogger:OnClientState (FishNet.Transporting.ClientConnectionStateArgs) (at C:/Users/canxm/Documents/Codex/2026-11-21/b/outputs/Week06_Pong/Assets/Scripts/Network/ConnectionLogger.cs:47)
 FishNet.Managing.Client.ClientManager:Transport_OnClientConnectionState (FishNet.Transporting.ClientConnectionStateArgs) (at C:/Users/canxm/Documents/Codex/2026-11-21/b/outputs/Week06_Pong/Assets/FishNet/Runtime/Managing/Client/ClientManager.cs:387)
 FishNet.Transporting.UTP.UnityTransport:HandleClientConnectionState (FishNet.Transporting.ClientConnectionStateArgs) (at ./Library/PackageCache/com.alven.fishnet.unitytransport@135253c12e58/UnityTransport.cs:1708)
 FishNet.Transporting.UTP.UnityTransport:SetClientConnectionState (FishNet.Transporting.LocalConnectionState) (at ./Library/PackageCache/com.alven.fishnet.unitytransport@135253c12e58/UnityTransport.cs:1967)
@@ -152,7 +152,7 @@ UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOpt
 UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[]) (at C:/build/output/unity/unity/Runtime/Export/Logging/DebugLogHandler.cs:9)
 UnityEngine.Logger:Log (UnityEngine.LogType,object) (at C:/build/output/unity/unity/Runtime/Export/Logging/Logger.cs:60)
 UnityEngine.Debug:Log (object) (at C:/build/output/unity/unity/Runtime/Export/Debug/Debug.bindings.cs:123)
-ConnectionLogger/<LogStartedIdentity>d__6:MoveNext () (at C:/Users/canxm/Documents/Codex/2026-11-21/b/outputs/Week06_Pong/Assets/Scripts/Network/ConnectionLogger.cs:68)
+ConnectionLogger/<LogStartedIdentity>d__6:MoveNext () (at C:/Users/canxm/Documents/Codex/2026-11-21/b/outputs/Week06_Pong/Assets/Scripts/Network/ConnectionLogger.cs:60)
 UnityEngine.SetupCoroutine:InvokeMoveNext (System.Collections.IEnumerator,intptr) (at C:/build/output/unity/unity/Runtime/Export/Scripting/Coroutines.cs:17)
 
 (Filename: C:/build/output/unity/unity/Runtime/Export/Debug/Debug.bindings.cs Line: 123)
@@ -164,7 +164,7 @@ UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOpt
 UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[]) (at C:/build/output/unity/unity/Runtime/Export/Logging/DebugLogHandler.cs:9)
 UnityEngine.Logger:Log (UnityEngine.LogType,object) (at C:/build/output/unity/unity/Runtime/Export/Logging/Logger.cs:60)
 UnityEngine.Debug:Log (object) (at C:/build/output/unity/unity/Runtime/Export/Debug/Debug.bindings.cs:123)
-PaddleController:OnStartClient () (at C:/Users/canxm/Documents/Codex/2026-11-21/b/outputs/Week06_Pong/Assets/Scripts/Network/PaddleController.cs:88)
+PaddleController:OnStartClient () (at C:/Users/canxm/Documents/Codex/2026-11-21/b/outputs/Week06_Pong/Assets/Scripts/Network/PaddleController.cs:72)
 FishNet.Object.NetworkBehaviour:OnStartClient_Internal () (at C:/Users/canxm/Documents/Codex/2026-11-21/b/outputs/Week06_Pong/Assets/FishNet/Runtime/Object/NetworkBehaviour/NetworkBehaviour.Callbacks.cs:175)
 FishNet.Object.NetworkObject:InvokeStartCallbacks (bool,bool) (at C:/Users/canxm/Documents/Codex/2026-11-21/b/outputs/Week06_Pong/Assets/FishNet/Runtime/Object/NetworkObject/NetworkObject.Callbacks.cs:52)
 FishNet.Object.NetworkObject:Initialize (bool,bool) (at C:/Users/canxm/Documents/Codex/2026-11-21/b/outputs/Week06_Pong/Assets/FishNet/Runtime/Object/NetworkObject/NetworkObject.cs:1093)
@@ -195,7 +195,7 @@ UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOpt
 UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[]) (at C:/build/output/unity/unity/Runtime/Export/Logging/DebugLogHandler.cs:9)
 UnityEngine.Logger:Log (UnityEngine.LogType,object) (at C:/build/output/unity/unity/Runtime/Export/Logging/Logger.cs:60)
 UnityEngine.Debug:Log (object) (at C:/build/output/unity/unity/Runtime/Export/Debug/Debug.bindings.cs:123)
-PaddleController:OnStartClient () (at C:/Users/canxm/Documents/Codex/2026-11-21/b/outputs/Week06_Pong/Assets/Scripts/Network/PaddleController.cs:84)
+PaddleController:OnStartClient () (at C:/Users/canxm/Documents/Codex/2026-11-21/b/outputs/Week06_Pong/Assets/Scripts/Network/PaddleController.cs:68)
 FishNet.Object.NetworkBehaviour:OnStartClient_Internal () (at C:/Users/canxm/Documents/Codex/2026-11-21/b/outputs/Week06_Pong/Assets/FishNet/Runtime/Object/NetworkBehaviour/NetworkBehaviour.Callbacks.cs:175)
 FishNet.Object.NetworkObject:InvokeStartCallbacks (bool,bool) (at C:/Users/canxm/Documents/Codex/2026-11-21/b/outputs/Week06_Pong/Assets/FishNet/Runtime/Object/NetworkObject/NetworkObject.Callbacks.cs:52)
 FishNet.Object.NetworkObject:Initialize (bool,bool) (at C:/Users/canxm/Documents/Codex/2026-11-21/b/outputs/Week06_Pong/Assets/FishNet/Runtime/Object/NetworkObject/NetworkObject.cs:1093)
@@ -226,7 +226,7 @@ UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOpt
 UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[]) (at C:/build/output/unity/unity/Runtime/Export/Logging/DebugLogHandler.cs:9)
 UnityEngine.Logger:Log (UnityEngine.LogType,object) (at C:/build/output/unity/unity/Runtime/Export/Logging/Logger.cs:60)
 UnityEngine.Debug:Log (object) (at C:/build/output/unity/unity/Runtime/Export/Debug/Debug.bindings.cs:123)
-GameState:OnFeedChanged (FishNet.Object.Synchronizing.SyncListOperation,int,string,string,bool) (at C:/Users/canxm/Documents/Codex/2026-11-21/b/outputs/Week06_Pong/Assets/Scripts/Network/GameState.cs:100)
+GameState:OnFeedChanged (FishNet.Object.Synchronizing.SyncListOperation,int,string,string,bool) (at C:/Users/canxm/Documents/Codex/2026-11-21/b/outputs/Week06_Pong/Assets/Scripts/Network/GameState.cs:84)
 FishNet.Object.Synchronizing.SyncList`1<string>:OnStartCallback (bool) (at C:/Users/canxm/Documents/Codex/2026-11-21/b/outputs/Week06_Pong/Assets/FishNet/Runtime/Object/Synchronizing/SyncList.cs:240)
 FishNet.Object.NetworkBehaviour:InvokeSyncTypeOnStartCallbacks (bool) (at C:/Users/canxm/Documents/Codex/2026-11-21/b/outputs/Week06_Pong/Assets/FishNet/Runtime/Object/NetworkBehaviour/NetworkBehaviour.Callbacks.cs:55)
 FishNet.Object.NetworkObject:InvokeOnStartSyncTypeCallbacks (bool) (at C:/Users/canxm/Documents/Codex/2026-11-21/b/outputs/Week06_Pong/Assets/FishNet/Runtime/Object/NetworkObject/NetworkObject.Callbacks.cs:70)
@@ -257,7 +257,7 @@ UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOpt
 UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[]) (at C:/build/output/unity/unity/Runtime/Export/Logging/DebugLogHandler.cs:9)
 UnityEngine.Logger:Log (UnityEngine.LogType,object) (at C:/build/output/unity/unity/Runtime/Export/Logging/Logger.cs:60)
 UnityEngine.Debug:Log (object) (at C:/build/output/unity/unity/Runtime/Export/Debug/Debug.bindings.cs:123)
-GameState:OnFeedChanged (FishNet.Object.Synchronizing.SyncListOperation,int,string,string,bool) (at C:/Users/canxm/Documents/Codex/2026-11-21/b/outputs/Week06_Pong/Assets/Scripts/Network/GameState.cs:100)
+GameState:OnFeedChanged (FishNet.Object.Synchronizing.SyncListOperation,int,string,string,bool) (at C:/Users/canxm/Documents/Codex/2026-11-21/b/outputs/Week06_Pong/Assets/Scripts/Network/GameState.cs:84)
 FishNet.Object.Synchronizing.SyncList`1<string>:InvokeOnChange (FishNet.Object.Synchronizing.SyncListOperation,int,string,string,bool) (at C:/Users/canxm/Documents/Codex/2026-11-21/b/outputs/Week06_Pong/Assets/FishNet/Runtime/Object/Synchronizing/SyncList.cs:441)
 FishNet.Object.Synchronizing.SyncList`1<string>:Read (FishNet.Serializing.PooledReader,bool) (at C:/Users/canxm/Documents/Codex/2026-11-21/b/outputs/Week06_Pong/Assets/FishNet/Runtime/Object/Synchronizing/SyncList.cs:418)
 FishNet.Object.NetworkBehaviour:ReadSyncType (int,FishNet.Serializing.PooledReader,int,bool) (at C:/Users/canxm/Documents/Codex/2026-11-21/b/outputs/Week06_Pong/Assets/FishNet/Runtime/Object/NetworkBehaviour/NetworkBehaviour.SyncTypes.cs:174)
@@ -287,7 +287,7 @@ UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOpt
 UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[]) (at C:/build/output/unity/unity/Runtime/Export/Logging/DebugLogHandler.cs:9)
 UnityEngine.Logger:Log (UnityEngine.LogType,object) (at C:/build/output/unity/unity/Runtime/Export/Logging/Logger.cs:60)
 UnityEngine.Debug:Log (object) (at C:/build/output/unity/unity/Runtime/Export/Debug/Debug.bindings.cs:123)
-GameState:OnFeedChanged (FishNet.Object.Synchronizing.SyncListOperation,int,string,string,bool) (at C:/Users/canxm/Documents/Codex/2026-11-21/b/outputs/Week06_Pong/Assets/Scripts/Network/GameState.cs:100)
+GameState:OnFeedChanged (FishNet.Object.Synchronizing.SyncListOperation,int,string,string,bool) (at C:/Users/canxm/Documents/Codex/2026-11-21/b/outputs/Week06_Pong/Assets/Scripts/Network/GameState.cs:84)
 FishNet.Object.Synchronizing.SyncList`1<string>:InvokeOnChange (FishNet.Object.Synchronizing.SyncListOperation,int,string,string,bool) (at C:/Users/canxm/Documents/Codex/2026-11-21/b/outputs/Week06_Pong/Assets/FishNet/Runtime/Object/Synchronizing/SyncList.cs:441)
 FishNet.Object.Synchronizing.SyncList`1<string>:Read (FishNet.Serializing.PooledReader,bool) (at C:/Users/canxm/Documents/Codex/2026-11-21/b/outputs/Week06_Pong/Assets/FishNet/Runtime/Object/Synchronizing/SyncList.cs:418)
 FishNet.Object.NetworkBehaviour:ReadSyncType (int,FishNet.Serializing.PooledReader,int,bool) (at C:/Users/canxm/Documents/Codex/2026-11-21/b/outputs/Week06_Pong/Assets/FishNet/Runtime/Object/NetworkBehaviour/NetworkBehaviour.SyncTypes.cs:174)
@@ -302,7 +302,7 @@ FishNet.Transporting.UTP.UnityTransport:ProcessEvent () (at ./Library/PackageCac
 FishNet.Transporting.UTP.UnityTransport:IterateIncoming () (at ./Library/PackageCache/com.alven.fishnet.unitytransport@135253c12e58/UnityTransport.cs:893)
 FishNet.Transporting.UTP.UnityTransport:IterateIncoming (bool) (at ./Library/PackageCache/com.alven.fishnet.unitytransport@135253c12e58/UnityTransport.cs:1728)
 FishNet.Managing.Transporting.TransportManager:IterateIncoming (bool) (at C:/Users/canxm/Documents/Codex/2026-11-21/b/outputs/Week06_Pong/Assets/FishNet/Runtime/Managing/Transporting/TransportManager.cs:650)
-FishNet.Managing.Timing.TimeManager:TryIterateData (bool) (at C:/Users/canxm/Documents/Codex/2026-11-21/b/outputs/Week06_Pong/Assets/FishNet/Runtime/Managing/Timing/TimeManager.cs:1116)
+FishNet.Managing.Timing.TimeManager:TryIterateData (bool) (at C:/Users/canxm/Documents/Codex/2026-11-21/b/outputs/Week06_Pong/Assets/FishNet/Runtime/Managing/Timing/TimeManager.cs:1115)
 FishNet.Managing.Timing.TimeManager:IncreaseTick () (at C:/Users/canxm/Documents/Codex/2026-11-21/b/outputs/Week06_Pong/Assets/FishNet/Runtime/Managing/Timing/TimeManager.cs:734)
 FishNet.Managing.Timing.TimeManager:<TickUpdate>g__MethodLogic|112_0 () (at C:/Users/canxm/Documents/Codex/2026-11-21/b/outputs/Week06_Pong/Assets/FishNet/Runtime/Managing/Timing/TimeManager.cs:393)
 FishNet.Managing.Timing.TimeManager:TickUpdate () (at C:/Users/canxm/Documents/Codex/2026-11-21/b/outputs/Week06_Pong/Assets/FishNet/Runtime/Managing/Timing/TimeManager.cs:381)
@@ -317,7 +317,7 @@ UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOpt
 UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[]) (at C:/build/output/unity/unity/Runtime/Export/Logging/DebugLogHandler.cs:9)
 UnityEngine.Logger:Log (UnityEngine.LogType,object) (at C:/build/output/unity/unity/Runtime/Export/Logging/Logger.cs:60)
 UnityEngine.Debug:Log (object) (at C:/build/output/unity/unity/Runtime/Export/Debug/Debug.bindings.cs:123)
-PaddleController:RpcLogic___ObserversScored___1692629761 (int,int) (at C:/Users/canxm/Documents/Codex/2026-11-21/b/outputs/Week06_Pong/Assets/Scripts/Network/PaddleController.cs:223)
+PaddleController:RpcLogic___ObserversScored___1692629761 (int,int) (at C:/Users/canxm/Documents/Codex/2026-11-21/b/outputs/Week06_Pong/Assets/Scripts/Network/PaddleController.cs:197)
 PaddleController:RpcReader___Observers_ObserversScored___1692629761 (FishNet.Serializing.PooledReader,FishNet.Transporting.Channel)
 FishNet.Object.NetworkBehaviour:ReadObserversRpc (int,bool,uint,FishNet.Serializing.PooledReader,FishNet.Transporting.Channel) (at C:/Users/canxm/Documents/Codex/2026-11-21/b/outputs/Week06_Pong/Assets/FishNet/Runtime/Object/NetworkBehaviour/NetworkBehaviour.RPCs.cs:300)
 FishNet.Managing.Client.ClientObjects:ParseRpcLink (FishNet.Serializing.PooledReader,uint16,FishNet.Transporting.Channel) (at C:/Users/canxm/Documents/Codex/2026-11-21/b/outputs/Week06_Pong/Assets/FishNet/Runtime/Managing/Client/Object/ClientObjects.RpcLinks.cs:58)
@@ -346,7 +346,7 @@ UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOpt
 UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[]) (at C:/build/output/unity/unity/Runtime/Export/Logging/DebugLogHandler.cs:9)
 UnityEngine.Logger:Log (UnityEngine.LogType,object) (at C:/build/output/unity/unity/Runtime/Export/Logging/Logger.cs:60)
 UnityEngine.Debug:Log (object) (at C:/build/output/unity/unity/Runtime/Export/Debug/Debug.bindings.cs:123)
-PaddleController:RpcLogic___TargetYouServe___328543758 (FishNet.Connection.NetworkConnection) (at C:/Users/canxm/Documents/Codex/2026-11-21/b/outputs/Week06_Pong/Assets/Scripts/Network/PaddleController.cs:230)
+PaddleController:RpcLogic___TargetYouServe___328543758 (FishNet.Connection.NetworkConnection) (at C:/Users/canxm/Documents/Codex/2026-11-21/b/outputs/Week06_Pong/Assets/Scripts/Network/PaddleController.cs:204)
 PaddleController:RpcReader___Target_TargetYouServe___328543758 (FishNet.Serializing.PooledReader,FishNet.Transporting.Channel)
 FishNet.Object.NetworkBehaviour:ReadTargetRpc (int,bool,uint,FishNet.Serializing.PooledReader,FishNet.Transporting.Channel) (at C:/Users/canxm/Documents/Codex/2026-11-21/b/outputs/Week06_Pong/Assets/FishNet/Runtime/Object/NetworkBehaviour/NetworkBehaviour.RPCs.cs:319)
 FishNet.Managing.Client.ClientObjects:ParseRpcLink (FishNet.Serializing.PooledReader,uint16,FishNet.Transporting.Channel) (at C:/Users/canxm/Documents/Codex/2026-11-21/b/outputs/Week06_Pong/Assets/FishNet/Runtime/Managing/Client/Object/ClientObjects.RpcLinks.cs:53)
@@ -375,7 +375,7 @@ UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOpt
 UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[]) (at C:/build/output/unity/unity/Runtime/Export/Logging/DebugLogHandler.cs:9)
 UnityEngine.Logger:Log (UnityEngine.LogType,object) (at C:/build/output/unity/unity/Runtime/Export/Logging/Logger.cs:60)
 UnityEngine.Debug:Log (object) (at C:/build/output/unity/unity/Runtime/Export/Debug/Debug.bindings.cs:123)
-GameState:OnFeedChanged (FishNet.Object.Synchronizing.SyncListOperation,int,string,string,bool) (at C:/Users/canxm/Documents/Codex/2026-11-21/b/outputs/Week06_Pong/Assets/Scripts/Network/GameState.cs:100)
+GameState:OnFeedChanged (FishNet.Object.Synchronizing.SyncListOperation,int,string,string,bool) (at C:/Users/canxm/Documents/Codex/2026-11-21/b/outputs/Week06_Pong/Assets/Scripts/Network/GameState.cs:84)
 FishNet.Object.Synchronizing.SyncList`1<string>:InvokeOnChange (FishNet.Object.Synchronizing.SyncListOperation,int,string,string,bool) (at C:/Users/canxm/Documents/Codex/2026-11-21/b/outputs/Week06_Pong/Assets/FishNet/Runtime/Object/Synchronizing/SyncList.cs:441)
 FishNet.Object.Synchronizing.SyncList`1<string>:Read (FishNet.Serializing.PooledReader,bool) (at C:/Users/canxm/Documents/Codex/2026-11-21/b/outputs/Week06_Pong/Assets/FishNet/Runtime/Object/Synchronizing/SyncList.cs:418)
 FishNet.Object.NetworkBehaviour:ReadSyncType (int,FishNet.Serializing.PooledReader,int,bool) (at C:/Users/canxm/Documents/Codex/2026-11-21/b/outputs/Week06_Pong/Assets/FishNet/Runtime/Object/NetworkBehaviour/NetworkBehaviour.SyncTypes.cs:174)
@@ -405,7 +405,7 @@ UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOpt
 UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[]) (at C:/build/output/unity/unity/Runtime/Export/Logging/DebugLogHandler.cs:9)
 UnityEngine.Logger:Log (UnityEngine.LogType,object) (at C:/build/output/unity/unity/Runtime/Export/Logging/Logger.cs:60)
 UnityEngine.Debug:Log (object) (at C:/build/output/unity/unity/Runtime/Export/Debug/Debug.bindings.cs:123)
-GameState/<>c:<Awake>b__9_0 (int,int,bool) (at C:/Users/canxm/Documents/Codex/2026-11-21/b/outputs/Week06_Pong/Assets/Scripts/Network/GameState.cs:29)
+GameState/<>c:<Awake>b__9_0 (int,int,bool) (at C:/Users/canxm/Documents/Codex/2026-11-21/b/outputs/Week06_Pong/Assets/Scripts/Network/GameState.cs:21)
 FishNet.Object.Synchronizing.SyncVar`1<int>:InvokeOnChange (int,int,bool) (at C:/Users/canxm/Documents/Codex/2026-11-21/b/outputs/Week06_Pong/Assets/FishNet/Runtime/Object/Synchronizing/SyncVar.cs:362)
 FishNet.Object.Synchronizing.SyncVar`1<int>:SetValue (int,bool,bool) (at C:/Users/canxm/Documents/Codex/2026-11-21/b/outputs/Week06_Pong/Assets/FishNet/Runtime/Object/Synchronizing/SyncVar.cs:288)
 FishNet.Object.Synchronizing.SyncVar`1<int>:Read (FishNet.Serializing.PooledReader,bool) (at C:/Users/canxm/Documents/Codex/2026-11-21/b/outputs/Week06_Pong/Assets/FishNet/Runtime/Object/Synchronizing/SyncVar.cs:443)
@@ -429,7 +429,7 @@ FishNet.Transporting.NetworkReaderLoop:Update () (at C:/Users/canxm/Documents/Co
 
 (Filename: C:/build/output/unity/unity/Runtime/Export/Debug/Debug.bindings.cs Line: 123)
 
-[AutoMatch/guest] 10.73s score 1:0
+[AutoMatch/guest] 7.93s score 1:0
 UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
 UnityEngine.StackTraceUtility:ExtractStackTrace () (at C:/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:35)
 UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
@@ -447,7 +447,7 @@ UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOpt
 UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[]) (at C:/build/output/unity/unity/Runtime/Export/Logging/DebugLogHandler.cs:9)
 UnityEngine.Logger:Log (UnityEngine.LogType,object) (at C:/build/output/unity/unity/Runtime/Export/Logging/Logger.cs:60)
 UnityEngine.Debug:Log (object) (at C:/build/output/unity/unity/Runtime/Export/Debug/Debug.bindings.cs:123)
-GameState:OnFeedChanged (FishNet.Object.Synchronizing.SyncListOperation,int,string,string,bool) (at C:/Users/canxm/Documents/Codex/2026-11-21/b/outputs/Week06_Pong/Assets/Scripts/Network/GameState.cs:100)
+GameState:OnFeedChanged (FishNet.Object.Synchronizing.SyncListOperation,int,string,string,bool) (at C:/Users/canxm/Documents/Codex/2026-11-21/b/outputs/Week06_Pong/Assets/Scripts/Network/GameState.cs:84)
 FishNet.Object.Synchronizing.SyncList`1<string>:InvokeOnChange (FishNet.Object.Synchronizing.SyncListOperation,int,string,string,bool) (at C:/Users/canxm/Documents/Codex/2026-11-21/b/outputs/Week06_Pong/Assets/FishNet/Runtime/Object/Synchronizing/SyncList.cs:441)
 FishNet.Object.Synchronizing.SyncList`1<string>:Read (FishNet.Serializing.PooledReader,bool) (at C:/Users/canxm/Documents/Codex/2026-11-21/b/outputs/Week06_Pong/Assets/FishNet/Runtime/Object/Synchronizing/SyncList.cs:418)
 FishNet.Object.NetworkBehaviour:ReadSyncType (int,FishNet.Serializing.PooledReader,int,bool) (at C:/Users/canxm/Documents/Codex/2026-11-21/b/outputs/Week06_Pong/Assets/FishNet/Runtime/Object/NetworkBehaviour/NetworkBehaviour.SyncTypes.cs:174)
@@ -477,7 +477,7 @@ UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOpt
 UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[]) (at C:/build/output/unity/unity/Runtime/Export/Logging/DebugLogHandler.cs:9)
 UnityEngine.Logger:Log (UnityEngine.LogType,object) (at C:/build/output/unity/unity/Runtime/Export/Logging/Logger.cs:60)
 UnityEngine.Debug:Log (object) (at C:/build/output/unity/unity/Runtime/Export/Debug/Debug.bindings.cs:123)
-PaddleController:RpcLogic___ObserversScored___1692629761 (int,int) (at C:/Users/canxm/Documents/Codex/2026-11-21/b/outputs/Week06_Pong/Assets/Scripts/Network/PaddleController.cs:223)
+PaddleController:RpcLogic___ObserversScored___1692629761 (int,int) (at C:/Users/canxm/Documents/Codex/2026-11-21/b/outputs/Week06_Pong/Assets/Scripts/Network/PaddleController.cs:197)
 PaddleController:RpcReader___Observers_ObserversScored___1692629761 (FishNet.Serializing.PooledReader,FishNet.Transporting.Channel)
 FishNet.Object.NetworkBehaviour:ReadObserversRpc (int,bool,uint,FishNet.Serializing.PooledReader,FishNet.Transporting.Channel) (at C:/Users/canxm/Documents/Codex/2026-11-21/b/outputs/Week06_Pong/Assets/FishNet/Runtime/Object/NetworkBehaviour/NetworkBehaviour.RPCs.cs:300)
 FishNet.Managing.Client.ClientObjects:ParseRpcLink (FishNet.Serializing.PooledReader,uint16,FishNet.Transporting.Channel) (at C:/Users/canxm/Documents/Codex/2026-11-21/b/outputs/Week06_Pong/Assets/FishNet/Runtime/Managing/Client/Object/ClientObjects.RpcLinks.cs:58)
@@ -506,7 +506,7 @@ UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOpt
 UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[]) (at C:/build/output/unity/unity/Runtime/Export/Logging/DebugLogHandler.cs:9)
 UnityEngine.Logger:Log (UnityEngine.LogType,object) (at C:/build/output/unity/unity/Runtime/Export/Logging/Logger.cs:60)
 UnityEngine.Debug:Log (object) (at C:/build/output/unity/unity/Runtime/Export/Debug/Debug.bindings.cs:123)
-GameState:OnFeedChanged (FishNet.Object.Synchronizing.SyncListOperation,int,string,string,bool) (at C:/Users/canxm/Documents/Codex/2026-11-21/b/outputs/Week06_Pong/Assets/Scripts/Network/GameState.cs:100)
+GameState:OnFeedChanged (FishNet.Object.Synchronizing.SyncListOperation,int,string,string,bool) (at C:/Users/canxm/Documents/Codex/2026-11-21/b/outputs/Week06_Pong/Assets/Scripts/Network/GameState.cs:84)
 FishNet.Object.Synchronizing.SyncList`1<string>:InvokeOnChange (FishNet.Object.Synchronizing.SyncListOperation,int,string,string,bool) (at C:/Users/canxm/Documents/Codex/2026-11-21/b/outputs/Week06_Pong/Assets/FishNet/Runtime/Object/Synchronizing/SyncList.cs:441)
 FishNet.Object.Synchronizing.SyncList`1<string>:Read (FishNet.Serializing.PooledReader,bool) (at C:/Users/canxm/Documents/Codex/2026-11-21/b/outputs/Week06_Pong/Assets/FishNet/Runtime/Object/Synchronizing/SyncList.cs:418)
 FishNet.Object.NetworkBehaviour:ReadSyncType (int,FishNet.Serializing.PooledReader,int,bool) (at C:/Users/canxm/Documents/Codex/2026-11-21/b/outputs/Week06_Pong/Assets/FishNet/Runtime/Object/NetworkBehaviour/NetworkBehaviour.SyncTypes.cs:174)
@@ -536,7 +536,7 @@ UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOpt
 UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[]) (at C:/build/output/unity/unity/Runtime/Export/Logging/DebugLogHandler.cs:9)
 UnityEngine.Logger:Log (UnityEngine.LogType,object) (at C:/build/output/unity/unity/Runtime/Export/Logging/Logger.cs:60)
 UnityEngine.Debug:Log (object) (at C:/build/output/unity/unity/Runtime/Export/Debug/Debug.bindings.cs:123)
-GameState/<>c:<Awake>b__9_1 (int,int,bool) (at C:/Users/canxm/Documents/Codex/2026-11-21/b/outputs/Week06_Pong/Assets/Scripts/Network/GameState.cs:30)
+GameState/<>c:<Awake>b__9_1 (int,int,bool) (at C:/Users/canxm/Documents/Codex/2026-11-21/b/outputs/Week06_Pong/Assets/Scripts/Network/GameState.cs:22)
 FishNet.Object.Synchronizing.SyncVar`1<int>:InvokeOnChange (int,int,bool) (at C:/Users/canxm/Documents/Codex/2026-11-21/b/outputs/Week06_Pong/Assets/FishNet/Runtime/Object/Synchronizing/SyncVar.cs:362)
 FishNet.Object.Synchronizing.SyncVar`1<int>:SetValue (int,bool,bool) (at C:/Users/canxm/Documents/Codex/2026-11-21/b/outputs/Week06_Pong/Assets/FishNet/Runtime/Object/Synchronizing/SyncVar.cs:288)
 FishNet.Object.Synchronizing.SyncVar`1<int>:Read (FishNet.Serializing.PooledReader,bool) (at C:/Users/canxm/Documents/Codex/2026-11-21/b/outputs/Week06_Pong/Assets/FishNet/Runtime/Object/Synchronizing/SyncVar.cs:443)
@@ -560,7 +560,7 @@ FishNet.Transporting.NetworkReaderLoop:Update () (at C:/Users/canxm/Documents/Co
 
 (Filename: C:/build/output/unity/unity/Runtime/Export/Debug/Debug.bindings.cs Line: 123)
 
-[AutoMatch/guest] 24.29s score 1:1
+[AutoMatch/guest] 21.97s score 1:1
 UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
 UnityEngine.StackTraceUtility:ExtractStackTrace () (at C:/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:35)
 UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
@@ -578,7 +578,7 @@ UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOpt
 UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[]) (at C:/build/output/unity/unity/Runtime/Export/Logging/DebugLogHandler.cs:9)
 UnityEngine.Logger:Log (UnityEngine.LogType,object) (at C:/build/output/unity/unity/Runtime/Export/Logging/Logger.cs:60)
 UnityEngine.Debug:Log (object) (at C:/build/output/unity/unity/Runtime/Export/Debug/Debug.bindings.cs:123)
-GameState:OnFeedChanged (FishNet.Object.Synchronizing.SyncListOperation,int,string,string,bool) (at C:/Users/canxm/Documents/Codex/2026-11-21/b/outputs/Week06_Pong/Assets/Scripts/Network/GameState.cs:100)
+GameState:OnFeedChanged (FishNet.Object.Synchronizing.SyncListOperation,int,string,string,bool) (at C:/Users/canxm/Documents/Codex/2026-11-21/b/outputs/Week06_Pong/Assets/Scripts/Network/GameState.cs:84)
 FishNet.Object.Synchronizing.SyncList`1<string>:InvokeOnChange (FishNet.Object.Synchronizing.SyncListOperation,int,string,string,bool) (at C:/Users/canxm/Documents/Codex/2026-11-21/b/outputs/Week06_Pong/Assets/FishNet/Runtime/Object/Synchronizing/SyncList.cs:441)
 FishNet.Object.Synchronizing.SyncList`1<string>:Read (FishNet.Serializing.PooledReader,bool) (at C:/Users/canxm/Documents/Codex/2026-11-21/b/outputs/Week06_Pong/Assets/FishNet/Runtime/Object/Synchronizing/SyncList.cs:418)
 FishNet.Object.NetworkBehaviour:ReadSyncType (int,FishNet.Serializing.PooledReader,int,bool) (at C:/Users/canxm/Documents/Codex/2026-11-21/b/outputs/Week06_Pong/Assets/FishNet/Runtime/Object/NetworkBehaviour/NetworkBehaviour.SyncTypes.cs:174)
@@ -608,7 +608,7 @@ UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOpt
 UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[]) (at C:/build/output/unity/unity/Runtime/Export/Logging/DebugLogHandler.cs:9)
 UnityEngine.Logger:Log (UnityEngine.LogType,object) (at C:/build/output/unity/unity/Runtime/Export/Logging/Logger.cs:60)
 UnityEngine.Debug:Log (object) (at C:/build/output/unity/unity/Runtime/Export/Debug/Debug.bindings.cs:123)
-PaddleController:RpcLogic___ObserversScored___1692629761 (int,int) (at C:/Users/canxm/Documents/Codex/2026-11-21/b/outputs/Week06_Pong/Assets/Scripts/Network/PaddleController.cs:223)
+PaddleController:RpcLogic___ObserversScored___1692629761 (int,int) (at C:/Users/canxm/Documents/Codex/2026-11-21/b/outputs/Week06_Pong/Assets/Scripts/Network/PaddleController.cs:197)
 PaddleController:RpcReader___Observers_ObserversScored___1692629761 (FishNet.Serializing.PooledReader,FishNet.Transporting.Channel)
 FishNet.Object.NetworkBehaviour:ReadObserversRpc (int,bool,uint,FishNet.Serializing.PooledReader,FishNet.Transporting.Channel) (at C:/Users/canxm/Documents/Codex/2026-11-21/b/outputs/Week06_Pong/Assets/FishNet/Runtime/Object/NetworkBehaviour/NetworkBehaviour.RPCs.cs:300)
 FishNet.Managing.Client.ClientObjects:ParseRpcLink (FishNet.Serializing.PooledReader,uint16,FishNet.Transporting.Channel) (at C:/Users/canxm/Documents/Codex/2026-11-21/b/outputs/Week06_Pong/Assets/FishNet/Runtime/Managing/Client/Object/ClientObjects.RpcLinks.cs:58)
@@ -637,7 +637,7 @@ UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOpt
 UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[]) (at C:/build/output/unity/unity/Runtime/Export/Logging/DebugLogHandler.cs:9)
 UnityEngine.Logger:Log (UnityEngine.LogType,object) (at C:/build/output/unity/unity/Runtime/Export/Logging/Logger.cs:60)
 UnityEngine.Debug:Log (object) (at C:/build/output/unity/unity/Runtime/Export/Debug/Debug.bindings.cs:123)
-PaddleController:RpcLogic___TargetYouServe___328543758 (FishNet.Connection.NetworkConnection) (at C:/Users/canxm/Documents/Codex/2026-11-21/b/outputs/Week06_Pong/Assets/Scripts/Network/PaddleController.cs:230)
+PaddleController:RpcLogic___TargetYouServe___328543758 (FishNet.Connection.NetworkConnection) (at C:/Users/canxm/Documents/Codex/2026-11-21/b/outputs/Week06_Pong/Assets/Scripts/Network/PaddleController.cs:204)
 PaddleController:RpcReader___Target_TargetYouServe___328543758 (FishNet.Serializing.PooledReader,FishNet.Transporting.Channel)
 FishNet.Object.NetworkBehaviour:ReadTargetRpc (int,bool,uint,FishNet.Serializing.PooledReader,FishNet.Transporting.Channel) (at C:/Users/canxm/Documents/Codex/2026-11-21/b/outputs/Week06_Pong/Assets/FishNet/Runtime/Object/NetworkBehaviour/NetworkBehaviour.RPCs.cs:319)
 FishNet.Managing.Client.ClientObjects:ParseRpcLink (FishNet.Serializing.PooledReader,uint16,FishNet.Transporting.Channel) (at C:/Users/canxm/Documents/Codex/2026-11-21/b/outputs/Week06_Pong/Assets/FishNet/Runtime/Managing/Client/Object/ClientObjects.RpcLinks.cs:53)
@@ -666,7 +666,7 @@ UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOpt
 UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[]) (at C:/build/output/unity/unity/Runtime/Export/Logging/DebugLogHandler.cs:9)
 UnityEngine.Logger:Log (UnityEngine.LogType,object) (at C:/build/output/unity/unity/Runtime/Export/Logging/Logger.cs:60)
 UnityEngine.Debug:Log (object) (at C:/build/output/unity/unity/Runtime/Export/Debug/Debug.bindings.cs:123)
-GameState:OnFeedChanged (FishNet.Object.Synchronizing.SyncListOperation,int,string,string,bool) (at C:/Users/canxm/Documents/Codex/2026-11-21/b/outputs/Week06_Pong/Assets/Scripts/Network/GameState.cs:100)
+GameState:OnFeedChanged (FishNet.Object.Synchronizing.SyncListOperation,int,string,string,bool) (at C:/Users/canxm/Documents/Codex/2026-11-21/b/outputs/Week06_Pong/Assets/Scripts/Network/GameState.cs:84)
 FishNet.Object.Synchronizing.SyncList`1<string>:InvokeOnChange (FishNet.Object.Synchronizing.SyncListOperation,int,string,string,bool) (at C:/Users/canxm/Documents/Codex/2026-11-21/b/outputs/Week06_Pong/Assets/FishNet/Runtime/Object/Synchronizing/SyncList.cs:441)
 FishNet.Object.Synchronizing.SyncList`1<string>:Read (FishNet.Serializing.PooledReader,bool) (at C:/Users/canxm/Documents/Codex/2026-11-21/b/outputs/Week06_Pong/Assets/FishNet/Runtime/Object/Synchronizing/SyncList.cs:418)
 FishNet.Object.NetworkBehaviour:ReadSyncType (int,FishNet.Serializing.PooledReader,int,bool) (at C:/Users/canxm/Documents/Codex/2026-11-21/b/outputs/Week06_Pong/Assets/FishNet/Runtime/Object/NetworkBehaviour/NetworkBehaviour.SyncTypes.cs:174)
@@ -696,7 +696,7 @@ UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOpt
 UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[]) (at C:/build/output/unity/unity/Runtime/Export/Logging/DebugLogHandler.cs:9)
 UnityEngine.Logger:Log (UnityEngine.LogType,object) (at C:/build/output/unity/unity/Runtime/Export/Logging/Logger.cs:60)
 UnityEngine.Debug:Log (object) (at C:/build/output/unity/unity/Runtime/Export/Debug/Debug.bindings.cs:123)
-GameState/<>c:<Awake>b__9_0 (int,int,bool) (at C:/Users/canxm/Documents/Codex/2026-11-21/b/outputs/Week06_Pong/Assets/Scripts/Network/GameState.cs:29)
+GameState/<>c:<Awake>b__9_0 (int,int,bool) (at C:/Users/canxm/Documents/Codex/2026-11-21/b/outputs/Week06_Pong/Assets/Scripts/Network/GameState.cs:21)
 FishNet.Object.Synchronizing.SyncVar`1<int>:InvokeOnChange (int,int,bool) (at C:/Users/canxm/Documents/Codex/2026-11-21/b/outputs/Week06_Pong/Assets/FishNet/Runtime/Object/Synchronizing/SyncVar.cs:362)
 FishNet.Object.Synchronizing.SyncVar`1<int>:SetValue (int,bool,bool) (at C:/Users/canxm/Documents/Codex/2026-11-21/b/outputs/Week06_Pong/Assets/FishNet/Runtime/Object/Synchronizing/SyncVar.cs:288)
 FishNet.Object.Synchronizing.SyncVar`1<int>:Read (FishNet.Serializing.PooledReader,bool) (at C:/Users/canxm/Documents/Codex/2026-11-21/b/outputs/Week06_Pong/Assets/FishNet/Runtime/Object/Synchronizing/SyncVar.cs:443)
@@ -720,7 +720,7 @@ FishNet.Transporting.NetworkReaderLoop:Update () (at C:/Users/canxm/Documents/Co
 
 (Filename: C:/build/output/unity/unity/Runtime/Export/Debug/Debug.bindings.cs Line: 123)
 
-[AutoMatch/guest] 33.76s score 2:1
+[AutoMatch/guest] 31.83s score 2:1
 UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
 UnityEngine.StackTraceUtility:ExtractStackTrace () (at C:/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:35)
 UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
@@ -738,7 +738,7 @@ UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOpt
 UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[]) (at C:/build/output/unity/unity/Runtime/Export/Logging/DebugLogHandler.cs:9)
 UnityEngine.Logger:Log (UnityEngine.LogType,object) (at C:/build/output/unity/unity/Runtime/Export/Logging/Logger.cs:60)
 UnityEngine.Debug:Log (object) (at C:/build/output/unity/unity/Runtime/Export/Debug/Debug.bindings.cs:123)
-GameState:OnFeedChanged (FishNet.Object.Synchronizing.SyncListOperation,int,string,string,bool) (at C:/Users/canxm/Documents/Codex/2026-11-21/b/outputs/Week06_Pong/Assets/Scripts/Network/GameState.cs:100)
+GameState:OnFeedChanged (FishNet.Object.Synchronizing.SyncListOperation,int,string,string,bool) (at C:/Users/canxm/Documents/Codex/2026-11-21/b/outputs/Week06_Pong/Assets/Scripts/Network/GameState.cs:84)
 FishNet.Object.Synchronizing.SyncList`1<string>:InvokeOnChange (FishNet.Object.Synchronizing.SyncListOperation,int,string,string,bool) (at C:/Users/canxm/Documents/Codex/2026-11-21/b/outputs/Week06_Pong/Assets/FishNet/Runtime/Object/Synchronizing/SyncList.cs:441)
 FishNet.Object.Synchronizing.SyncList`1<string>:Read (FishNet.Serializing.PooledReader,bool) (at C:/Users/canxm/Documents/Codex/2026-11-21/b/outputs/Week06_Pong/Assets/FishNet/Runtime/Object/Synchronizing/SyncList.cs:418)
 FishNet.Object.NetworkBehaviour:ReadSyncType (int,FishNet.Serializing.PooledReader,int,bool) (at C:/Users/canxm/Documents/Codex/2026-11-21/b/outputs/Week06_Pong/Assets/FishNet/Runtime/Object/NetworkBehaviour/NetworkBehaviour.SyncTypes.cs:174)
@@ -768,7 +768,7 @@ UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOpt
 UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[]) (at C:/build/output/unity/unity/Runtime/Export/Logging/DebugLogHandler.cs:9)
 UnityEngine.Logger:Log (UnityEngine.LogType,object) (at C:/build/output/unity/unity/Runtime/Export/Logging/Logger.cs:60)
 UnityEngine.Debug:Log (object) (at C:/build/output/unity/unity/Runtime/Export/Debug/Debug.bindings.cs:123)
-PaddleController:RpcLogic___ObserversScored___1692629761 (int,int) (at C:/Users/canxm/Documents/Codex/2026-11-21/b/outputs/Week06_Pong/Assets/Scripts/Network/PaddleController.cs:223)
+PaddleController:RpcLogic___ObserversScored___1692629761 (int,int) (at C:/Users/canxm/Documents/Codex/2026-11-21/b/outputs/Week06_Pong/Assets/Scripts/Network/PaddleController.cs:197)
 PaddleController:RpcReader___Observers_ObserversScored___1692629761 (FishNet.Serializing.PooledReader,FishNet.Transporting.Channel)
 FishNet.Object.NetworkBehaviour:ReadObserversRpc (int,bool,uint,FishNet.Serializing.PooledReader,FishNet.Transporting.Channel) (at C:/Users/canxm/Documents/Codex/2026-11-21/b/outputs/Week06_Pong/Assets/FishNet/Runtime/Object/NetworkBehaviour/NetworkBehaviour.RPCs.cs:300)
 FishNet.Managing.Client.ClientObjects:ParseRpcLink (FishNet.Serializing.PooledReader,uint16,FishNet.Transporting.Channel) (at C:/Users/canxm/Documents/Codex/2026-11-21/b/outputs/Week06_Pong/Assets/FishNet/Runtime/Managing/Client/Object/ClientObjects.RpcLinks.cs:58)
@@ -797,7 +797,7 @@ UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOpt
 UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[]) (at C:/build/output/unity/unity/Runtime/Export/Logging/DebugLogHandler.cs:9)
 UnityEngine.Logger:Log (UnityEngine.LogType,object) (at C:/build/output/unity/unity/Runtime/Export/Logging/Logger.cs:60)
 UnityEngine.Debug:Log (object) (at C:/build/output/unity/unity/Runtime/Export/Debug/Debug.bindings.cs:123)
-GameState:OnFeedChanged (FishNet.Object.Synchronizing.SyncListOperation,int,string,string,bool) (at C:/Users/canxm/Documents/Codex/2026-11-21/b/outputs/Week06_Pong/Assets/Scripts/Network/GameState.cs:100)
+GameState:OnFeedChanged (FishNet.Object.Synchronizing.SyncListOperation,int,string,string,bool) (at C:/Users/canxm/Documents/Codex/2026-11-21/b/outputs/Week06_Pong/Assets/Scripts/Network/GameState.cs:84)
 FishNet.Object.Synchronizing.SyncList`1<string>:InvokeOnChange (FishNet.Object.Synchronizing.SyncListOperation,int,string,string,bool) (at C:/Users/canxm/Documents/Codex/2026-11-21/b/outputs/Week06_Pong/Assets/FishNet/Runtime/Object/Synchronizing/SyncList.cs:441)
 FishNet.Object.Synchronizing.SyncList`1<string>:Read (FishNet.Serializing.PooledReader,bool) (at C:/Users/canxm/Documents/Codex/2026-11-21/b/outputs/Week06_Pong/Assets/FishNet/Runtime/Object/Synchronizing/SyncList.cs:418)
 FishNet.Object.NetworkBehaviour:ReadSyncType (int,FishNet.Serializing.PooledReader,int,bool) (at C:/Users/canxm/Documents/Codex/2026-11-21/b/outputs/Week06_Pong/Assets/FishNet/Runtime/Object/NetworkBehaviour/NetworkBehaviour.SyncTypes.cs:174)
@@ -827,7 +827,7 @@ UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOpt
 UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[]) (at C:/build/output/unity/unity/Runtime/Export/Logging/DebugLogHandler.cs:9)
 UnityEngine.Logger:Log (UnityEngine.LogType,object) (at C:/build/output/unity/unity/Runtime/Export/Logging/Logger.cs:60)
 UnityEngine.Debug:Log (object) (at C:/build/output/unity/unity/Runtime/Export/Debug/Debug.bindings.cs:123)
-GameState/<>c:<Awake>b__9_1 (int,int,bool) (at C:/Users/canxm/Documents/Codex/2026-11-21/b/outputs/Week06_Pong/Assets/Scripts/Network/GameState.cs:30)
+GameState/<>c:<Awake>b__9_1 (int,int,bool) (at C:/Users/canxm/Documents/Codex/2026-11-21/b/outputs/Week06_Pong/Assets/Scripts/Network/GameState.cs:22)
 FishNet.Object.Synchronizing.SyncVar`1<int>:InvokeOnChange (int,int,bool) (at C:/Users/canxm/Documents/Codex/2026-11-21/b/outputs/Week06_Pong/Assets/FishNet/Runtime/Object/Synchronizing/SyncVar.cs:362)
 FishNet.Object.Synchronizing.SyncVar`1<int>:SetValue (int,bool,bool) (at C:/Users/canxm/Documents/Codex/2026-11-21/b/outputs/Week06_Pong/Assets/FishNet/Runtime/Object/Synchronizing/SyncVar.cs:288)
 FishNet.Object.Synchronizing.SyncVar`1<int>:Read (FishNet.Serializing.PooledReader,bool) (at C:/Users/canxm/Documents/Codex/2026-11-21/b/outputs/Week06_Pong/Assets/FishNet/Runtime/Object/Synchronizing/SyncVar.cs:443)
@@ -851,7 +851,7 @@ FishNet.Transporting.NetworkReaderLoop:Update () (at C:/Users/canxm/Documents/Co
 
 (Filename: C:/build/output/unity/unity/Runtime/Export/Debug/Debug.bindings.cs Line: 123)
 
-[AutoMatch/guest] 42.63s score 2:2
+[AutoMatch/guest] 40.93s score 2:2
 UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
 UnityEngine.StackTraceUtility:ExtractStackTrace () (at C:/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:35)
 UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
@@ -869,7 +869,7 @@ UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOpt
 UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[]) (at C:/build/output/unity/unity/Runtime/Export/Logging/DebugLogHandler.cs:9)
 UnityEngine.Logger:Log (UnityEngine.LogType,object) (at C:/build/output/unity/unity/Runtime/Export/Logging/Logger.cs:60)
 UnityEngine.Debug:Log (object) (at C:/build/output/unity/unity/Runtime/Export/Debug/Debug.bindings.cs:123)
-GameState:OnFeedChanged (FishNet.Object.Synchronizing.SyncListOperation,int,string,string,bool) (at C:/Users/canxm/Documents/Codex/2026-11-21/b/outputs/Week06_Pong/Assets/Scripts/Network/GameState.cs:100)
+GameState:OnFeedChanged (FishNet.Object.Synchronizing.SyncListOperation,int,string,string,bool) (at C:/Users/canxm/Documents/Codex/2026-11-21/b/outputs/Week06_Pong/Assets/Scripts/Network/GameState.cs:84)
 FishNet.Object.Synchronizing.SyncList`1<string>:InvokeOnChange (FishNet.Object.Synchronizing.SyncListOperation,int,string,string,bool) (at C:/Users/canxm/Documents/Codex/2026-11-21/b/outputs/Week06_Pong/Assets/FishNet/Runtime/Object/Synchronizing/SyncList.cs:441)
 FishNet.Object.Synchronizing.SyncList`1<string>:Read (FishNet.Serializing.PooledReader,bool) (at C:/Users/canxm/Documents/Codex/2026-11-21/b/outputs/Week06_Pong/Assets/FishNet/Runtime/Object/Synchronizing/SyncList.cs:418)
 FishNet.Object.NetworkBehaviour:ReadSyncType (int,FishNet.Serializing.PooledReader,int,bool) (at C:/Users/canxm/Documents/Codex/2026-11-21/b/outputs/Week06_Pong/Assets/FishNet/Runtime/Object/NetworkBehaviour/NetworkBehaviour.SyncTypes.cs:174)
@@ -899,7 +899,7 @@ UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOpt
 UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[]) (at C:/build/output/unity/unity/Runtime/Export/Logging/DebugLogHandler.cs:9)
 UnityEngine.Logger:Log (UnityEngine.LogType,object) (at C:/build/output/unity/unity/Runtime/Export/Logging/Logger.cs:60)
 UnityEngine.Debug:Log (object) (at C:/build/output/unity/unity/Runtime/Export/Debug/Debug.bindings.cs:123)
-PaddleController:RpcLogic___ObserversScored___1692629761 (int,int) (at C:/Users/canxm/Documents/Codex/2026-11-21/b/outputs/Week06_Pong/Assets/Scripts/Network/PaddleController.cs:223)
+PaddleController:RpcLogic___ObserversScored___1692629761 (int,int) (at C:/Users/canxm/Documents/Codex/2026-11-21/b/outputs/Week06_Pong/Assets/Scripts/Network/PaddleController.cs:197)
 PaddleController:RpcReader___Observers_ObserversScored___1692629761 (FishNet.Serializing.PooledReader,FishNet.Transporting.Channel)
 FishNet.Object.NetworkBehaviour:ReadObserversRpc (int,bool,uint,FishNet.Serializing.PooledReader,FishNet.Transporting.Channel) (at C:/Users/canxm/Documents/Codex/2026-11-21/b/outputs/Week06_Pong/Assets/FishNet/Runtime/Object/NetworkBehaviour/NetworkBehaviour.RPCs.cs:300)
 FishNet.Managing.Client.ClientObjects:ParseRpcLink (FishNet.Serializing.PooledReader,uint16,FishNet.Transporting.Channel) (at C:/Users/canxm/Documents/Codex/2026-11-21/b/outputs/Week06_Pong/Assets/FishNet/Runtime/Managing/Client/Object/ClientObjects.RpcLinks.cs:58)
@@ -928,7 +928,7 @@ UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOpt
 UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[]) (at C:/build/output/unity/unity/Runtime/Export/Logging/DebugLogHandler.cs:9)
 UnityEngine.Logger:Log (UnityEngine.LogType,object) (at C:/build/output/unity/unity/Runtime/Export/Logging/Logger.cs:60)
 UnityEngine.Debug:Log (object) (at C:/build/output/unity/unity/Runtime/Export/Debug/Debug.bindings.cs:123)
-PaddleController:RpcLogic___TargetYouServe___328543758 (FishNet.Connection.NetworkConnection) (at C:/Users/canxm/Documents/Codex/2026-11-21/b/outputs/Week06_Pong/Assets/Scripts/Network/PaddleController.cs:230)
+PaddleController:RpcLogic___TargetYouServe___328543758 (FishNet.Connection.NetworkConnection) (at C:/Users/canxm/Documents/Codex/2026-11-21/b/outputs/Week06_Pong/Assets/Scripts/Network/PaddleController.cs:204)
 PaddleController:RpcReader___Target_TargetYouServe___328543758 (FishNet.Serializing.PooledReader,FishNet.Transporting.Channel)
 FishNet.Object.NetworkBehaviour:ReadTargetRpc (int,bool,uint,FishNet.Serializing.PooledReader,FishNet.Transporting.Channel) (at C:/Users/canxm/Documents/Codex/2026-11-21/b/outputs/Week06_Pong/Assets/FishNet/Runtime/Object/NetworkBehaviour/NetworkBehaviour.RPCs.cs:319)
 FishNet.Managing.Client.ClientObjects:ParseRpcLink (FishNet.Serializing.PooledReader,uint16,FishNet.Transporting.Channel) (at C:/Users/canxm/Documents/Codex/2026-11-21/b/outputs/Week06_Pong/Assets/FishNet/Runtime/Managing/Client/Object/ClientObjects.RpcLinks.cs:53)
@@ -957,7 +957,7 @@ UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOpt
 UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[]) (at C:/build/output/unity/unity/Runtime/Export/Logging/DebugLogHandler.cs:9)
 UnityEngine.Logger:Log (UnityEngine.LogType,object) (at C:/build/output/unity/unity/Runtime/Export/Logging/Logger.cs:60)
 UnityEngine.Debug:Log (object) (at C:/build/output/unity/unity/Runtime/Export/Debug/Debug.bindings.cs:123)
-GameState:OnFeedChanged (FishNet.Object.Synchronizing.SyncListOperation,int,string,string,bool) (at C:/Users/canxm/Documents/Codex/2026-11-21/b/outputs/Week06_Pong/Assets/Scripts/Network/GameState.cs:100)
+GameState:OnFeedChanged (FishNet.Object.Synchronizing.SyncListOperation,int,string,string,bool) (at C:/Users/canxm/Documents/Codex/2026-11-21/b/outputs/Week06_Pong/Assets/Scripts/Network/GameState.cs:84)
 FishNet.Object.Synchronizing.SyncList`1<string>:InvokeOnChange (FishNet.Object.Synchronizing.SyncListOperation,int,string,string,bool) (at C:/Users/canxm/Documents/Codex/2026-11-21/b/outputs/Week06_Pong/Assets/FishNet/Runtime/Object/Synchronizing/SyncList.cs:441)
 FishNet.Object.Synchronizing.SyncList`1<string>:Read (FishNet.Serializing.PooledReader,bool) (at C:/Users/canxm/Documents/Codex/2026-11-21/b/outputs/Week06_Pong/Assets/FishNet/Runtime/Object/Synchronizing/SyncList.cs:418)
 FishNet.Object.NetworkBehaviour:ReadSyncType (int,FishNet.Serializing.PooledReader,int,bool) (at C:/Users/canxm/Documents/Codex/2026-11-21/b/outputs/Week06_Pong/Assets/FishNet/Runtime/Object/NetworkBehaviour/NetworkBehaviour.SyncTypes.cs:174)
@@ -987,7 +987,7 @@ UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOpt
 UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[]) (at C:/build/output/unity/unity/Runtime/Export/Logging/DebugLogHandler.cs:9)
 UnityEngine.Logger:Log (UnityEngine.LogType,object) (at C:/build/output/unity/unity/Runtime/Export/Logging/Logger.cs:60)
 UnityEngine.Debug:Log (object) (at C:/build/output/unity/unity/Runtime/Export/Debug/Debug.bindings.cs:123)
-GameState/<>c:<Awake>b__9_0 (int,int,bool) (at C:/Users/canxm/Documents/Codex/2026-11-21/b/outputs/Week06_Pong/Assets/Scripts/Network/GameState.cs:29)
+GameState/<>c:<Awake>b__9_0 (int,int,bool) (at C:/Users/canxm/Documents/Codex/2026-11-21/b/outputs/Week06_Pong/Assets/Scripts/Network/GameState.cs:21)
 FishNet.Object.Synchronizing.SyncVar`1<int>:InvokeOnChange (int,int,bool) (at C:/Users/canxm/Documents/Codex/2026-11-21/b/outputs/Week06_Pong/Assets/FishNet/Runtime/Object/Synchronizing/SyncVar.cs:362)
 FishNet.Object.Synchronizing.SyncVar`1<int>:SetValue (int,bool,bool) (at C:/Users/canxm/Documents/Codex/2026-11-21/b/outputs/Week06_Pong/Assets/FishNet/Runtime/Object/Synchronizing/SyncVar.cs:288)
 FishNet.Object.Synchronizing.SyncVar`1<int>:Read (FishNet.Serializing.PooledReader,bool) (at C:/Users/canxm/Documents/Codex/2026-11-21/b/outputs/Week06_Pong/Assets/FishNet/Runtime/Object/Synchronizing/SyncVar.cs:443)
@@ -1011,7 +1011,7 @@ FishNet.Transporting.NetworkReaderLoop:Update () (at C:/Users/canxm/Documents/Co
 
 (Filename: C:/build/output/unity/unity/Runtime/Export/Debug/Debug.bindings.cs Line: 123)
 
-[AutoMatch/guest] 51.63s score 3:2
+[AutoMatch/guest] 51.00s score 3:2
 UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
 UnityEngine.StackTraceUtility:ExtractStackTrace () (at C:/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:35)
 UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
@@ -1029,7 +1029,7 @@ UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOpt
 UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[]) (at C:/build/output/unity/unity/Runtime/Export/Logging/DebugLogHandler.cs:9)
 UnityEngine.Logger:Log (UnityEngine.LogType,object) (at C:/build/output/unity/unity/Runtime/Export/Logging/Logger.cs:60)
 UnityEngine.Debug:Log (object) (at C:/build/output/unity/unity/Runtime/Export/Debug/Debug.bindings.cs:123)
-Week06AutoMatch/<Finish>d__13:MoveNext () (at C:/Users/canxm/Documents/Codex/2026-11-21/b/outputs/Week06_Pong/Assets/Scripts/Network/Week06AutoMatch.cs:105)
+Week06AutoMatch/<Finish>d__13:MoveNext () (at C:/Users/canxm/Documents/Codex/2026-11-21/b/outputs/Week06_Pong/Assets/Scripts/Network/Week06AutoMatch.cs:104)
 UnityEngine.SetupCoroutine:InvokeMoveNext (System.Collections.IEnumerator,intptr) (at C:/build/output/unity/unity/Runtime/Export/Scripting/Coroutines.cs:17)
 UnityEngine.MonoBehaviour:StartCoroutineManaged2 (System.Collections.IEnumerator)
 UnityEngine.MonoBehaviour:StartCoroutine (System.Collections.IEnumerator) (at C:/build/output/unity/unity/Runtime/Export/Scripting/MonoBehaviour.bindings.cs:114)
@@ -1037,28 +1037,14 @@ Week06AutoMatch:Update () (at C:/Users/canxm/Documents/Codex/2026-11-21/b/output
 
 (Filename: C:/build/output/unity/unity/Runtime/Export/Debug/Debug.bindings.cs Line: 123)
 
-[Client] Paddle #4 gone. Paddles known here: 1.
+[Client] Paddle #3 gone. Paddles known here: 1.
 UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
 UnityEngine.StackTraceUtility:ExtractStackTrace () (at C:/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:35)
 UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
 UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[]) (at C:/build/output/unity/unity/Runtime/Export/Logging/DebugLogHandler.cs:9)
 UnityEngine.Logger:Log (UnityEngine.LogType,object) (at C:/build/output/unity/unity/Runtime/Export/Logging/Logger.cs:60)
 UnityEngine.Debug:Log (object) (at C:/build/output/unity/unity/Runtime/Export/Debug/Debug.bindings.cs:123)
-PaddleController:OnStopClient () (at C:/Users/canxm/Documents/Codex/2026-11-21/b/outputs/Week06_Pong/Assets/Scripts/Network/PaddleController.cs:97)
-FishNet.Object.NetworkBehaviour:OnStopClient_Internal () (at C:/Users/canxm/Documents/Codex/2026-11-21/b/outputs/Week06_Pong/Assets/FishNet/Runtime/Object/NetworkBehaviour/NetworkBehaviour.Callbacks.cs:186)
-FishNet.Object.NetworkObject:InvokeStopCallbacks (bool,bool) (at C:/Users/canxm/Documents/Codex/2026-11-21/b/outputs/Week06_Pong/Assets/FishNet/Runtime/Object/NetworkObject/NetworkObject.Callbacks.cs:130)
-FishNet.Object.NetworkObject:OnDestroy () (at C:/Users/canxm/Documents/Codex/2026-11-21/b/outputs/Week06_Pong/Assets/FishNet/Runtime/Object/NetworkObject/NetworkObject.cs:447)
-
-(Filename: C:/build/output/unity/unity/Runtime/Export/Debug/Debug.bindings.cs Line: 123)
-
-[Client] Paddle #3 gone. Paddles known here: 0.
-UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
-UnityEngine.StackTraceUtility:ExtractStackTrace () (at C:/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:35)
-UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
-UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[]) (at C:/build/output/unity/unity/Runtime/Export/Logging/DebugLogHandler.cs:9)
-UnityEngine.Logger:Log (UnityEngine.LogType,object) (at C:/build/output/unity/unity/Runtime/Export/Logging/Logger.cs:60)
-UnityEngine.Debug:Log (object) (at C:/build/output/unity/unity/Runtime/Export/Debug/Debug.bindings.cs:123)
-PaddleController:OnStopClient () (at C:/Users/canxm/Documents/Codex/2026-11-21/b/outputs/Week06_Pong/Assets/Scripts/Network/PaddleController.cs:97)
+PaddleController:OnStopClient () (at C:/Users/canxm/Documents/Codex/2026-11-21/b/outputs/Week06_Pong/Assets/Scripts/Network/PaddleController.cs:81)
 FishNet.Object.NetworkBehaviour:OnStopClient_Internal () (at C:/Users/canxm/Documents/Codex/2026-11-21/b/outputs/Week06_Pong/Assets/FishNet/Runtime/Object/NetworkBehaviour/NetworkBehaviour.Callbacks.cs:186)
 FishNet.Object.NetworkObject:InvokeStopCallbacks (bool,bool) (at C:/Users/canxm/Documents/Codex/2026-11-21/b/outputs/Week06_Pong/Assets/FishNet/Runtime/Object/NetworkObject/NetworkObject.Callbacks.cs:130)
 FishNet.Object.NetworkObject:Deinitialize (bool) (at C:/Users/canxm/Documents/Codex/2026-11-21/b/outputs/Week06_Pong/Assets/FishNet/Runtime/Object/NetworkObject/NetworkObject.cs:1126)
@@ -1071,12 +1057,39 @@ FishNet.Transporting.UTP.UnityTransport:SetClientConnectionState (FishNet.Transp
 FishNet.Transporting.UTP.UnityTransport:DisconnectLocalClient () (at ./Library/PackageCache/com.alven.fishnet.unitytransport@135253c12e58/UnityTransport.cs:994)
 FishNet.Transporting.UTP.UnityTransport:StopClient () (at ./Library/PackageCache/com.alven.fishnet.unitytransport@135253c12e58/UnityTransport.cs:1982)
 FishNet.Transporting.UTP.UnityTransport:StopConnection (bool) (at ./Library/PackageCache/com.alven.fishnet.unitytransport@135253c12e58/UnityTransport.cs:1837)
-FishNet.Transporting.UTP.UnityTransport:Shutdown () (at ./Library/PackageCache/com.alven.fishnet.unitytransport@135253c12e58/UnityTransport.cs:1851)
-FishNet.Transporting.UTP.UnityTransport:OnDestroy () (at ./Library/PackageCache/com.alven.fishnet.unitytransport@135253c12e58/UnityTransport.cs:920)
+FishNet.Managing.Client.ClientManager:StopConnection () (at C:/Users/canxm/Documents/Codex/2026-11-21/b/outputs/Week06_Pong/Assets/FishNet/Runtime/Managing/Client/ClientManager.cs:317)
+Week06AutoMatch/<Finish>d__13:MoveNext () (at C:/Users/canxm/Documents/Codex/2026-11-21/b/outputs/Week06_Pong/Assets/Scripts/Network/Week06AutoMatch.cs:113)
+UnityEngine.SetupCoroutine:InvokeMoveNext (System.Collections.IEnumerator,intptr) (at C:/build/output/unity/unity/Runtime/Export/Scripting/Coroutines.cs:17)
 
 (Filename: C:/build/output/unity/unity/Runtime/Export/Debug/Debug.bindings.cs Line: 123)
 
-[2026.11.21 12:49:08] Local client is stopping for UnityTransport.
+[Client] Paddle #4 gone. Paddles known here: 0.
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at C:/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:35)
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[]) (at C:/build/output/unity/unity/Runtime/Export/Logging/DebugLogHandler.cs:9)
+UnityEngine.Logger:Log (UnityEngine.LogType,object) (at C:/build/output/unity/unity/Runtime/Export/Logging/Logger.cs:60)
+UnityEngine.Debug:Log (object) (at C:/build/output/unity/unity/Runtime/Export/Debug/Debug.bindings.cs:123)
+PaddleController:OnStopClient () (at C:/Users/canxm/Documents/Codex/2026-11-21/b/outputs/Week06_Pong/Assets/Scripts/Network/PaddleController.cs:81)
+FishNet.Object.NetworkBehaviour:OnStopClient_Internal () (at C:/Users/canxm/Documents/Codex/2026-11-21/b/outputs/Week06_Pong/Assets/FishNet/Runtime/Object/NetworkBehaviour/NetworkBehaviour.Callbacks.cs:186)
+FishNet.Object.NetworkObject:InvokeStopCallbacks (bool,bool) (at C:/Users/canxm/Documents/Codex/2026-11-21/b/outputs/Week06_Pong/Assets/FishNet/Runtime/Object/NetworkObject/NetworkObject.Callbacks.cs:130)
+FishNet.Object.NetworkObject:Deinitialize (bool) (at C:/Users/canxm/Documents/Codex/2026-11-21/b/outputs/Week06_Pong/Assets/FishNet/Runtime/Object/NetworkObject/NetworkObject.cs:1126)
+FishNet.Managing.Object.ManagedObjects:DespawnWithoutSynchronization (FishNet.Object.NetworkObject,bool,bool,FishNet.Object.DespawnType,bool) (at C:/Users/canxm/Documents/Codex/2026-11-21/b/outputs/Week06_Pong/Assets/FishNet/Runtime/Managing/Object/ManagedObjects.cs:418)
+FishNet.Managing.Object.ManagedObjects:DespawnWithoutSynchronization (bool,bool) (at C:/Users/canxm/Documents/Codex/2026-11-21/b/outputs/Week06_Pong/Assets/FishNet/Runtime/Managing/Object/ManagedObjects.cs:393)
+FishNet.Managing.Client.ClientObjects:OnClientConnectionState (FishNet.Transporting.ClientConnectionStateArgs) (at C:/Users/canxm/Documents/Codex/2026-11-21/b/outputs/Week06_Pong/Assets/FishNet/Runtime/Managing/Client/Object/ClientObjects.cs:97)
+FishNet.Managing.Client.ClientManager:Transport_OnClientConnectionState (FishNet.Transporting.ClientConnectionStateArgs) (at C:/Users/canxm/Documents/Codex/2026-11-21/b/outputs/Week06_Pong/Assets/FishNet/Runtime/Managing/Client/ClientManager.cs:357)
+FishNet.Transporting.UTP.UnityTransport:HandleClientConnectionState (FishNet.Transporting.ClientConnectionStateArgs) (at ./Library/PackageCache/com.alven.fishnet.unitytransport@135253c12e58/UnityTransport.cs:1708)
+FishNet.Transporting.UTP.UnityTransport:SetClientConnectionState (FishNet.Transporting.LocalConnectionState) (at ./Library/PackageCache/com.alven.fishnet.unitytransport@135253c12e58/UnityTransport.cs:1967)
+FishNet.Transporting.UTP.UnityTransport:DisconnectLocalClient () (at ./Library/PackageCache/com.alven.fishnet.unitytransport@135253c12e58/UnityTransport.cs:994)
+FishNet.Transporting.UTP.UnityTransport:StopClient () (at ./Library/PackageCache/com.alven.fishnet.unitytransport@135253c12e58/UnityTransport.cs:1982)
+FishNet.Transporting.UTP.UnityTransport:StopConnection (bool) (at ./Library/PackageCache/com.alven.fishnet.unitytransport@135253c12e58/UnityTransport.cs:1837)
+FishNet.Managing.Client.ClientManager:StopConnection () (at C:/Users/canxm/Documents/Codex/2026-11-21/b/outputs/Week06_Pong/Assets/FishNet/Runtime/Managing/Client/ClientManager.cs:317)
+Week06AutoMatch/<Finish>d__13:MoveNext () (at C:/Users/canxm/Documents/Codex/2026-11-21/b/outputs/Week06_Pong/Assets/Scripts/Network/Week06AutoMatch.cs:113)
+UnityEngine.SetupCoroutine:InvokeMoveNext (System.Collections.IEnumerator,intptr) (at C:/build/output/unity/unity/Runtime/Export/Scripting/Coroutines.cs:17)
+
+(Filename: C:/build/output/unity/unity/Runtime/Export/Debug/Debug.bindings.cs Line: 123)
+
+[2026.11.21 13:28:40] Local client is stopping for UnityTransport.
 UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
 UnityEngine.StackTraceUtility:ExtractStackTrace () (at C:/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:35)
 UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
@@ -1092,12 +1105,33 @@ FishNet.Transporting.UTP.UnityTransport:SetClientConnectionState (FishNet.Transp
 FishNet.Transporting.UTP.UnityTransport:DisconnectLocalClient () (at ./Library/PackageCache/com.alven.fishnet.unitytransport@135253c12e58/UnityTransport.cs:994)
 FishNet.Transporting.UTP.UnityTransport:StopClient () (at ./Library/PackageCache/com.alven.fishnet.unitytransport@135253c12e58/UnityTransport.cs:1982)
 FishNet.Transporting.UTP.UnityTransport:StopConnection (bool) (at ./Library/PackageCache/com.alven.fishnet.unitytransport@135253c12e58/UnityTransport.cs:1837)
-FishNet.Transporting.UTP.UnityTransport:Shutdown () (at ./Library/PackageCache/com.alven.fishnet.unitytransport@135253c12e58/UnityTransport.cs:1851)
-FishNet.Transporting.UTP.UnityTransport:OnDestroy () (at ./Library/PackageCache/com.alven.fishnet.unitytransport@135253c12e58/UnityTransport.cs:920)
+FishNet.Managing.Client.ClientManager:StopConnection () (at C:/Users/canxm/Documents/Codex/2026-11-21/b/outputs/Week06_Pong/Assets/FishNet/Runtime/Managing/Client/ClientManager.cs:317)
+Week06AutoMatch/<Finish>d__13:MoveNext () (at C:/Users/canxm/Documents/Codex/2026-11-21/b/outputs/Week06_Pong/Assets/Scripts/Network/Week06AutoMatch.cs:113)
+UnityEngine.SetupCoroutine:InvokeMoveNext (System.Collections.IEnumerator,intptr) (at C:/build/output/unity/unity/Runtime/Export/Scripting/Coroutines.cs:17)
 
 (Filename: C:/build/output/unity/unity/Runtime/Export/Debug/Debug.bindings.cs Line: 123)
 
-[2026.11.21 12:49:08] Local client is stopped for UnityTransport.
+[Client] Stopping
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at C:/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:35)
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[]) (at C:/build/output/unity/unity/Runtime/Export/Logging/DebugLogHandler.cs:9)
+UnityEngine.Logger:Log (UnityEngine.LogType,object) (at C:/build/output/unity/unity/Runtime/Export/Logging/Logger.cs:60)
+UnityEngine.Debug:Log (object) (at C:/build/output/unity/unity/Runtime/Export/Debug/Debug.bindings.cs:123)
+ConnectionLogger:OnClientState (FishNet.Transporting.ClientConnectionStateArgs) (at C:/Users/canxm/Documents/Codex/2026-11-21/b/outputs/Week06_Pong/Assets/Scripts/Network/ConnectionLogger.cs:47)
+FishNet.Managing.Client.ClientManager:Transport_OnClientConnectionState (FishNet.Transporting.ClientConnectionStateArgs) (at C:/Users/canxm/Documents/Codex/2026-11-21/b/outputs/Week06_Pong/Assets/FishNet/Runtime/Managing/Client/ClientManager.cs:387)
+FishNet.Transporting.UTP.UnityTransport:HandleClientConnectionState (FishNet.Transporting.ClientConnectionStateArgs) (at ./Library/PackageCache/com.alven.fishnet.unitytransport@135253c12e58/UnityTransport.cs:1708)
+FishNet.Transporting.UTP.UnityTransport:SetClientConnectionState (FishNet.Transporting.LocalConnectionState) (at ./Library/PackageCache/com.alven.fishnet.unitytransport@135253c12e58/UnityTransport.cs:1967)
+FishNet.Transporting.UTP.UnityTransport:DisconnectLocalClient () (at ./Library/PackageCache/com.alven.fishnet.unitytransport@135253c12e58/UnityTransport.cs:994)
+FishNet.Transporting.UTP.UnityTransport:StopClient () (at ./Library/PackageCache/com.alven.fishnet.unitytransport@135253c12e58/UnityTransport.cs:1982)
+FishNet.Transporting.UTP.UnityTransport:StopConnection (bool) (at ./Library/PackageCache/com.alven.fishnet.unitytransport@135253c12e58/UnityTransport.cs:1837)
+FishNet.Managing.Client.ClientManager:StopConnection () (at C:/Users/canxm/Documents/Codex/2026-11-21/b/outputs/Week06_Pong/Assets/FishNet/Runtime/Managing/Client/ClientManager.cs:317)
+Week06AutoMatch/<Finish>d__13:MoveNext () (at C:/Users/canxm/Documents/Codex/2026-11-21/b/outputs/Week06_Pong/Assets/Scripts/Network/Week06AutoMatch.cs:113)
+UnityEngine.SetupCoroutine:InvokeMoveNext (System.Collections.IEnumerator,intptr) (at C:/build/output/unity/unity/Runtime/Export/Scripting/Coroutines.cs:17)
+
+(Filename: C:/build/output/unity/unity/Runtime/Export/Debug/Debug.bindings.cs Line: 123)
+
+[2026.11.21 13:28:40] Local client is stopped for UnityTransport.
 UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
 UnityEngine.StackTraceUtility:ExtractStackTrace () (at C:/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:35)
 UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
@@ -1113,8 +1147,29 @@ FishNet.Transporting.UTP.UnityTransport:SetClientConnectionState (FishNet.Transp
 FishNet.Transporting.UTP.UnityTransport:DisconnectLocalClient () (at ./Library/PackageCache/com.alven.fishnet.unitytransport@135253c12e58/UnityTransport.cs:1011)
 FishNet.Transporting.UTP.UnityTransport:StopClient () (at ./Library/PackageCache/com.alven.fishnet.unitytransport@135253c12e58/UnityTransport.cs:1982)
 FishNet.Transporting.UTP.UnityTransport:StopConnection (bool) (at ./Library/PackageCache/com.alven.fishnet.unitytransport@135253c12e58/UnityTransport.cs:1837)
-FishNet.Transporting.UTP.UnityTransport:Shutdown () (at ./Library/PackageCache/com.alven.fishnet.unitytransport@135253c12e58/UnityTransport.cs:1851)
-FishNet.Transporting.UTP.UnityTransport:OnDestroy () (at ./Library/PackageCache/com.alven.fishnet.unitytransport@135253c12e58/UnityTransport.cs:920)
+FishNet.Managing.Client.ClientManager:StopConnection () (at C:/Users/canxm/Documents/Codex/2026-11-21/b/outputs/Week06_Pong/Assets/FishNet/Runtime/Managing/Client/ClientManager.cs:317)
+Week06AutoMatch/<Finish>d__13:MoveNext () (at C:/Users/canxm/Documents/Codex/2026-11-21/b/outputs/Week06_Pong/Assets/Scripts/Network/Week06AutoMatch.cs:113)
+UnityEngine.SetupCoroutine:InvokeMoveNext (System.Collections.IEnumerator,intptr) (at C:/build/output/unity/unity/Runtime/Export/Scripting/Coroutines.cs:17)
+
+(Filename: C:/build/output/unity/unity/Runtime/Export/Debug/Debug.bindings.cs Line: 123)
+
+[Client] Stopped
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at C:/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:35)
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[]) (at C:/build/output/unity/unity/Runtime/Export/Logging/DebugLogHandler.cs:9)
+UnityEngine.Logger:Log (UnityEngine.LogType,object) (at C:/build/output/unity/unity/Runtime/Export/Logging/Logger.cs:60)
+UnityEngine.Debug:Log (object) (at C:/build/output/unity/unity/Runtime/Export/Debug/Debug.bindings.cs:123)
+ConnectionLogger:OnClientState (FishNet.Transporting.ClientConnectionStateArgs) (at C:/Users/canxm/Documents/Codex/2026-11-21/b/outputs/Week06_Pong/Assets/Scripts/Network/ConnectionLogger.cs:47)
+FishNet.Managing.Client.ClientManager:Transport_OnClientConnectionState (FishNet.Transporting.ClientConnectionStateArgs) (at C:/Users/canxm/Documents/Codex/2026-11-21/b/outputs/Week06_Pong/Assets/FishNet/Runtime/Managing/Client/ClientManager.cs:387)
+FishNet.Transporting.UTP.UnityTransport:HandleClientConnectionState (FishNet.Transporting.ClientConnectionStateArgs) (at ./Library/PackageCache/com.alven.fishnet.unitytransport@135253c12e58/UnityTransport.cs:1708)
+FishNet.Transporting.UTP.UnityTransport:SetClientConnectionState (FishNet.Transporting.LocalConnectionState) (at ./Library/PackageCache/com.alven.fishnet.unitytransport@135253c12e58/UnityTransport.cs:1967)
+FishNet.Transporting.UTP.UnityTransport:DisconnectLocalClient () (at ./Library/PackageCache/com.alven.fishnet.unitytransport@135253c12e58/UnityTransport.cs:1011)
+FishNet.Transporting.UTP.UnityTransport:StopClient () (at ./Library/PackageCache/com.alven.fishnet.unitytransport@135253c12e58/UnityTransport.cs:1982)
+FishNet.Transporting.UTP.UnityTransport:StopConnection (bool) (at ./Library/PackageCache/com.alven.fishnet.unitytransport@135253c12e58/UnityTransport.cs:1837)
+FishNet.Managing.Client.ClientManager:StopConnection () (at C:/Users/canxm/Documents/Codex/2026-11-21/b/outputs/Week06_Pong/Assets/FishNet/Runtime/Managing/Client/ClientManager.cs:317)
+Week06AutoMatch/<Finish>d__13:MoveNext () (at C:/Users/canxm/Documents/Codex/2026-11-21/b/outputs/Week06_Pong/Assets/Scripts/Network/Week06AutoMatch.cs:113)
+UnityEngine.SetupCoroutine:InvokeMoveNext (System.Collections.IEnumerator,intptr) (at C:/build/output/unity/unity/Runtime/Export/Scripting/Coroutines.cs:17)
 
 (Filename: C:/build/output/unity/unity/Runtime/Export/Debug/Debug.bindings.cs Line: 123)
 
@@ -1123,4 +1178,4 @@ FishNet.Transporting.UTP.UnityTransport:OnDestroy () (at ./Library/PackageCache/
 Input System module state changed to: ShutdownInProgress.
 Input System polling thread exited.
 Input System module state changed to: Shutdown.
-PlayerConnection::Cleanup##utp:{"type":"MemoryLeaks","version":2,"phase":"Immediate","time":1795254548414,"processId":14952,"allocatedMemory":606699,"memoryLabels":[{"Default":136},{"NewDelete":760},{"Thread":8384},{"Manager":548406},{"GfxDevice":2112},{"GfxThread":2304},{"Audio":752},{"Serialization":520},{"JobScheduler":32768},{"String":517},{"HashMap":6656},{"PoolAlloc":384},{"CloudService":144},{"VR":1872},{"Video":144},{"NativeArray":648},{"Subsystems":96},{"Accessibility":80},{"CoreBusinessMetrics":120}]}
+PlayerConnection::Cleanup##utp:{"type":"MemoryLeaks","version":2,"phase":"Immediate","time":1795256921463,"processId":44896,"allocatedMemory":607918,"memoryLabels":[{"Default":136},{"NewDelete":760},{"Thread":8640},{"Manager":548406},{"GfxDevice":2112},{"GfxThread":3072},{"Audio":752},{"Serialization":520},{"JobScheduler":32768},{"String":511},{"HashMap":6656},{"PoolAlloc":384},{"CloudService":144},{"VR":1872},{"Video":144},{"NativeArray":648},{"Subsystems":96},{"Accessibility":80},{"Gui":201},{"CoreBusinessMetrics":120}]}

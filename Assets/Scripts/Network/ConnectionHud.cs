@@ -24,8 +24,8 @@ public class ConnectionHud : MonoBehaviour
         if (_relayBusy) return;
         _relayBusy = true;
         _relaySession = true;
-        _relayStatus = "Relay host hazırlanıyor...";
-        try { _relayCode = await RelayLink.Host(_nm); _relayStatus = "Kodu arkadaşınla paylaş."; }
+        _relayStatus = "Preparing Relay host...";
+        try { _relayCode = await RelayLink.Host(_nm); _relayStatus = "Share the code with your partner."; }
         catch (Exception ex) { _relayCode = ""; _relayStatus = "Host failed: " + ex.Message; Debug.LogError("[Relay] " + _relayStatus); }
         finally { _relayBusy = false; }
     }
@@ -35,8 +35,8 @@ public class ConnectionHud : MonoBehaviour
         if (_relayBusy) return;
         _relayBusy = true;
         _relaySession = true;
-        _relayStatus = "Relay bağlantısı hazırlanıyor...";
-        try { await RelayLink.Join(_nm, _joinCode); _relayStatus = "Bağlantı isteği gönderildi."; }
+        _relayStatus = "Preparing Relay connection...";
+        try { await RelayLink.Join(_nm, _joinCode); _relayStatus = "Connection request sent."; }
         catch (Exception ex) { _relayStatus = "Join failed: " + ex.Message; Debug.LogError("[Relay] " + _relayStatus); }
         finally { _relayBusy = false; }
     }
@@ -174,12 +174,12 @@ public class ConnectionHud : MonoBehaviour
             _joinCode = GUILayout.TextField(_joinCode, 6).ToUpperInvariant();
             if (GUILayout.Button("Join via Relay")) JoinViaRelay();
         }
-        if (_relayBusy) GUILayout.Label("Relay: lütfen bekle...");
+        if (_relayBusy) GUILayout.Label("Relay: please wait...");
         if (!string.IsNullOrEmpty(_relayStatus)) GUILayout.Label(_relayStatus);
         if (!string.IsNullOrEmpty(_relayCode) && _serverState == LocalConnectionState.Started)
             GUILayout.Label($"<b><size=26>JOIN CODE: {_relayCode}</size></b>", Rich());
         if (_relaySession && !_relayBusy)
-            GUILayout.Label("Yerel/IP bağlantıya dönmek için Play'i durdurup tekrar başlat.");
+            GUILayout.Label("Stop and restart Play Mode before returning to a local/IP connection.");
         bool previousEnabled = GUI.enabled;
         GUI.enabled = previousEnabled && !_relayBusy;
 
@@ -223,9 +223,9 @@ public class ConnectionHud : MonoBehaviour
         }
 
         GUI.enabled = previousEnabled;
-        GUILayout.Label("W/S veya ↑/↓: hareket | Space: servis");
+        GUILayout.Label("W/S or Up/Down: move | Space: serve");
         if (showDebugDetails)
-            GUILayout.Label("C: spam | X: büyük yön | T: teleport | G: skor 9");
+            GUILayout.Label("C: spam | X: oversized input | T: teleport | G: score 9");
 
         GUILayout.Space(6);
         string stats = _traffic == null ? "  (statistics disabled: StatisticsManager ▸ Run In Release + Network Traffic ▸ Enable Mode)" : "";

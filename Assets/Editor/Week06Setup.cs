@@ -17,7 +17,7 @@ public static class Week06Setup
     public static void Prepare()
     {
 #if !WEEK06_RELAY_READY
-        Debug.LogWarning("[Week06] Önce Week06 > Install required Relay packages seç ve derlemenin bitmesini bekle.");
+        Debug.LogWarning("[Week06] First select Week06 > Install required Relay packages and wait for compilation.");
         return;
 #else
         var scene = EditorSceneManager.OpenScene("Assets/Scenes/Pong.unity");
@@ -67,7 +67,7 @@ public static class Week06Setup
     public static void PrepareAndBuild()
     {
 #if !WEEK06_RELAY_READY
-        throw new InvalidOperationException("Önce Week06 > Install required Relay packages seç ve derlemeyi bekle.");
+        throw new InvalidOperationException("First select Week06 > Install required Relay packages and wait for compilation.");
 #else
         Prepare();
         string path = Path.GetFullPath("Builds/Windows/Pong.exe");
@@ -89,7 +89,7 @@ public static class Week06Setup
     public static void Export()
     {
         AssetDatabase.Refresh();
-        string path = Path.GetFullPath("Week06_Pong_Tamamlanmis.unitypackage");
+        string path = Path.GetFullPath("Week06_Pong_Completed.unitypackage");
         string[] args = Environment.GetCommandLineArgs();
         int output = Array.IndexOf(args, "-week06-package-output");
         if (output >= 0 && output + 1 < args.Length) path = Path.GetFullPath(args[output + 1]);

@@ -1,219 +1,193 @@
-# Week 06 — Homework 3: Host hileleri ve katılım kodu
+# Week 06 - Homework 3: The Host Cheats and the Join Code
 
-Bu proje, Week05_Pong_Host paketindeki sahne, prefab ve FishNet kodları üzerine devam eder. Unity: **6000.3.2f1**. Sahne: `Assets/Scenes/Pong.unity`.
+This project continues Week05_Pong_Host. Unity: **6000.3.2f1**. Scene: `Assets/Scenes/Pong.unity`. Original scene and prefab GUIDs are preserved. FishNet remains 4.7.3R. Packages and ProjectSettings were added because the original file was an asset package, not a complete project.
 
-## Hocanın istediği şey
+## Requirements and points
 
-Önce misafirin hile yapamadığını, hostun ise sunucuyla aynı süreci paylaştığı için doğrudan durum değiştirerek hile yapabildiğini göstereceksin. Sonra iki farklı ağdaki oyuncuyu Unity Relay katılım koduyla, IP yazmadan bağlayacaksın.
+Demonstrate that guest cheats cannot change authoritative server state, while direct host writes can. Then connect through a Relay join code without entering an IP address.
 
-| Adım | Yapılacak iş | Puan |
+| Step | Requirement | Points |
 | --- | --- | --- |
-| 1 | Misafirde C/X/T/G dene; sunucunun kurallarının bozulmadığını göster | 1 |
-| 2 | Oyuncu başına 1 saniye servis sınırı; yalnız isteği yapan oyuncuya TOO FAST | 2 |
-| 3 | Hostta aynı hileler ve Speed 40 deneyi; üç soruya cevap | 2 |
-| 4–6 | UnityTransport, RelayLink, iki Relay düğmesi ve katılım kodu | 2 |
-| 7 | Farklı ağdaki arkadaşla 3 puana kadar oyna, rolleri değiştir | 2 |
-| Teslim | README, iki terim, açıklanacak satır, zamanında GitHub gönderimi | 1 |
+| 1 | Guest C/X/T/G cheats fail | 1 |
+| 2 | One serve request per player per second; private TOO FAST notification | 2 |
+| 3 | Host cheats, Speed 40 and three answers | 2 |
+| 4-6 | UnityTransport, RelayLink, two buttons and a join code | 2 |
+| 7 | Partner on a different network, play to 3 points, swap roles | 2 |
+| Submission | README, two vocabulary terms, indicated line and timely GitHub push | 1 |
 
-Belge her adım sonunda commit ve push istiyor. 12:00 sonrası gönderimde README puanı kaybediliyor; belirli teslim günü belgede belirtilmiyor. Repoda parola, anahtar/token ve Library klasörü bulunmamalı.
+The sheet requests a commit and push after each step. A push after 12:00 loses the README point; the supplied sheet does not specify the submission date. Do not commit passwords, keys/tokens or Library.
 
-## Projeyi aç
+## Setup
 
-**Unitypackage kullanıyorsan:** Unity 6000.3.2f1 ile mevcut Week05 URP projesine paketi import et. Eksik Relay bağımlılıkları otomatik kurulur; internet ve Git gerekir. Gerekirse **Week06 → Install required Relay packages** menüsünü kullan. Derlemeden sonra **Prepare and validate project** seç. Paket içindeki rehber `Assets/Week06/README.md` konumundadır.
+1. Open the project with Unity **6000.3.2f1**, or import the unitypackage into the existing Week05 URP project.
+2. Wait for dependency installation and compilation. Internet and Git are required. If necessary, select **Week06 > Install required Relay packages**.
+3. Select **Week06 > Prepare and validate project**. This saves the scene, configures URP and selects UnityTransport on port 7770. Tugboat remains present but unused.
+4. Open `Assets/Scenes/Pong.unity`. In Multiplayer Play Mode, enable **one additional player** and do not use a Server tag.
+5. Enter Play Mode. Main Editor: **Start Host**. Guest: address **127.0.0.1**, then **Start Client**.
+6. W/S or Up/Down moves; Space serves. First player: LEFT; second: RIGHT.
 
-1. Unity Hub → Add project from disk ile bu klasörü seç, **6000.3.2f1** ile aç.
-2. Paketlerin indirilmesini ve derlemenin bitmesini bekle.
-3. `Assets/Scenes/Pong.unity` sahnesini aç.
-4. Ayarları yeniden kurmak gerekirse **Week06 → Prepare and validate project** menüsünü seç. Bu işlem sahneyi kaydeder, UnityTransport'u seçer, portu 7770 yapar ve URP ayarlarını oluşturur.
-5. Multiplayer Play Mode'da **bir ek oyuncu** aç; hiçbirine Server etiketi verme.
-6. Play → ana editörde **Start Host**, ek oyuncuda adres **127.0.0.1** → **Start Client**.
-7. W/S veya yukarı/aşağı: hareket. Space: servis. İlk oyuncu LEFT, ikinci RIGHT.
+Cloud project **pong** is linked and Relay is enabled. An unlinked imported project is configured automatically. If already linked elsewhere, select **Week06 > Link to pong Unity Cloud project**. Your partner must use the same Cloud-linked project.
 
-Başlangıç dosyası tam Unity projesi olmadığı için Packages ve ProjectSettings eklendi. Mevcut sahne ve prefablar korundu. Tugboat bileşeni kalır, seçili taşıyıcı UnityTransport olur. Ödevin önkoşulu için raket hareketi sunucu kontrollü yapıldı.
+Feed and technical debug rows are hidden. Score, RTT, join code and serve/refusal notifications remain visible. Show Debug Details on ConnectionHud enables optional diagnostics. Code comments have been removed.
 
-## Kodun mantığı
+## Code behavior
 
-- `Update`: yalnız raketin sahibi klavyeyi okur; yönü ve test tuşlarını saklar.
-- `OwnerTick`: her ağ tickinde bir hareket isteği; C için 20 istek, X için yön 100 gönderir.
-- `ServerMove`: geçersiz sayıyı reddeder → 30 ms sınırı → oyun kuralı → yönü -1/+1 arasına sıkıştırma → sunucudaki hızla hareket → saha sınırı.
-- Raket NetworkTransform bileşeninde **Client Authoritative kapalıdır**. Konumu sunucu dağıtır.
-- T doğrudan yerel konumu, G doğrudan SyncVar skoru değiştirir. Bunlar eğitim amaçlı hile denemeleridir.
-- `ServerRequestServe`: null kontrolü → hız sınırı → servis hakkı/oyun durumu → topu başlat → duyur.
-- `TargetRefused`: yalnız hedef bağlantının HUD'unda TOO FAST gösterir.
-- `RelayLink`: Services başlat → anonim giriş → allocation oluştur/katıl → transport verisini ayarla → bağlantıyı başlat.
+`Update` reads input only for the owned paddle. `OwnerTick` sends one direction request each network tick. `ServerMove` rejects non-finite values, applies the 30 ms limit, checks the rule, clamps direction to -1/+1, moves using server speed and clamps to court bounds. NetworkTransform has **Client Authoritative off** and **Send To Owner on**. Every 10 ticks, the authoritative position is resent so an idle guest teleport is corrected.
 
-## Step 1 — Misafir hileleri
+T directly changes local position; G directly attempts a SyncVar score write. They are intentional teaching cheats. `ServerRequestServe` follows null check, rate limit, serving-side/game-state checks, state change and announcement. `TargetRefused` notifies only the requesting connection. `RelayLink` initializes Services, signs in anonymously, creates/joins an allocation, configures transport data and starts networking.
 
-Misafir penceresine odaklanıp C/X/T/G tuşlarını sırayla dene. T'yi top merkezden uzaklaşmışken dene; iki pencereyi izle.
+## Step 1 - Guest cheats
 
-| Tuş | Beklenen sonuç |
+Focus the guest and try C/X/T/G individually. Try T with the ball away from the center and watch both windows.
+
+| Key | Expected outcome |
 | --- | --- |
-| C | 20 istekten biri kabul, 19 adet Rejected input … too fast; normal hız |
-| X | Yön 100 gelse de 1 kabul edilir; hız artmaz |
-| T | Yalnız misafirin görüntüsü sıçrar, sonraki sunucu konum güncellemesiyle geri döner |
-| G | Hostun skoru değişmez |
+| C | 20 requests in one tick: one accepted, 19 Rejected input ... too fast messages |
+| X | Direction 100 is clamped to 1; no speed increase |
+| T | Guest view jumps briefly; authoritative position restores it |
+| G | Host score does not change |
 
-**G misafirde SyncVar'a yazdı; host neden görmedi?** SyncVar'ın yazma yetkisi sunucudadır; misafirin doğrudan yazma girişimi sunucuya giden RPC değildir ve sunucunun yetkili skorunu değiştirmez.
+**Why did the host never see the guest G write?** The server owns SyncVar write authority. A direct client write is not an RPC and cannot change the server's authoritative score.
 
 Commit: `Homework 3: guest cheats fail`.
 
-## Step 2 — Servis sınırı
+## Step 2 - Serve rate limit
 
-`MinServeGap = 1.0`, `_lastServeTime = -1`. Süre damgası static değildir; her rakette ayrı tutulur. Zaman sunucunun `TimeManager.TicksToTime(TimeManager.Tick)` değerinden alınır.
+`MinServeGap = 1.0`; `_lastServeTime = -1` is an instance field, not static. Each paddle has a separate timestamp. Server time comes from `TimeManager.TicksToTime(TimeManager.Tick)`. An early request calls `TargetRefused(Owner, "TOO FAST")` and returns. The timestamp updates after the rate check and before the serving-side check, so out-of-turn spam is limited too.
 
-Erken istekte `TargetRefused(Owner, "TOO FAST")` çağrılır ve dönülür. Süre damgası hız kontrolünden sonra, servis hakkından önce güncellenir; böylece yanlış sıradaki servis spam'i de sınırlanır.
-
-**Deney:** Misafirde Space'e hızlıca iki kez bas. Yalnız misafir TOO FAST görmeli. Bir saniye sonra tekrar dene. Servis sırası sende değilse veya top zaten oyundaysa yeni servis başlamaz.
+Press Space twice quickly on the guest. Only the guest should see TOO FAST. After one second, a new serve is allowed only if it is that player's turn and the ball is not already in play.
 
 Commit: `Homework 3: serve rate limit`.
 
-## Step 3 — Host hileleri
+## Step 3 - Host cheats
 
-Host penceresinde C/X/T/G dene. Oyun çalışırken Hierarchy'den hostun raketini seç, PaddleController → Speed değerini 8'den 40'a çıkar ve hareket et. Sonra 8'e geri al.
+Focus the host and try the same keys. While playing, select the host paddle and change Speed from 8 to 40. Move, observe both windows and restore 8.
 
-| Deney | Beklenen sonuç | Sebep |
+| Test | Outcome | Reason |
 | --- | --- | --- |
-| C | 19 ret, normal hız | Sunucu hız kontrolü host için de çalışır |
-| X | Normal hız | Clamp uygulanır |
-| T | İki pencerede de konum değişir, orada kalır | Hostun konumu aynı zamanda sunucunun konumudur |
-| G | İki pencerede de LEFT 9 olur | Host sunucu yetkili skora doğrudan yazar |
-| Speed 40 | İki pencerede de 5 kat hız | Sunucunun kullandığı hız değişmiştir |
+| C | 19 rejections, normal speed | Server rate check also applies to host requests |
+| X | Normal speed | Direction is clamped |
+| T | Persistent position change in both windows | Host position is server position |
+| G | LEFT becomes 9 in both windows | Direct authoritative score write |
+| Speed 40 | Five times normal speed in both windows | Server speed value changed |
 
-**1. C/X başarısızken T/G neden çalıştı?** C/X sunucunun denetlediği istektir; T/G sunucuyla aynı süreci paylaşan hostun doğrudan yetkili durum yazımıdır.
+**1. Why did C/X fail while T/G worked?** C/X are validated requests; T/G are direct state writes in the process that also runs the server.
 
-**2. Misafir hangilerini görebilir?** Hostun T ile konum değiştirmesini, G ile skoru 9 yapmasını ve Speed 40 ile hızlanmasını görebilir; C/X kuralları aşamaz.
+**2. Which cheats can a guest see?** The host T position change, G score change and Speed 40 movement increase; C/X do not bypass the checks.
 
-**3. Yabancılarla dereceli oyunda hangisi?** Oyuncuların sunucu belleğini ve kurallarını değiştirememesi için oyunculardan bağımsız, güvenilir bir dedicated server seçerim.
+**3. Host or dedicated server for ranked play with strangers?** A trusted dedicated server independent of players prevents a player from editing server memory and rules.
 
-**İstenen kanıt:** Host G'ye bastıktan sonra misafir ekranını yakala. `Week06/screenshots/host-g-guest.png` olarak kaydedip buraya Markdown görüntüsü ekle. Görüntü olmadan tamamlandı yazma.
+This real guest screenshot was captured after the host G input during an automated local test. The guest is RIGHT and LEFT is 9. Complete the personal Editor demonstration too.
 
-Aşağıdaki gerçek görüntü, iki yerel Windows buildiyle yapılan otomatik testte host G girişinden sonra alındı. Misafir RIGHT tarafında ve ortak LEFT skoru 9. Kendi editör deneyini de ayrıca yap.
-
-![Host G sonrası misafir: LEFT 9, misafir RIGHT](screenshots/host-g-guest.png)
+![Guest after host G](screenshots/host-g-guest.png)
 
 Commit: `Homework 3: host cheats work`.
 
-## Step 4 — Paketler ve kendi hesabın
+## Step 4 - Packages and transport
 
-Manifestte Multiplayer Services, Input System, URP, Multiplayer Play Mode ve belirli Git commitine sabitlenmiş FishyUnityTransport bulunur. FishNet 4.7.3R başlangıç paketinden korunmuştur.
-
-**Tamamlandı:** Unity Cloud projesi pong bağlandı; Relay etkinleştirildi. Katılım koduyla iki süreç bağlanıp 3–2 oynadı, misafir RTT 67 ms. [Relay kanıtı ve görüntü](RELAY_TESTI.md).
-
-Başka bir projede kurulum gerekirse:
-
-1. Edit → Project Settings → Services: öğrenci Unity hesabınla giriş yap.
-2. Unity Cloud projesi oluştur veya mevcut projeyi bağla.
-3. Cloud Dashboard → aynı proje → Relay'i etkinleştir.
-4. NetworkManager üzerinde UnityTransport port 7770; TransportManager alanında UnityTransport seçili olmalı.
-5. Önce Start Host / 127.0.0.1 yerel testini yap.
-
-Arkadaşın aynı Cloud projeye bağlı repoyu kullanmalı. Parola veya erişim anahtarı ekleme.
+Dependencies include Multiplayer Services, Input System, URP, Multiplayer Play Mode and FishyUnityTransport pinned to a Git commit. In another project, use Project Settings > Services to link the same Cloud project, enable Relay in its Dashboard and select UnityTransport/port 7770 on NetworkManager and TransportManager. First verify Start Host and 127.0.0.1. Do not add account credentials.
 
 Commit: `Homework 3: UnityTransport`.
 
-## Step 5 — RelayLink.cs
+## Step 5 - RelayLink.cs
 
-**CreateAllocationAsync ne döndürür?** Relay adresi, allocation kimliği ve bağlantı verilerini taşıyan `Allocation`; 1 parametresi hosta ek bir misafir yeri ayırır.
+**CreateAllocationAsync returns:** An `Allocation` containing the Relay endpoint, allocation identifier and connection data. Argument 1 reserves one guest slot in addition to the host.
 
-**GetJoinCodeAsync ne döndürür?** Allocation'a katılmak için paylaşılacak katılım kodunu string olarak döndürür.
+**GetJoinCodeAsync returns:** A string containing the shareable code for the allocation.
 
-**SetRelayServerData neden önce?** Transport bağlantıyı açarken Relay uç noktasını ve bağlantı verilerini bilmelidir; bu yüzden StartConnection'dan önce ayarlanır.
+**Why SetRelayServerData before StartConnection?** The transport needs its Relay endpoint and allocation data when it opens the connection.
 
-Notes 6.1/6.2 gönderilmedi. Bu uygulama o notların birebir kopyası değildir; aynı davranış FishyUnityTransport API'siyle hazırlanmıştır. Hoca sınıfı kendin yazarak öğrenmeni istiyor; kodu okuyup açıklayabilecek duruma gel ve notlarla karşılaştır.
+Notes 6.1/6.2 were not supplied. This implementation uses the FishyUnityTransport API for the requested behavior; it is not claimed to be an exact transcription of those notes. Read and explain the code and compare it with the notes before submitting.
 
-API kaynağı: https://github.com/ooonush/FishyUnityTransport
+API reference: https://github.com/ooonush/FishyUnityTransport
 
-## Step 6 — İki düğme ve kod
+## Step 6 - Buttons and code
 
-1. Yerel testten sonra Play'i durdurup yeniden başlat.
-2. Hostta **Host via Relay** seç. İşlem bitene kadar tekrar basılamaz.
-3. Başarılıysa HUD'da büyük JOIN CODE, konsolda `[Relay] Join code: ...` görünür.
-4. Misafir aynı projenin instance/buildinde kodu girer, **Join via Relay** seçer.
-5. LEFT/RIGHT ile ralli oyna. Stop Host kodu temizler; kod host kapanınca geçersizdir.
-6. Aynı PC'deki süreçler için farklı anonim authentication profili kullanılır.
-7. Relay'den IP düğmelerine dönmek için Play'i durdurup yeniden başlat.
+Stop and restart Play Mode after local testing. Click **Host via Relay**; buttons are blocked while busy. The HUD shows JOIN CODE and the Console logs `[Relay] Join code: ...`. In the guest instance/build of the same project, enter the code and select **Join via Relay**. Play a rally. Stop Host clears the code, which expires with its host. Separate processes use separate anonymous authentication profiles. Restart Play Mode before returning to IP buttons.
+
+The real same-PC Relay test, screenshots and measurements are in [RELAY_TEST.md](RELAY_TEST.md).
 
 Commit: `Homework 3: join code`.
 
-## Step 7 — Farklı ağda arkadaş testi
+## Step 7 - Partner on a different network
 
-**Kendi kendine oynama tamamlandı:** İki bağımsız oyun süreciyle iki otomatik maç oynandı. Her ikisi de **3–2** bitti; ikinci maçta Bot A/B host ve misafir rollerini değiştirdi. Top ve skor doğrudan değiştirilmedi, W/S ve Space girişleri kullanıldı. Sonuçlar, RTT ölçümleri ve gerçek ekran görüntüleri [otomatik maç raporunda](OTOMATIK_MACLAR.md). Bu yerel deney, hocanın farklı ağdaki gerçek arkadaşla Relay şartını sağlamaz.
+Two local bot matches completed with roles swapped; both finished 3-2. A real Relay match also completed on the same computer. Movement and serving used W/S and Space without direct ball/score writes. See [AUTOMATED_MATCHES.md](AUTOMATED_MATCHES.md). These are not tests with a real partner on a different network.
 
-Tekrar çalıştırmak için **Week06 → Build and play automatically (two players)** seç. Normal oyuncu kontrolleri korunur; botlar yalnız otomatik maç parametresiyle başlatıldığında etkin olur.
+Select **Week06 > Build and play automatically (two players)** to run a local bot match. Normal play is unchanged; bots run only when explicitly requested.
 
-Arkadaşın senin reponu aynı Unity sürümüyle açmalı. Sen host ol, kodu kendin paylaş. Arkadaşın başka ev Wi-Fi veya telefon hotspot üzerinden katılsın. **3 puana kadar oynayın.** Sonra arkadaşının reposunu aç; o host, sen misafir olacak şekilde tekrarlayın.
+Your partner opens your repository with the same Unity version. Host via Relay and share the code yourself. Your partner joins from another home connection or phone hotspot. **Play to 3 points.** Then open your partner's repository and repeat with roles reversed.
 
-| Bağlantı kartı | Gerçek testten sonra doldur |
+| Connection card | Complete after the actual partner test |
 | --- | --- |
-| Arkadaşın adı | BEKLİYOR |
-| Kim host, kim misafir? | BEKLİYOR |
-| İki ağ | BEKLİYOR |
-| Misafirin Relay RTT değeri | BEKLİYOR — HUD'dan ms |
-| Misafirin 127.0.0.1 RTT değeri | BEKLİYOR — yerel testte HUD'dan ms |
-| İlk denemede oldu mu, hangi düzeltme? | BEKLİYOR |
-| 3 puanlık oyunun skoru | BEKLİYOR |
-| Roller değiştirilerek ikinci test | BEKLİYOR |
+| Partner name | PENDING |
+| Host and guest | PENDING |
+| The two networks | PENDING |
+| Guest Relay RTT | PENDING - HUD measurement in ms |
+| Guest 127.0.0.1 RTT | PENDING - local HUD measurement in ms |
+| First attempt and any required fix | PENDING |
+| Score at 3 points | PENDING |
+| Second test with roles reversed | PENDING |
 
-RTT ve skor birlikte görünürken misafir ekran görüntüsünü `Week06/screenshots/relay-guest.png` olarak kaydet ve buraya ekle.
+Add a guest screenshot with RTT and score visible together.
 
-**1. Kim kime bağlanır?** Host ve misafir Relay'e bağlanır; Relay paketleri aralarında taşır, oyun kararlarını host verir.
+**1. Who connects to whom through Relay?** Host and guest connect to Relay, which forwards packets; the host still makes game decisions.
 
-**2. Router ayarı neden gerekmedi?** Her iki taraf da dışarı doğru erişilebilir Relay'e bağlanır; hosta gelen bağlantı için port yönlendirme gerekmez.
+**2. Why was no router change required?** Both establish outgoing connections to a reachable Relay service; incoming host port forwarding is unnecessary.
 
-**3. Ek gecikme nereden?** Loopback yerine internet üzerinden Relay'e, karşı oyuncuya ve geri giden yol ile ağ işleme/kuyruk süreleri RTT'ye eklenir.
+**3. Where did the extra milliseconds come from?** The internet route to Relay and the other player, the return route, processing and queuing add delay compared with loopback.
 
-## İki terim ve açıklanacak satır
+## Vocabulary and the indicated line
 
-- **Authority / yetki:** Oyun durumu hakkında son karar ve yazma hakkının hangi tarafta olduğu.
-- **Relay / aktarıcı:** Paketleri ileten hizmet; oyunun yetkili hakemi değildir.
+- **Authority:** Final decision and write permission over game state.
+- **Relay:** A packet-forwarding service, not the authoritative game referee.
 
-**Açıklanacak satır:** `direction = Mathf.Clamp(direction, -1f, 1f);` — istemci 100 gönderse bile sunucu en fazla 1 kabul eder, hız katsayısını istemci seçemez. Hoca derste başka satırı işaret ettiyse bu bölümü onun istediği satıra göre değiştir.
+**Line to explain:** `direction = Mathf.Clamp(direction, -1f, 1f);` - even if a client sends 100, the server accepts at most 1. The client cannot select the speed multiplier. Replace this explanation if the instructor indicated another line in class.
 
-## Hata olursa
+## Troubleshooting
 
-| Belirti | Kontrol |
+| Symptom | Check |
 | --- | --- |
-| RelayService / AuthenticationService yok | Multiplayer Services indirildi mi? |
-| UnityTransport yok | Git kurulumu ve Git paketi |
-| Host hemen başarısız | Services proje bağlantısı, Relay etkinliği, internet |
-| Join başarısız | Kodda 0/O hatası, host kapalı mı, aynı Cloud proje mi? |
-| Kod var ama sunucu durdu | UnityTransport seçili mi; Relay verisi bağlantıdan önce mi? |
-| Aynı PC'de kimlik sorunu | Ayrı authentication profili |
-| Relay sonrası IP çalışmıyor | Play'i durdur, yeniden başlat |
-| RTT 150 ms üstü | Gerçek ölçümü yaz; farklı bağlantıyla tekrar dene |
+| RelayService / AuthenticationService missing | Multiplayer Services installation |
+| UnityTransport missing | Git and the Git package |
+| Host fails immediately | Cloud link, Relay activation and internet |
+| Join fails | Typo, stopped host or different Cloud project |
+| Code appears but server stops | UnityTransport selected; Relay data configured first |
+| Same-PC identity issue | Separate authentication profiles |
+| IP fails after Relay | Stop and restart Play Mode |
+| RTT above 150 ms | Record it and try another connection |
 
-## Teslim kontrolü
+## Submission checklist
 
-- [x] Unity Cloud projesi pong bağlandı ve Relay açık.
-- [ ] Editör/misafir pencerelerinde C/X/T/G denemelerini yaptım.
-- [ ] Servis reddini yalnız isteği yapan oyuncu gördü.
-- [ ] Host Speed 40 deneyi yapıldı, sonra 8'e alındı.
-- [ ] Host G sonrası misafir ekran görüntüsü eklendi.
-- [ ] Farklı ağda arkadaşla 3 puan oynandı, roller değiştirildi.
-- [ ] Gerçek bağlantı kartı ve RTT/skor görüntüsü eklendi.
-- [ ] Kodları açıklayabiliyorum; Notes 6.1/6.2 ile karşılaştırdım.
-- [ ] GitHub'a gönderildi; Library ve gizli bilgiler yok.
+- [x] Cloud project pong linked and Relay enabled.
+- [ ] Personally demonstrate C/X/T/G in the Editor and guest.
+- [ ] Verify that only the requester sees serve refusal.
+- [ ] Demonstrate Speed 40 and restore 8.
+- [ ] Add the host-G guest screenshot to the personal submission.
+- [ ] Play with a real partner on another network and swap roles.
+- [ ] Complete the actual connection card and RTT/score screenshot.
+- [ ] Explain the code and compare with Notes 6.1/6.2.
+- [ ] Push on time without Library or secrets.
 
-Yerel doğrulama durumu `TEST_SONUCLARI.md` içindedir. Buradaki beklenen sonuçlar senin gerçek deney kaydın yerine geçmez. GitHub adresi verilmediği için uzaktaki depoya gönderim yapılmadı.
+Recorded checks are in `TEST_RESULTS.md`. Expected outcomes and automated evidence do not replace the actual partner test. No GitHub destination was supplied, so no remote push was performed.
 
-## Bağlantı kartı ve test değerlendirmesi
+## Connection card and test discussion
 
-İlk maçta ben host, arkadaşım Deniz misafir olarak oynadı. Deniz benim projemi aynı Unity sürümüyle açtı. Host via Relay düğmesiyle oluşturduğum katılım kodunu Deniz'e ilettim; o da Join via Relay ile bağlandı. IP adresi yazmadık ve router üzerinde port yönlendirme yapmadık. Maçı 3–2 tamamladık.
+I hosted the first match and my partner Deniz joined. Deniz opened my project with the same Unity version. I sent the Host via Relay code and Deniz used Join via Relay. We entered no IP address and configured no router port forwarding. The match finished 3-2.
 
-| Bilgi | Test kaydı |
+| Item | Test record |
 | --- | --- |
-| Arkadaşın adı | Deniz |
-| İlk maçtaki roller | Ben host, Deniz misafir |
-| Hostun ağı | Ev Wi-Fi bağlantısı |
-| Misafirin ağı | Telefonun mobil internetinden açılan hotspot |
-| Misafirin Relay RTT değeri | Yaklaşık 84 ms |
-| Misafirin 127.0.0.1 RTT değeri | Yaklaşık 1 ms |
-| İlk denemede bağlantı | Başarılı; ek düzeltme gerekmedi |
-| İlk maçın sonucu | LEFT 3 – RIGHT 2 |
-| Roller değiştirilerek ikinci maç | Deniz host, ben misafir; Deniz'in projesinde oynadık |
-| İkinci maçta misafir RTT değeri | Yaklaşık 91 ms |
-| İkinci maçın sonucu | LEFT 3 – RIGHT 2 |
+| Partner name | Deniz |
+| First-match roles | I hosted; Deniz joined |
+| Host network | Home Wi-Fi |
+| Guest network | Phone hotspot using mobile data |
+| Guest Relay RTT | Approximately 84 ms |
+| Guest 127.0.0.1 RTT | Approximately 1 ms |
+| First connection attempt | Successful; no additional fix |
+| First-match score | LEFT 3 - RIGHT 2 |
+| Reversed roles | Deniz hosted; I joined Deniz's project |
+| Second-match guest RTT | Approximately 91 ms |
+| Second-match score | LEFT 3 - RIGHT 2 |
 
-Relay bağlantısında raket hareketi, 127.0.0.1 testine göre daha gecikmeli hissedildi. Bunun nedeni paketlerin bilgisayarın kendi içinde dolaşmak yerine internet üzerinden Relay sunucusuna ve karşı oyuncuya gidip geri dönmesidir. Relay paketleri taşıdı; servis, skor ve hareket kurallarını host uyguladı.
+Relay movement felt later than 127.0.0.1 because packets travelled over the internet to Relay and the other player instead of staying on one computer. Relay forwarded packets; the host enforced movement, serve and score rules.
 
-**Bu bölüm örnek metindir. Deniz adı, ağ bilgileri, skorlar ve RTT değerleri temsilidir; farklı ağda gerçekleştirilmiş bir testin kaydı değildir.**
+**This section is example text. The name Deniz, networks, scores and RTT values are illustrative; this is not a record of a test performed on two different networks.**

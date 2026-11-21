@@ -16,7 +16,8 @@
 [Smoke/guest] PASS Host T position reaches both processes
 [Smoke/guest] PASS Guest T cannot persist against server state
 [Smoke/guest] COMPLETE failures=0
-C/X test interval: 19 rejected input requests. C sends 20 requests in one tick.
+C/X interval: 19 rejected input requests.
 Unity 6000.3.2f1 Windows Development build: succeeded.
-Final Unity editor compile and scene validation: succeeded.
-Relay Cloud runtime and cross-network partner test: NOT RUN.
+English interface captures: refreshed.
+Real same-PC Unity Relay match: completed.
+Real partner test on two different networks: NOT PERFORMED.

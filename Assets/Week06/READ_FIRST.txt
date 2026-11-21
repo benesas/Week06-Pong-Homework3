@@ -1,0 +1,21 @@
+WEEK06 PONG - UNITYPACKAGE SETUP
+
+Use Unity 6000.3.2f1 and the existing Week05 URP project.
+1. Import using Assets > Import Package > Custom Package.
+2. Wait for missing Multiplayer Services and FishyUnityTransport dependencies.
+   Internet access and Git are required. If needed, select Week06 > Install required Relay packages.
+3. After compilation, select Week06 > Prepare and validate project.
+4. Open Assets/Scenes/Pong.unity. Enter Play Mode and click Start Host.
+5. Guest instance/build: enter 127.0.0.1 and click Start Client.
+6. For two bots, select Week06 > Build and play automatically (two players).
+
+Assignment guide: Assets/Week06/README.md
+Verification: Assets/Week06/TEST_RESULTS.md
+Local matches: Assets/Week06/AutoMatches/
+Relay evidence: Assets/Week06/RELAY_TEST.md
+
+The package contains no UPM binaries or account credentials.
+Cloud project pong is linked and Relay is enabled. Unlinked projects are configured automatically.
+If linked elsewhere, select Week06 > Link to pong Unity Cloud project.
+Same-PC bot matches do not replace the required real partner test on two different networks.
+Feed/debug rows are hidden; score, RTT and serve notifications remain visible.
